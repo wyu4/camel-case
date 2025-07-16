@@ -1,0 +1,18 @@
+:root {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cababas {
+  position: absolute;
+  aspect-ratio: 1/1;
+  max-width: 3cm;
+  bottom: 0;
+  right: 0;
+}
