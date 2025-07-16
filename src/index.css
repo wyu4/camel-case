@@ -9,10 +9,27 @@ body {
   height: 100vh;
 }
 
+@keyframes cababas-in {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(15%);
+    }
+}
+
 .cababas {
   position: absolute;
   aspect-ratio: 1/1;
   max-width: 3cm;
   bottom: 0;
   right: 0;
+  transform: translateY(100%);
+  animation-name: cababas-in;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1
 }
