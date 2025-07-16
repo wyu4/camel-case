@@ -1,0 +1,26 @@
+@keyframes cababas-in {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(30%);
+    }
+}
+
+.cababas-emblem {
+    position: absolute;
+    aspect-ratio: 1/1;
+    max-width: 3cm;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    animation-name: cababas-in;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    z-index: 1;
+}
