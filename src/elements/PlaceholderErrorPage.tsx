@@ -36,7 +36,7 @@ const PlaceholderErrorPage = ({
                     id="icon"
                 ></img>
                 <div id="main-message">
-                    <h1>This site can't be reached.</h1>
+                    <h1>This site can't be reached</h1>
                     <p>
                         {"Check if there's a typo in " +
                             window.location.hostname +
