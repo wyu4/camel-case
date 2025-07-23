@@ -1,0 +1,16 @@
+@import url("./Cababas.css");
+@import url("./PlaceholderErrorPage.css");
+
+:root {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    color-scheme: light dark;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}

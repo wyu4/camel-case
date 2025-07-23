@@ -1,10 +1,14 @@
-import './App.css'
-import CababasEmblem from './Components/CababasEmblem'
+import "./css/App.css";
+import CababasEmblem from "./elements/CababasEmblem";
+import PlaceholderErrorPage from "./elements/PlaceholderErrorPage";
 
 function App() {
-  return <>
-    <CababasEmblem></CababasEmblem>
-  </>
+    return (
+        <>
+            <PlaceholderErrorPage></PlaceholderErrorPage>
+            <CababasEmblem></CababasEmblem>
+        </>
+    );
 }
 
-export default App
+export default App;
