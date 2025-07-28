@@ -1,12 +1,12 @@
 import "./css/App.css";
-import CababasEmblem from "./elements/CababasEmblem";
-import PlaceholderErrorPage from "./elements/PlaceholderErrorPage";
+import PlaceholderCababas from "./elements/placeholder/PlaceholderCababas";
+import PlaceholderErrorPage from "./elements/placeholder/PlaceholderErrorPage";
 
 function App() {
     return (
         <>
             <PlaceholderErrorPage></PlaceholderErrorPage>
-            <CababasEmblem></CababasEmblem>
+            <PlaceholderCababas></PlaceholderCababas>
         </>
     );
 }
