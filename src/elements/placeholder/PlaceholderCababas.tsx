@@ -1,4 +1,4 @@
-import cababasImage from "/Cababas.webp";
+import cababasImage from "/images/Cababas.webp";
 
 export default function PlaceholderCababas() {
     return (

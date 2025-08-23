@@ -1,6 +1,6 @@
 import React from "react";
-import ErrorImageLight from "/ErrorIconLight.webp";
-import ErrorImageDark from "/ErrorIconDark.webp";
+import ErrorImageLight from "/images/ErrorIconLight.webp";
+import ErrorImageDark from "/images/ErrorIconDark.webp";
 
 type PlaceholderErrorPageProps = {
     className?: string;
