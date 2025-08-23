@@ -7,11 +7,17 @@
     --button-light: rgb(26, 115, 232);
     position: relative;
     font-size: 100%;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
     display: block;
     z-index: 0;
     width: 100vw;
     height: 100vh;
+}
+
+.placeholder-error-page,
+.placeholder-error-page h1,
+.placeholder-error-page p,
+.placeholder-error-page a {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .placeholder-error-page #main-content {

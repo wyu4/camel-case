@@ -1,5 +1,25 @@
-@import url("./images/Cababas.css");
-@import url("./images/PlaceholderErrorPage.css");
+@import url("./Cababas.css");
+@import url("./PlaceholderErrorPage.css");
+
+@font-face {
+    font-family: 'lazy-dog';
+    src: url('../fonts/lazy-dog.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'intro-rust';
+    src: url('../fonts/intro-rust.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'etna';
+    src: url('../fonts/etna.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'betm-rounded';
+    src: url('../fonts/betm-rounded-regular.ttf') format('truetype');
+}
 
 :root {
     overflow: hidden;
@@ -13,4 +33,20 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-family: 'lazy-dog', Arial;
+}
+
+h2 {
+    font-family: 'intro-rust', Arial;
+}
+
+h3 {
+    font-family: 'etna', Arial;
+}
+
+p,div {
+    font-family: 'betm-rounded', Arial;
 }
