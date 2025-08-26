@@ -2,13 +2,13 @@ import React from "react";
 import ErrorImageLight from "/images/ErrorIconLight.webp";
 import ErrorImageDark from "/images/ErrorIconDark.webp";
 
-type PlaceholderErrorPageProps = {
+type PlaceholderErrorProps = {
     className?: string;
 };
 
-export default function PlaceholderPage({
+export default function PlaceholderError({
     className = "",
-}: PlaceholderErrorPageProps) {
+}: PlaceholderErrorProps) {
     const reloadButton = React.useRef<HTMLButtonElement>(null);
     const [isDark, setIsDark] = React.useState(false);
 

@@ -1,18 +1,8 @@
 import "./css/App.css";
-import PlaceholderCababas from "./elements/placeholder/PlaceholderCababas";
-import PlaceholderErrorPage from "./elements/placeholder/PlaceholderErrorPage";
-
-function Placeholder() {
-    return (
-        <>
-            <PlaceholderErrorPage></PlaceholderErrorPage>
-            <PlaceholderCababas></PlaceholderCababas>
-        </>
-    );
-}
+import PlaceholderPage from "./elements/placeholder/PlaceholderPage";
 
 function App() {
-    return <Placeholder></Placeholder>;
+    return <PlaceholderPage />;
 }
 
 export default App;

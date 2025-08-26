@@ -4,7 +4,7 @@ export default function PlaceholderCababas() {
     return (
         <img
             src={cababasImage}
-            className="cababas placeholder"
+            className="placeholder cababas"
             draggable={false}
         ></img>
     );
