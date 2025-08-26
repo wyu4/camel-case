@@ -36,6 +36,7 @@
     --high-brown: #905b41;
     --high-dark-brown: #4f4d39;
     --high-beige: #f4e5c9;
+    --back-beige: #e8e2d4;
     --spacing: 1rem;
     --radius: 20px;
 }
@@ -45,6 +46,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background: var(--back-beige);
 }
 
 h1 {

@@ -1,14 +1,17 @@
 .top-bar {
     display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    background: #ffffff;
+    background: #ffffff00;
     z-index: 9999;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: var(--spacing);
+    padding: calc(var(--spacing) * 2);
+}
+
+.top-bar a,.top-bar button {
+    font-size: 2em;
 }

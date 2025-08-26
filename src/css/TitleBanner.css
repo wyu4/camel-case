@@ -10,4 +10,10 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing);
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-banner #title h1 {
+    color: var(--high-brown);
 }
