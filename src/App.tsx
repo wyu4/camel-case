@@ -1,8 +1,10 @@
 import "./css/App.css";
-import PlaceholderPage from "./elements/placeholder/PlaceholderPage";
+import ProductionPage from "./elements/production/ProductionPage";
+// import PlaceholderPage from "./elements/placeholder/PlaceholderPage";
 
 function App() {
-    return <PlaceholderPage />;
+    // return <PlaceholderPage />;
+    return <ProductionPage />;
 }
 
 export default App;

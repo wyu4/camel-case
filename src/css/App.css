@@ -1,9 +1,12 @@
 @import url("./Cababas.css");
 @import url("./PlaceholderError.css");
+@import url("./TopBar.css");
+@import url("./ProductionContainer.css");
+@import url("./TitleBanner.css");
 
 @font-face {
     font-family: 'lazy-dog';
-    src: url('../fonts/lazy-dog.ttf') format('truetype');
+    src: url('../fonts/lazy-dog.otf') format('opentype');
 }
 
 @font-face {
@@ -22,10 +25,19 @@
 }
 
 :root {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin: 0;
     padding: 0;
     color-scheme: light dark;
+    --main-blue: #cae2d8;
+    --main-green: #287a5c;
+    --main-brown: #ca9459;
+    --high-brown: #905b41;
+    --high-dark-brown: #4f4d39;
+    --high-beige: #f4e5c9;
+    --spacing: 1rem;
+    --radius: 20px;
 }
 
 body {
@@ -37,6 +49,7 @@ body {
 
 h1 {
     font-family: 'lazy-dog', Arial;
+    font-size: 10rem;
 }
 
 h2 {

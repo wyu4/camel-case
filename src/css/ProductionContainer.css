@@ -1,0 +1,7 @@
+.production.container {
+    background: #00000000;
+}
+
+.production.background {
+    background: var(--main-blue);
+}

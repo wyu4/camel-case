@@ -1,0 +1,13 @@
+.title-banner {
+    width: 100%;
+
+}
+
+.title-banner #title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+}
