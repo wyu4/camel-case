@@ -1,0 +1,7 @@
+@import url('./PlaceholderCababas.css');
+@import url('./PlaceholderError.css');
+
+:root {
+    overflow-y: hidden;
+    color-scheme: light dark;
+}

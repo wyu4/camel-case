@@ -1,6 +1,9 @@
+import "./../css/production/ProductionApp.css";
+
 import { useRef } from "react";
-import TitleBanner from "./TitleBanner";
-import TopBar from "./TopBar";
+import TopBar from "../elements/production/TopBar";
+import TitleBanner from "../elements/production/TitleBanner";
+import Intro from "../elements/production/Intro";
 
 export default function ProductionPage() {
     const background = useRef<HTMLDivElement>(null);
@@ -11,6 +14,8 @@ export default function ProductionPage() {
             <div className="production container">
                 <TopBar />
                 <TitleBanner />
+                <Intro />
+                <section></section>
             </div>
         </>
     );
