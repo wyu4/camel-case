@@ -1,5 +1,6 @@
 @import url('./TopBar.css');
 @import url('./TitleBanner.css');
+@import url('./Footer.css');
 
 @font-face {
     font-family: 'lazy-dog';
@@ -37,31 +38,38 @@
     padding: 0;
 }
 
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
     background: var(--back-beige);
 }
 
 h1 {
     font-family: 'lazy-dog', Arial;
+    color: var(--high-brown);
     font-size: 10rem;
 }
 
 h2 {
     font-family: 'intro-rust', Arial;
+    font-size: 3rem;
 }
 
 h3 {
     font-family: 'etna', Arial;
+    font-size: 2rem;
 }
 
 p,
 div {
     font-family: 'betm-rounded', Arial;
     color: #000000;
+    font-size: 1.5rem;
 }
 
 .production.container {
