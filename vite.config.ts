@@ -11,16 +11,16 @@ export default defineConfig({
     build: {
         outDir: resolve(__dirname, "dist"),
         emptyOutDir: true,
-        // rollupOptions: {
-        //     input: {
-        //         main: resolve(root, "index.html"),
-        //         placeholder: resolve(
-        //             root,
-        //             "pages",
-        //             "placeholder",
-        //             "index.html"
-        //         ),
-        //     },
-        // },
+        rollupOptions: {
+            input: {
+                main: resolve(root, "index.html"),
+                placeholder: resolve(
+                    root,
+                    "pages",
+                    "placeholder",
+                    "index.html"
+                ),
+            },
+        },
     },
 });
