@@ -16,7 +16,6 @@ export default defineConfig({
                 main: resolve(root, "index.html"),
                 placeholder: resolve(
                     root,
-                    "pages",
                     "placeholder",
                     "index.html"
                 ),
