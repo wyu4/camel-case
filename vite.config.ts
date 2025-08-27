@@ -8,22 +8,19 @@ const root = resolve(__dirname, "src");
 export default defineConfig({
     root,
     plugins: [react()],
-    server: {
-        port: 3001,
-    },
     build: {
         outDir: resolve(__dirname, "dist"),
         emptyOutDir: true,
-        rollupOptions: {
-            input: {
-                main: resolve(root, "index.html"),
-                placeholder: resolve(
-                    root,
-                    "pages",
-                    "placeholder",
-                    "index.html"
-                ),
-            },
-        },
+        // rollupOptions: {
+        //     input: {
+        //         main: resolve(root, "index.html"),
+        //         placeholder: resolve(
+        //             root,
+        //             "pages",
+        //             "placeholder",
+        //             "index.html"
+        //         ),
+        //     },
+        // },
     },
 });
