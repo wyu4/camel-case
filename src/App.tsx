@@ -12,25 +12,31 @@ import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
 
 export default function App() {
-    const [viewWidth, setViewWidth] = useState(0);
-    const [viewHeight, setViewHeight] = useState(0);
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [windowProps, setWindowProps] = useState<WindowProps>({
+        scrollPosition: 0,
+        viewWidth: 0,
+        viewHeight: 0,
+    });
 
     const background = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollPosition(window.scrollY);
+            setWindowProps((last) => ({
+                ...last,
+                scrollPosition: window.scrollY,
+            }));
         };
 
         const handleWindowResize = () => {
             const viewport = window.visualViewport;
             if (!viewport) return;
-            
-            setViewWidth(viewport.width?.valueOf());
-            setViewHeight(viewport.height?.valueOf());
 
-            console.log(viewport.height?.valueOf());
+            setWindowProps((last) => ({
+                ...last,
+                viewWidth: viewport.width?.valueOf(),
+                viewHeight: viewport.height?.valueOf(),
+            }));
         };
         handleWindowResize();
 
@@ -48,11 +54,8 @@ export default function App() {
         <>
             <div className="production background" ref={background} />
             <div className="production container">
-                <TopBar
-                    scrollPosition={scrollPosition}
-                    viewHeight={viewHeight}
-                />
-                <TitleBanner />
+                <TopBar {...windowProps} />
+                <TitleBanner {...windowProps} />
                 <Intro />
                 <Mission />
                 <Agenda />

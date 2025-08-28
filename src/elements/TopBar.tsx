@@ -1,23 +1,8 @@
-import { type HTMLAttributes } from "react";
-
-type TopBarProps = Omit<
-    HTMLAttributes<HTMLDivElement> & {
-        scrollPosition: number;
-        viewHeight: number;
-    },
-    "className"
->;
-
-export default function TopBar({
-    scrollPosition,
-    viewHeight,
-    ...props
-}: TopBarProps) {
+export default function TopBar({ ...props }: VerticalWindowProps) {
     return (
         <div
             className="top-bar"
-            style={{ opacity: scrollPosition > viewHeight / 10 ? 1 : 0 }}
-            {...props}
+            style={{ opacity: props.scrollPosition > props.viewHeight / 10 ? 1 : 0 }}
         >
             <button>Foo</button>
             <button>Bar</button>

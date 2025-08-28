@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-export default function TitleBanner() {
+export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
     const headers: JSX.Element[] = [];
 
@@ -10,7 +10,10 @@ export default function TitleBanner() {
     });
 
     return (
-        <section className="title-banner">
+        <section
+            className="title-banner"
+            style={{ transform: `translateY(calc(-1.5em - ${props.scrollPosition/2}px))` }}
+        >
             <div id="title">{headers}</div>
         </section>
     );
