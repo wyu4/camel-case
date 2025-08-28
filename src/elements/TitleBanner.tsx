@@ -5,8 +5,8 @@ export default function TitleBanner() {
     const headers: JSX.Element[] = [];
 
     // Splits the title into seperate header elements
-    TITLE.split("").forEach((character) => {
-        headers.push(<h1>{character}</h1>);
+    TITLE.split("").forEach((character, i) => {
+        headers.push(<h1 key={`${character}-${i}`}>{character}</h1>);
     });
 
     return (

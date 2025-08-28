@@ -10,6 +10,7 @@
     align-items: center;
     gap: var(--spacing);
     padding: calc(var(--spacing) * 2);
+    transition: opacity 0.25s ease-in-out;
 }
 
 .top-bar a,.top-bar button {
