@@ -1,0 +1,11 @@
+.mission {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.mission .mission-container {
+    z-index: 20;
+    min-width: 15em;
+    max-width: 20vw;
+    transform: translateX(calc(100vw - 30em)) rotateY(-20deg);
+}

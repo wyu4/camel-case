@@ -7,7 +7,7 @@ export default function Plack({
 }: ComponentPropsWithRef<"div">) {
     return (
         <div
-            className={"intro container plack rounded padded " + className}
+            className={"plack rounded padded " + className}
             {...props}
         >
             {children}
