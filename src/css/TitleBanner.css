@@ -8,8 +8,8 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing);
+    gap: 1vw;
     width: 100vw;
     height: 100vh;
-    transform: translateY(-1.5em);
+    z-index: 1;
 }

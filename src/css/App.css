@@ -1,5 +1,6 @@
 @import url('./TopBar.css');
 @import url('./TitleBanner.css');
+@import url('./Intro.css');
 @import url('./Footer.css');
 
 @font-face {
@@ -31,14 +32,19 @@
     --high-brown: #905b41;
     --high-dark-brown: #4f4d39;
     --high-beige: #f4e5c9;
-    --back-beige: #e8e2d4;
-    --spacing: 1rem;
+    --high-beige-2: #f8f3e6;
+    --high-grey: #8f8f8f;
+    --spacing: 1.5rem;
     --radius: 20px;
     margin: 0;
     padding: 0;
 }
 
-body, h1, h2, h3, p {
+body,
+h1,
+h2,
+h3,
+p {
     margin: 0;
     padding: 0;
 }
@@ -51,25 +57,27 @@ body {
 
 h1 {
     font-family: 'lazy-dog', Arial;
-    color: var(--high-dark-brown);
     font-size: 15rem;
+    color: var(--high-dark-brown);
 }
 
 h2 {
     font-family: 'intro-rust', Arial;
     font-size: 3rem;
+    color: var(--high-brown);
 }
 
 h3 {
     font-family: 'etna', Arial;
     font-size: 2rem;
+    color: var(--main-green);
 }
 
 p,
 div {
     font-family: 'betm-rounded', Arial;
-    color: #000000;
     font-size: 1.5rem;
+    color: var(--high-dark-brown);
 }
 
 .production.container {
@@ -78,4 +86,20 @@ div {
 
 .production.background {
     background: var(--main-blue);
+}
+
+.rounded {
+    border-radius: 20px;
+}
+
+.plack {
+    background: var(--high-beige-2);
+}
+
+.padded {
+    padding: var(--spacing);
+}
+
+.invisible { 
+    opacity: 0;
 }
