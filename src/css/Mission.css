@@ -7,5 +7,5 @@
     z-index: 20;
     min-width: 15em;
     max-width: 20vw;
-    transform: translateX(calc(100vw - 30em)) rotateY(-20deg);
+    transform: translateX(calc(100vw - 30em));
 }

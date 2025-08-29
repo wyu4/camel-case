@@ -11,12 +11,16 @@ import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
 
+const SCHEDULE_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
+
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
         scrollPosition: 0,
         viewWidth: 0,
         viewHeight: 0,
     });
+    const [loadingSchedule, setLoadingSchedule] = useState(true);
+    const [scheduleData, setScheduleData] = useState<ScheduleProps>([])
 
     const background = useRef<HTMLDivElement>(null);
 
@@ -43,6 +47,22 @@ export default function App() {
         window.addEventListener("resize", handleWindowResize);
         window.addEventListener("scroll", handleScroll); // Track the scroll position
 
+        const getSchedule = async () => {
+            try {
+                const response = await fetch(SCHEDULE_API);
+                if (!response.ok) {
+                    throw new Error(`Request code ${response.status}`)
+                }
+                const formattedResult : ScheduleProps = await response.json();
+                setScheduleData(formattedResult);
+            } catch (e: unknown) {
+                console.error(`Couldn't get schedule: ${e}`);
+            } finally {
+                setLoadingSchedule(false);
+            }
+        }
+        getSchedule();
+
         // Cleanup
         return () => {
             window.removeEventListener("resize", handleWindowResize);
@@ -60,7 +80,8 @@ export default function App() {
                 <div className="invisible" style={{height:"20vh"}} />
                 <Mission />
                 <div className="invisible" style={{height:"20vh"}} />
-                <Agenda />
+                <Agenda schedule={scheduleData} />
+                <div className="invisible" style={{height:"20vh"}} />
                 <Judges />
                 <Sponsors />
                 <FAQ />

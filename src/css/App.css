@@ -2,6 +2,7 @@
 @import url('./TitleBanner.css');
 @import url('./Intro.css');
 @import url('./Mission.css');
+@import url('./Agenda.css');
 @import url('./Footer.css');
 
 @font-face {
@@ -36,7 +37,7 @@
     --high-beige-2: #f8f3e6;
     --high-grey: #8f8f8f;
     --spacing: 1.5rem;
-    --radius: 20px;
+    --radius: 0.5rem;
     margin: 0;
     padding: 0;
 }
@@ -90,7 +91,7 @@ div {
 }
 
 .rounded {
-    border-radius: 20px;
+    border-radius: var(--radius);
 }
 
 .plack {
@@ -103,4 +104,8 @@ div {
 
 .invisible { 
     opacity: 0;
+}
+
+.darkener {
+    background: #00000010;
 }
