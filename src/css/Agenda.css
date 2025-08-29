@@ -17,6 +17,7 @@
     max-height: 90vh;
     min-width: 50vw;
     max-width: 80vw;
+    gap: var(--spacing);
 }
 
 .agenda .schedule .day {
@@ -24,10 +25,12 @@
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
+    gap: var(--spacing);
 }
 
-.agenda .schedule .day p {
+.agenda .schedule .day h3 {
     text-align: center;
+    transform: translateY(-0.25rem);
 }
 
 .agenda .schedule .event {
@@ -36,5 +39,5 @@
     flex-wrap: nowrap;
     flex-direction: row;
     padding: calc(var(--spacing) / 3);
-    gap: 20px;
+    gap: var(--spacing);
 }
