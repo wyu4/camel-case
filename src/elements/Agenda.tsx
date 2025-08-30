@@ -16,7 +16,9 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
 
     useEffect(() => {
         if (schedule.length > 0) {
+            // Loading events
             const createEvent = (
+                // Individual events
                 { time, name }: EventProps,
                 eventNumber: number,
                 dayNumber: number
@@ -33,15 +35,22 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
             };
 
             const newTabs: JSX.Element[] = [];
-            const createEventTab = (data: EventProps[], dayNumber: number) => {
+            const createDayTab = (data: EventProps[], dayNumber: number) => {
+                // Individual tabs with events
                 const events: JSX.Element[] = [];
                 data.forEach((event, i) => {
                     events.push(createEvent(event, i, dayNumber));
                 });
                 return events;
             };
+
             schedule.forEach((daySchedule, i) => {
-                newTabs.push(<div key={`daySchedule-${i}`}>{createEventTab(daySchedule, i)}</div>);
+                // Create tabs and events for the full schedule
+                newTabs.push(
+                    <div key={`daySchedule-${i}`}>
+                        {createDayTab(daySchedule, i)}
+                    </div>
+                );
             });
 
             setTabs(newTabs);
@@ -49,6 +58,7 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
     }, [schedule]);
 
     useEffect(() => {
+        // Switch between tabs when dayNumber changes
         if (eventsContainer.current) {
             eventsContainer.current.style.transform = `translateX(-${
                 dayNumber * 100

@@ -19,7 +19,6 @@ export default function App() {
         viewWidth: 0,
         viewHeight: 0,
     });
-    const [loadingSchedule, setLoadingSchedule] = useState(true);
     const [scheduleData, setScheduleData] = useState<ScheduleProps>([])
 
     const background = useRef<HTMLDivElement>(null);
@@ -57,8 +56,6 @@ export default function App() {
                 setScheduleData(formattedResult);
             } catch (e: unknown) {
                 console.error(`Couldn't get schedule: ${e}`);
-            } finally {
-                setLoadingSchedule(false);
             }
         }
         getSchedule();
