@@ -21,16 +21,62 @@
 }
 
 .agenda .schedule .day {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
     gap: var(--spacing);
+    width: 100%;
+    height: 2rem;
+}
+
+.agenda .schedule .day button {
+    font-family: 'intro-rust', Arial;
+    font-size: 1.2em;
+    aspect-ratio: 1/1;
+    width: 2rem;
+    border: none;
+    color: var(--high-dark-brown);
+}
+
+.agenda .schedule .day button:hover {
+    color: var(--high-grey);
+}
+
+.agenda .schedule .day .last {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-5rem);
 }
 
 .agenda .schedule .day h3 {
+    position: absolute;
     text-align: center;
-    transform: translateY(-0.25rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(-0.25rem);
+}
+
+.agenda .schedule .day .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(5rem);
+}
+
+.agenda .schedule .events-container {
+    overflow-x: hidden;
+}
+
+.agenda .schedule .events {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    transition: transform 0.25s ease-in-out;
+}
+
+.agenda .schedule .events>div {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex: 0 0 100%;
 }
 
 .agenda .schedule .event {

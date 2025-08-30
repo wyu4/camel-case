@@ -106,6 +106,10 @@ div {
     opacity: 0;
 }
 
+.transparent { 
+    background: #00000000;
+}
+
 .darkener {
     background: #00000010;
 }
