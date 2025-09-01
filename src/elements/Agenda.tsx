@@ -2,6 +2,10 @@ import { useEffect, useRef, useState, type JSX } from "react";
 import Plack from "./Plack";
 import { wrapNum } from "../global/NumberHelpers";
 
+function EventInfo() {
+    return <Plack className="info"><h2>Event Rundown</h2></Plack>;
+}
+
 function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
     const [tabs, setTabs] = useState<JSX.Element[]>([]);
     const [dayNumber, setDayNumber] = useState(0);
@@ -88,7 +92,7 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
                 ref.style.minWidth = `${greatestWidth}px`;
             });
         }
-    }, [tabs])
+    }, [tabs]);
 
     useEffect(() => {
         // Switch between tabs when dayNumber changes
@@ -128,7 +132,9 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
 export default function Agenda({ schedule }: { schedule: ScheduleProps }) {
     return (
         <section className="agenda">
-            <EventSchedule schedule={schedule}></EventSchedule>
+            <EventInfo/>
+            <div className="invisible" style={{height:"var(--spacing)"}} />
+            <EventSchedule schedule={schedule} />
         </section>
     );
 }
