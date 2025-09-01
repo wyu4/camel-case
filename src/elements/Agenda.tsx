@@ -6,6 +6,7 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
     const [tabs, setTabs] = useState<JSX.Element[]>([]);
     const [dayNumber, setDayNumber] = useState(0);
     const eventsContainer = useRef<HTMLDivElement>(null);
+    const timeRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
     const onLastButtonClick = () => {
         setDayNumber((last) => wrapNum(last - 1, 0, tabs.length));
@@ -28,7 +29,14 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
                         className="event rounded"
                         key={`${dayNumber}-${eventNumber}-${time}-${name}`}
                     >
-                        <p className="time">{time}</p>
+                        <p
+                            ref={(element) => {
+                                timeRefs.current.push(element);
+                            }}
+                            className="time"
+                        >
+                            {time}
+                        </p>
                         <p className="name">{name}</p>
                     </div>
                 );
@@ -47,7 +55,7 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
             schedule.forEach((daySchedule, i) => {
                 // Create tabs and events for the full schedule
                 newTabs.push(
-                    <div key={`daySchedule-${i}`}>
+                    <div className="tab" key={`daySchedule-${i}`}>
                         {createDayTab(daySchedule, i)}
                     </div>
                 );
@@ -56,6 +64,31 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
             setTabs(newTabs);
         }
     }, [schedule]);
+
+    useEffect(() => {
+        // Setting a uniform width to all time elements
+        const current = timeRefs.current;
+        if (current.length > 1) {
+            let greatestWidth = 0;
+            // Get the widest one
+            current.forEach((ref) => {
+                if (ref === null) {
+                    return;
+                }
+                const width = ref.getBoundingClientRect().width;
+                if (greatestWidth < width) {
+                    greatestWidth = width;
+                }
+            });
+            // Set all the widths to the widest one
+            current.forEach((ref) => {
+                if (ref === null) {
+                    return;
+                }
+                ref.style.minWidth = `${greatestWidth}px`;
+            });
+        }
+    }, [tabs])
 
     useEffect(() => {
         // Switch between tabs when dayNumber changes

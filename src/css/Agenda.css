@@ -71,7 +71,7 @@
     transition: transform 0.25s ease-in-out;
 }
 
-.agenda .schedule .events>div {
+.agenda .schedule .events .tab {
     display: flex;
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -86,4 +86,9 @@
     flex-direction: row;
     padding: calc(var(--spacing) / 3);
     gap: var(--spacing);
+}
+
+.agenda .schedule .event .time {
+    text-wrap: nowrap;
+    flex-shrink: 0;
 }
