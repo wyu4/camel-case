@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState, type JSX } from "react";
 import Plack from "./Plack";
 import { wrapNum } from "../global/NumberHelpers";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 function EventInfo() {
-    
-
     return (
         <Plack className="info">
             <h2>Event Rundown</h2>
@@ -14,7 +13,19 @@ function EventInfo() {
             <p>
                 <b>Location: </b>???
             </p>
-            
+            <MapContainer
+                center={[45.323467111163716, -75.89449784098387]}
+                zoom={13}
+                scrollWheelZoom={true}
+                className="map-container rounded"
+            >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <Marker position={[45.323467111163716, -75.89449784098387]}>
+                    <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                </Marker>
+            </MapContainer>
         </Plack>
     );
 }

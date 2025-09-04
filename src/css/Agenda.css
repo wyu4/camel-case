@@ -8,6 +8,12 @@
     padding-right: 10vw;
 }
 
+.agenda .info .map-container {
+    aspect-ratio: 2/1;
+    width: 25vw;
+    min-width: 100%;
+}
+
 .agenda .schedule {
     display: flex;
     justify-content: flex-start;
