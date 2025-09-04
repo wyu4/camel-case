@@ -3,7 +3,20 @@ import Plack from "./Plack";
 import { wrapNum } from "../global/NumberHelpers";
 
 function EventInfo() {
-    return <Plack className="info"><h2>Event Rundown</h2></Plack>;
+    
+
+    return (
+        <Plack className="info">
+            <h2>Event Rundown</h2>
+            <p>
+                <b>Date: </b>November 29 - 30, 2025
+            </p>
+            <p>
+                <b>Location: </b>???
+            </p>
+            
+        </Plack>
+    );
 }
 
 function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
@@ -132,8 +145,8 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
 export default function Agenda({ schedule }: { schedule: ScheduleProps }) {
     return (
         <section className="agenda">
-            <EventInfo/>
-            <div className="invisible" style={{height:"var(--spacing)"}} />
+            <EventInfo />
+            <div className="invisible" style={{ height: "var(--spacing)" }} />
             <EventSchedule schedule={schedule} />
         </section>
     );
