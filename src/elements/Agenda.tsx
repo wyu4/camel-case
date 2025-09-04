@@ -1,9 +1,20 @@
 import { useEffect, useRef, useState, type JSX } from "react";
 import Plack from "./Plack";
 import { wrapNum } from "../global/NumberHelpers";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import type { LatLngExpression } from "leaflet";
+import L from "leaflet";
 
 function EventInfo() {
+    const coordinates: LatLngExpression = [
+        45.323467111163716, -75.89449784098387,
+    ];
+
+    const markerIcon = new L.Icon({
+        iconUrl: "/images/Cababas.webp",
+        iconSize: [41, 41],
+    });
+
     return (
         <Plack className="info">
             <h2>Event Rundown</h2>
@@ -14,17 +25,14 @@ function EventInfo() {
                 <b>Location: </b>???
             </p>
             <MapContainer
-                center={[45.323467111163716, -75.89449784098387]}
+                center={coordinates}
                 zoom={13}
                 scrollWheelZoom={true}
+                attributionControl={false}
                 className="map-container rounded"
             >
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={[45.323467111163716, -75.89449784098387]}>
-                    <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </Marker>
+                <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+                <Marker position={coordinates} icon={markerIcon} />
             </MapContainer>
         </Plack>
     );
