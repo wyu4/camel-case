@@ -55,6 +55,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: var(--main-blue);
+    overflow-x: hidden;
 }
 
 h1 {
@@ -75,8 +76,7 @@ h3 {
     color: var(--main-green);
 }
 
-p,
-div {
+p, div, button {
     font-family: 'betm-rounded', Arial;
     font-size: 1.5rem;
     color: var(--high-dark-brown);
