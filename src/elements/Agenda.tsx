@@ -4,6 +4,7 @@ import { wrapNum } from "../global/NumberHelpers";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import type { LatLngExpression } from "leaflet";
 import L from "leaflet";
+import Line from "./Line";
 
 function EventInfo() {
     const coordinates: LatLngExpression = [
@@ -18,12 +19,14 @@ function EventInfo() {
     return (
         <Plack className="info">
             <h2>Event Rundown</h2>
+            <Line lineWidth="2px" lineMargin="1rem" />
             <p>
                 <b>Date: </b>November 29 - 30, 2025
             </p>
             <p>
                 <b>Location: </b>???
             </p>
+            <div className="invisible" style={{ height: "var(--spacing)" }} />
             <MapContainer
                 center={coordinates}
                 zoom={13}
@@ -165,7 +168,6 @@ export default function Agenda({ schedule }: { schedule: ScheduleProps }) {
     return (
         <section className="agenda">
             <EventInfo />
-            <div className="invisible" style={{ height: "var(--spacing)" }} />
             <EventSchedule schedule={schedule} />
         </section>
     );
