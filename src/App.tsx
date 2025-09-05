@@ -6,13 +6,13 @@ import TitleBanner from "./elements/TitleBanner";
 import Intro from "./elements/Intro";
 import Mission from "./elements/Mission";
 import Agenda from "./elements/Agenda";
-import Judges from "./elements/Judges";
 import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
+import People from "./elements/People";
 
 const SCHEDULE_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
-const JUDGES_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/judges.json";
+const PEOPLE_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/people.json";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -21,7 +21,7 @@ export default function App() {
         viewHeight: 0,
     });
     const [scheduleData, setScheduleData] = useState<ScheduleProps>([]);
-    const [judgesData, setJudgesData] = useState<GroupProps>({
+    const [peopleData, setPeopleData] = useState<GroupProps>({
         judges: [],
         mentors: []
     });
@@ -66,18 +66,19 @@ export default function App() {
 
         const getJudges = async () => {
             try {
-                const response = await fetch(SCHEDULE_API);
+                const response = await fetch(PEOPLE_API);
                 if (!response.ok) {
                     throw new Error(`Request code ${response.status}`)
                 }
-                const formattedResult : ScheduleProps = await response.json();
-                setScheduleData(formattedResult);
+                const formattedResult : GroupProps = await response.json();
+                setPeopleData(formattedResult);
             } catch (e: unknown) {
-                console.error(`Couldn't get schedule: ${e}`);
+                console.error(`Couldn't get people: ${e}`);
             }
         }
 
         getSchedule();
+        getJudges();
 
         // Cleanup
         return () => {
@@ -98,7 +99,7 @@ export default function App() {
                 <div className="invisible" style={{height:"20vh"}} />
                 <Agenda schedule={scheduleData} />
                 <div className="invisible" style={{height:"20vh"}} />
-                <Judges people={judgesData} />
+                <People {...peopleData} />
                 <Sponsors />
                 <FAQ />
                 <Footer />
