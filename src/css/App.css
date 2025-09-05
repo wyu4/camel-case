@@ -27,7 +27,6 @@
 
 :root {
     overflow-x: hidden;
-    overflow-y: scroll;
     --main-blue: #cae2d8;
     --main-green: #287a5c;
     --main-brown: #ca9459;
@@ -55,7 +54,6 @@ body {
     width: 100vw;
     height: 100vh;
     background: var(--main-blue);
-    overflow-x: hidden;
 }
 
 h1 {
