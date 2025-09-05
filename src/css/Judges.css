@@ -1,0 +1,10 @@
+.judges {
+    padding: var(--spacing);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.judges .plack {
+    width: 90vw;
+}

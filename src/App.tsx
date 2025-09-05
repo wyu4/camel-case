@@ -12,6 +12,7 @@ import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
 
 const SCHEDULE_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
+const JUDGES_API = "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/judges.json";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -19,7 +20,11 @@ export default function App() {
         viewWidth: 0,
         viewHeight: 0,
     });
-    const [scheduleData, setScheduleData] = useState<ScheduleProps>([])
+    const [scheduleData, setScheduleData] = useState<ScheduleProps>([]);
+    const [judgesData, setJudgesData] = useState<GroupProps>({
+        judges: [],
+        mentors: []
+    });
 
     const background = useRef<HTMLDivElement>(null);
 
@@ -58,6 +63,20 @@ export default function App() {
                 console.error(`Couldn't get schedule: ${e}`);
             }
         }
+
+        const getJudges = async () => {
+            try {
+                const response = await fetch(SCHEDULE_API);
+                if (!response.ok) {
+                    throw new Error(`Request code ${response.status}`)
+                }
+                const formattedResult : ScheduleProps = await response.json();
+                setScheduleData(formattedResult);
+            } catch (e: unknown) {
+                console.error(`Couldn't get schedule: ${e}`);
+            }
+        }
+
         getSchedule();
 
         // Cleanup
@@ -79,7 +98,7 @@ export default function App() {
                 <div className="invisible" style={{height:"20vh"}} />
                 <Agenda schedule={scheduleData} />
                 <div className="invisible" style={{height:"20vh"}} />
-                <Judges />
+                <Judges people={judgesData} />
                 <Sponsors />
                 <FAQ />
                 <Footer />
