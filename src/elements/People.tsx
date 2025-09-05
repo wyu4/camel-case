@@ -1,5 +1,6 @@
 import { useEffect, useState, type JSX } from "react";
 import Plack from "./Plack";
+import Line from "./Line";
 
 const IMAGE_API =
     "https://raw.githubusercontent.com/wyu4/camel-storage/refs/heads/main/";
@@ -11,17 +12,18 @@ type PersonPropsWithRole = PersonProps & {
 };
 
 function Person({
-    icon = "media/incognito.png",
+    icon = "media/Incognito.svg",
     label = "No label",
     name,
     socials,
     role,
 }: PersonPropsWithRole) {
     return (
-        <div className={"person " + role}>
+        <div className={"person rounded " + role}>
             <h3>{name}</h3>
-            <img src={icon.startsWith("media/") ? IMAGE_API + icon : icon} />
+            <img className="rounded" src={icon.startsWith("media/") ? IMAGE_API + icon : icon} draggable={false} />
             <p>{label}</p>
+            <p>{`(${role})`}</p>
         </div>
     );
 }
@@ -50,7 +52,8 @@ export default function People({ judges, mentors }: GroupProps) {
         <section className="people">
             <Plack>
                 <h2>Who's involved?</h2>
-                <div>{people}</div>
+                <Line lineWidth="2px" lineMargin="1rem"  />
+                <div className="container">{people}</div>
             </Plack>
         </section>
     );

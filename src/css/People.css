@@ -1,0 +1,51 @@
+.people {
+    padding: var(--spacing);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --img-width: 15rem;
+}
+
+.people .plack {
+    width: calc(var(--img-width) * 4);
+    padding: var(--spacing);
+    gap: var(--spacing);
+}
+
+.people .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+}
+
+.people .plack .person {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing);
+    gap: calc(var(--spacing) / 2);
+    background: var(--high-beige);
+}
+
+.people .plack h2 {
+    text-align: center;
+}
+
+.people .plack .person h3 {
+    color: var(--high-dark-brown);
+}
+
+.people .plack .person p {
+    color: var(--high-grey);
+}
+
+
+.people .plack .person img {
+    aspect-ratio: 1/1;
+    max-width: var(--img-width);
+}
