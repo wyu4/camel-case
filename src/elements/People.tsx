@@ -13,16 +13,13 @@ type PersonPropsWithRole = PersonProps & {
 
 function Person({
     icon = "media/Incognito.svg",
-    label = "No label",
     name,
-    socials,
     role,
 }: PersonPropsWithRole) {
     return (
         <div className={"person rounded " + role}>
             <h3>{name}</h3>
             <img className="rounded" src={icon.startsWith("media/") ? IMAGE_API + icon : icon} draggable={false} />
-            <p>{label}</p>
             <p>{`(${role})`}</p>
         </div>
     );
