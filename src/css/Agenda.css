@@ -1,0 +1,131 @@
+.agenda {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    gap: var(--spacing);
+}
+
+.agenda .info {
+    gap: var(--spacing);
+    min-width: 35vw;
+    max-width: 50vw;
+}
+
+.agenda .info .map-container {
+    aspect-ratio: 2/1;
+}
+
+.agenda .schedule {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: var(--spacing);
+    transform: translateY(2rem);
+    min-width: 40vw;
+    max-width: 50vw;
+}
+
+.agenda .schedule .day {
+    position: relative;
+    gap: var(--spacing);
+    height: 2rem;
+}
+
+.agenda .schedule .day button {
+    font-family: 'intro-rust', Arial;
+    font-size: 1.2em;
+    aspect-ratio: 1/1;
+    width: 2rem;
+    border: none;
+    color: var(--high-dark-brown);
+}
+
+.agenda .schedule .day button:hover {
+    color: var(--high-grey);
+}
+
+.agenda .schedule .day .last {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-5rem);
+}
+
+.agenda .schedule .day h3 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%) translateY(-0.25rem);
+}
+
+.agenda .schedule .day .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(5rem);
+}
+
+.agenda .schedule .events-container {
+    overflow-x: hidden;
+}
+
+.agenda .schedule .events {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    transition: transform 0.25s ease-in-out;
+}
+
+.agenda .schedule .events .tab {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex: 0 0 100%;
+}
+
+.agenda .schedule .event {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: calc(var(--spacing) / 3);
+    gap: var(--spacing);
+}
+
+.agenda .schedule .event .time {
+    text-wrap: nowrap;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    .agenda {
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .agenda .info {
+        width: 80vw;
+        min-width: 0vw;
+        max-width: 100vw;
+    }
+
+    .agenda .info .map-container {
+        aspect-ratio: 1/1;
+    }
+
+    .agenda .schedule {
+        transform: none;
+        width: 80vw;
+        min-width: 0vw;
+        max-width: 100vw;
+    }
+}

@@ -1,5 +1,11 @@
 @import url('./TopBar.css');
 @import url('./TitleBanner.css');
+@import url('./Intro.css');
+@import url('./Mission.css');
+@import url('./Agenda.css');
+@import url('./People.css');
+@import url('./Sponsors.css');
+@import url('./Footer.css');
 
 @font-face {
     font-family: 'lazy-dog';
@@ -23,16 +29,25 @@
 
 :root {
     overflow-x: hidden;
-    overflow-y: scroll;
     --main-blue: #cae2d8;
     --main-green: #287a5c;
     --main-brown: #ca9459;
     --high-brown: #905b41;
     --high-dark-brown: #4f4d39;
     --high-beige: #f4e5c9;
-    --back-beige: #e8e2d4;
-    --spacing: 1rem;
-    --radius: 20px;
+    --high-beige-2: #f8f3e6;
+    --high-grey: #8f8f8f;
+    --spacing: 1.5rem;
+    --radius: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
     margin: 0;
     padding: 0;
 }
@@ -40,28 +55,35 @@
 body {
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: var(--back-beige);
+    background: var(--main-blue);
 }
 
 h1 {
     font-family: 'lazy-dog', Arial;
-    font-size: 10rem;
+    font-size: 15rem;
+    color: var(--high-dark-brown);
 }
 
 h2 {
     font-family: 'intro-rust', Arial;
+    font-size: 3rem;
+    color: var(--high-brown);
 }
 
 h3 {
     font-family: 'etna', Arial;
+    font-size: 2rem;
+    color: var(--main-green);
 }
 
-p,
-div {
+p, div, button {
     font-family: 'betm-rounded', Arial;
-    color: #000000;
+    font-size: 1.5rem;
+    color: var(--high-dark-brown);
+}
+
+a, u {
+    color: var(--high-brown);
 }
 
 .production.container {
@@ -70,4 +92,28 @@ div {
 
 .production.background {
     background: var(--main-blue);
+}
+
+.rounded {
+    border-radius: var(--radius);
+}
+
+.plack {
+    background: var(--high-beige-2);
+}
+
+.padded {
+    padding: var(--spacing);
+}
+
+.invisible { 
+    opacity: 0;
+}
+
+.transparent { 
+    background: #00000000;
+}
+
+.darkener {
+    background: #00000010;
 }

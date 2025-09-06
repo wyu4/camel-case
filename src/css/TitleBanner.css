@@ -1,6 +1,5 @@
 .title-banner {
-    width: 100%;
-
+    width: 100vw;
 }
 
 .title-banner #title {
@@ -9,11 +8,8 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing);
+    gap: 1vw;
     width: 100vw;
     height: 100vh;
-}
-
-.title-banner #title h1 {
-    color: var(--high-brown);
+    z-index: 1;
 }

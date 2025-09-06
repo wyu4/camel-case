@@ -1,6 +1,11 @@
-export default function TopBar() {
-    return <div className="top-bar">
-        <button>Foo</button>
-        <button>Bar</button>
-    </div>
+export default function TopBar({ ...props }: VerticalWindowProps) {
+    return (
+        <div
+            className="top-bar"
+            style={{ opacity: props.scrollPosition > props.viewHeight / 10 ? 1 : 0 }}
+        >
+            <button>Foo</button>
+            <button>Bar</button>
+        </div>
+    );
 }

@@ -1,14 +1,14 @@
 import { useRef } from "react";
-import Line from "./Line";
 import Plack from "./Plack";
+import Line from "./Line";
 
-export default function Intro() {
+export default function Mission() {
     const plack = useRef<HTMLDivElement>(null);
 
     return (
-        <section className="intro">
-            <Plack className="container" ref={plack}>
-                <h2>What is this?</h2>
+        <section className="mission">
+            <Plack className="mission-container" ref={plack}>
+                <h2>Our Mission</h2>
                 <Line />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
