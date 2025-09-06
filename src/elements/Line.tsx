@@ -1,15 +1,15 @@
 import type { ComponentPropsWithoutRef } from "react";
 
 type LineProps = Omit<ComponentPropsWithoutRef<"div">, "className"> & {
-    lineWidth: string;
+    lineWidth?: string;
     lineColor?: string;
     lineMargin?: string;
 };
 
 export default function Line({
-    lineWidth,
+    lineWidth = "2px",
     lineColor = "var(--high-grey)",
-    lineMargin = "0px",
+    lineMargin = "1rem",
     ...props
 }: LineProps) {
     return (

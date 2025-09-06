@@ -1,0 +1,31 @@
+.sponsors {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: var(--spacing);
+    margin-left: var(--spacing);
+    margin-right: var(--spacing);
+}
+
+.sponsors .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-width: calc(30rem - (var(--spacing) * 2));
+    width: calc(25% - (var(--spacing) * 2));
+    gap: var(--spacing);
+}
+
+.sponsors .tiers {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(75% - (var(--spacing) * 2));
+    gap: var(--spacing);
+}

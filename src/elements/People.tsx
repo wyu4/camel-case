@@ -7,12 +7,6 @@ const PEOPLE_API =
 const IMAGE_API =
     "https://raw.githubusercontent.com/wyu4/camel-storage/refs/heads/main/";
 
-type Role = "judge" | "mentor";
-
-type PersonPropsWithRole = PersonProps & {
-    role: Role;
-};
-
 function Person({
     icon = "media/Incognito.svg",
     name,
@@ -79,7 +73,7 @@ export default function People() {
         <section className="people">
             <Plack>
                 <h2>Who's involved?</h2>
-                <Line lineWidth="2px" lineMargin="1rem" />
+                <Line />
                 <div className="container">{peopleElements}</div>
             </Plack>
         </section>

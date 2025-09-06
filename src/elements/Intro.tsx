@@ -9,7 +9,7 @@ export default function Intro() {
         <section className="intro">
             <Plack className="container" ref={plack}>
                 <h2>What is this?</h2>
-                <Line lineWidth="2px" lineMargin="1rem" />
+                <Line />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna

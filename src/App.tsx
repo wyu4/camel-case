@@ -57,12 +57,13 @@ export default function App() {
                 <TopBar {...windowProps} />
                 <TitleBanner {...windowProps} />
                 <Intro />
-                <div className="invisible" style={{ height: "60vh" }} />
+                <div className="invisible" style={{ height: "35vh" }} />
                 <Mission />
-                <div className="invisible" style={{ height: "50vh" }} />
+                <div className="invisible" style={{ height: "40vh" }} />
                 <Agenda />
-                <div className="invisible" style={{ height: "70vh" }} />
+                <div className="invisible" style={{ height: "50vh" }} />
                 <People />
+                <div className="invisible" style={{ height: "25vh" }} />
                 <Sponsors />
                 <FAQ />
                 <Footer />

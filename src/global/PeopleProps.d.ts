@@ -10,10 +10,16 @@ declare type PersonProps = {
         twitter?: string;
         facebook?: string;
         instagram?: string;
-    }
-}
+    };
+};
 
 declare type GroupProps = {
     judges: PeopleProps[];
     mentors: PeopleProps[];
-}
+};
+
+declare type Role = "judge" | "mentor";
+
+declare type PersonPropsWithRole = PersonProps & {
+    role: Role;
+};

@@ -82,6 +82,10 @@ p, div, button {
     color: var(--high-dark-brown);
 }
 
+a, u {
+    color: var(--high-brown);
+}
+
 .production.container {
     background: #00000000;
 }

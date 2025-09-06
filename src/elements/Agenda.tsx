@@ -22,7 +22,7 @@ function EventInfo() {
     return (
         <Plack className="info">
             <h2>Event Rundown</h2>
-            <Line lineWidth="2px" lineMargin="1rem" />
+            <Line />
             <p>
                 <b>Date: </b>November 29 - 30, 2025
             </p>
