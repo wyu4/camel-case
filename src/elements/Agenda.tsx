@@ -6,6 +6,9 @@ import type { LatLngExpression } from "leaflet";
 import L from "leaflet";
 import Line from "./Line";
 
+const SCHEDULE_API =
+    "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
+
 function EventInfo() {
     const coordinates: LatLngExpression = [
         45.323467111163716, -75.89449784098387,
@@ -164,11 +167,29 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
     );
 }
 
-export default function Agenda({ schedule }: { schedule: ScheduleProps }) {
+export default function Agenda() {
+    const [scheduleData, setScheduleData] = useState<ScheduleProps>([]);
+
+    useEffect(() => {
+        const getSchedule = async () => {
+            try {
+                const response = await fetch(SCHEDULE_API);
+                if (!response.ok) {
+                    throw new Error(`Request code ${response.status}`);
+                }
+                const formattedResult: ScheduleProps = await response.json();
+                setScheduleData(formattedResult);
+            } catch (e: unknown) {
+                console.error(`Couldn't get schedule: ${e}`);
+            }
+        };
+        getSchedule();
+    }, []);
+
     return (
         <section className="agenda">
             <EventInfo />
-            <EventSchedule schedule={schedule} />
+            <EventSchedule schedule={scheduleData} />
         </section>
     );
 }
