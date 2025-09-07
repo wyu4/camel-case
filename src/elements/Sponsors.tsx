@@ -1,7 +1,71 @@
+import { useEffect, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
+import { getImagePath } from "../global/APIHelpers";
+
+const SPONSORS_API =
+    "https://raw.githubusercontent.com/wyu4/camel-storage/refs/heads/main/sponsors.json";
+
+type SectionProps = {
+    tier: string;
+    data: SponsorProps[];
+};
+
+function Section({ tier, data }: SectionProps) {
+    // Each tier / section
+    return (
+        // Inlined img generator
+        <div className="tier">
+            <h3>{tier}</h3>
+            <div className="content" >{data.map((sponsor, i) => (<img key={`${sponsor.name}-${i}`} src={getImagePath(sponsor.icon)} draggable={false} />))}</div>
+        </div>
+    ); 
+}
 
 export default function Sponsors() {
+    const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
+        tiers: {
+            byte: [],
+            kilobyte: [],
+            megabyte: [],
+            gigabyte: [],
+        },
+        package: "",
+    });
+    const [sectionElements, setSectionElements] = useState<
+        (JSX.Element | null)[]
+    >([]);
+
+    useEffect(() => {
+        // Get the sponsors data
+        const getSponsors = async () => {
+            try {
+                const response = await fetch(SPONSORS_API);
+                if (!response.ok) {
+                    throw new Error(`Request code ${response.status}`);
+                }
+                const formattedResult: AllSponsorsProps = await response.json();
+                setSponsorsData(formattedResult);
+            } catch (e: unknown) {
+                console.error(`Couldn't get sponsors: ${e}`);
+            }
+        };
+        getSponsors();
+    }, []);
+
+    useEffect(() => {
+        // Generate sections for tiers with sponsor logos when data is recieved
+        const tempSections: JSX.Element[] = [];
+        Object.entries(sponsorsData.tiers).forEach(([tier, data]) => {
+            if (data.length > 0) {
+                tempSections.push(
+                    <Section key={`${tier}`} tier={tier} data={data} />
+                );
+            }
+        });
+        setSectionElements(tempSections);
+    }, [sponsorsData]);
+
     return (
         <section className="sponsors">
             <div className="info">
@@ -27,7 +91,7 @@ export default function Sponsors() {
                 </Plack>
             </div>
 
-            <Plack className="tiers"></Plack>
+            <div className="tiers">{sectionElements}</div>
         </section>
     );
 }

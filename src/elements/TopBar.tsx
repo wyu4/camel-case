@@ -4,8 +4,7 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
             className="top-bar"
             style={{ opacity: props.scrollPosition > props.viewHeight / 10 ? 1 : 0 }}
         >
-            <button>Foo</button>
-            <button>Bar</button>
+            <button>Top Bar</button>
         </div>
     );
 }
