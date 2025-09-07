@@ -22,10 +22,34 @@
 
 .sponsors .tiers {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
     width: calc(75% - (var(--spacing) * 2));
     gap: var(--spacing);
+}
+
+.sponsors .tiers .tier {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing);
+    width: 100%;
+}
+
+.sponsors .tiers .tier .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+.sponsors img {
+    max-width: 10rem;
+    margin-bottom: var(--spacing);
 }

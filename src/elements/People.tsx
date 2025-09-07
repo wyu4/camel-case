@@ -1,14 +1,13 @@
 import { useEffect, useState, type JSX } from "react";
 import Plack from "./Plack";
 import Line from "./Line";
+import { getImagePath } from "../global/APIHelpers";
 
 const PEOPLE_API =
     "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/people.json";
-const IMAGE_API =
-    "https://raw.githubusercontent.com/wyu4/camel-storage/refs/heads/main/";
 
 function Person({
-    icon = "media/Incognito.svg",
+    icon = "media/Incognito.svg", // Default to incognito is there isn't an icon property
     name,
     role,
 }: PersonPropsWithRole) {
@@ -17,7 +16,7 @@ function Person({
             <h3>{name}</h3>
             <img
                 className="rounded"
-                src={icon.startsWith("media/") ? IMAGE_API + icon : icon}
+                src={getImagePath(icon)}
                 draggable={false}
             />
             <p>{`(${role})`}</p>
@@ -35,6 +34,7 @@ export default function People() {
     >([]);
 
     useEffect(() => {
+        // Get people data
         const getPeople = async () => {
             try {
                 const response = await fetch(PEOPLE_API);
@@ -51,15 +51,18 @@ export default function People() {
     }, []);
 
     useEffect(() => {
+        // Convert people data to HTML elements
         const { judges, mentors } = peopleData;
         const tempPeople: JSX.Element[] = [];
 
+        // Create elements for judges
         judges.forEach((prop, i) => {
             tempPeople.push(
                 <Person key={`judge-${i}`} role="judge" {...prop} />
             );
         });
 
+        // Create elements for mentors
         mentors.forEach((prop, i) => {
             tempPeople.push(
                 <Person key={`mentor-${i}`} role="mentor" {...prop} />
