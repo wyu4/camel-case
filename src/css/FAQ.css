@@ -1,0 +1,40 @@
+.faq {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing);
+    gap: var(--spacing);
+}
+
+.faq h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.faq .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+.faq .question {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--spacing)/3);
+    gap: calc(var(--spacing)/4);
+}
+
+.faq .question p {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.faq .material-icons {
+    aspect-ratio: 1/1;
+}
