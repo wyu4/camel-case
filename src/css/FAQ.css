@@ -66,11 +66,17 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: var(--spacing);
-    transform: translateY(-100%);
+    transform: translateY(0%);
     opacity: 0;
-    transition: transform 0.25s ease-out, opacity 0.25s 0.25s ease-out;
+    transition: opacity 0.25s ease-out 0s;
     pointer-events: none;
     z-index: 25;
+}
+
+.faq .question .response.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.25s ease-out 0.25s;
 }
 
 @media (max-width: 800px) {

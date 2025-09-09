@@ -21,10 +21,7 @@ function QuestionResponse({question, answer} : QuestionProps) {
                 transform: `rotateZ(${opened ? 180 : 0}deg)`
             }}>keyboard_arrow_down</span>
         </button>
-        <div className="response" style={{
-            opacity: opened ? 1 : 0,
-            transform: `translateY(${opened ? 0 : -100}%)`
-        }}><p>{answer}</p></div>
+        <div className={`response${opened ? " visible" : ""}`}><p>{answer}</p></div>
     </div>
     );
 }
