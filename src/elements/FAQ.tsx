@@ -1,15 +1,32 @@
-import { useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 
 type QuestionProps = {
     question: string;
     answer: string;
-    children?: JSX.Element[];
 }
 
-function QuestionResponse({question, answer, children=[]} : QuestionProps) {
+function QuestionResponse({question, answer} : QuestionProps) {
     const [opened, setOpened] = useState(false);
-    
-    return (<button className="question plack rounded padded"><p>{question}</p><span className="material-icons">keyboard_arrow_down</span></button>);
+    const responseRef = useRef<HTMLDivElement>(null);
+
+    return (
+    <div className="question plack rounded padded">
+        <button onClick={
+            () => {
+                setOpened((old) => !old)
+            }
+        }>
+            <h3>{question}</h3>
+            <span className="material-icons" style={{
+                transform: `rotateZ(${opened ? 180 : 0}deg)`
+            }}>keyboard_arrow_down</span>
+        </button>
+        <div className="response" style={{
+            opacity: opened ? 1 : 0,
+            transform: `translateY(${opened ? 0 : -100}%)`
+        }}><p>{answer}</p></div>
+    </div>
+    );
 }
 
 export default function FAQ() {

@@ -21,6 +21,15 @@
 }
 
 .faq .question {
+    position: relative;
+    
+    padding: 0;
+    gap: 0;
+    z-index: 20;
+    transition: transform 0.25s ease-out;
+}
+
+.faq .question button {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -28,16 +37,40 @@
     justify-content: space-between;
     padding: calc(var(--spacing)/3);
     gap: calc(var(--spacing)/4);
+    background: none;
+    border-width: 0;
+    border-radius: var(--radius);
+    width: 100%;
+    z-index: 25;
 }
 
-.faq .question p {
+.faq .question button h3 {
     text-align: left;
     white-space: nowrap;
+    color: var(--high-dark-brown);
+    font-size: 1.6rem;
+    line-height: 1rem;
 }
 
 .faq .question .material-icons {
     aspect-ratio: 1/1;
-    transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-out;
+}
+
+.faq .question .response {
+    white-space: normal;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--spacing);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.25s ease-out, opacity 0.25s 0.25s ease-out;
+    pointer-events: none;
+    z-index: 25;
 }
 
 @media (max-width: 800px) {
