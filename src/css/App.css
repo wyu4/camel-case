@@ -40,7 +40,6 @@
     --high-grey: #8f8f8f;
     --spacing: 1.5rem;
     --radius: 0.5rem;
-    
 }
 
 h1,
@@ -55,6 +54,7 @@ body {
     width: 100%;
     background: var(--main-blue);
     margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
