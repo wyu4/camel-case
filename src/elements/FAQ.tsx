@@ -8,13 +8,14 @@ type QuestionProps = {
 };
 
 function QuestionResponse({ question, children = [] }: QuestionProps) {
-    const [opened, setOpened] = useState(false);
-    const [responseHeight, setResponseHeight] = useState(0);
+    const [opened, setOpened] = useState(false); // Tracks the open/close state
+    const [responseHeight, setResponseHeight] = useState(0); // The height of the response element, useful for scaling
     const backgroundRef = useRef<HTMLDivElement>(null);
     const responseRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (responseRef.current) {
+            // Track the response element's height
             const sizeObserver = new ResizeObserver((entries) => {
                 if (entries.length < 1 || !backgroundRef.current) return;
                 const entry = entries[0];
@@ -34,6 +35,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
 
     useEffect(() => {
         if (backgroundRef.current) {
+            // Scale the background to include the response element if opened
             if (opened) {
                 backgroundRef.current.style.bottom = `-${responseHeight}px`;
             } else {
@@ -42,6 +44,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
         }
     }, [opened, responseHeight]);
 
+    // A lot of the animation is handled in the CSS file rather than a useEffect(), since it seemed a little more efficent here.
     return (
         <div className={`question${opened ? " opened" : ""}`}>
             <Plack className="background" ref={backgroundRef} />
