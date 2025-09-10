@@ -22,6 +22,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
                 console.log(entry.borderBoxSize);
             });
             sizeObserver.observe(responseRef.current);
+
             setResponseHeight(
                 responseRef.current.getBoundingClientRect().height
             );
@@ -48,6 +49,9 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
                 <button
                     onClick={() => {
                         setOpened((old) => !old);
+                    }}
+                    onBlur={() => {
+                        setOpened(false);
                     }}
                 >
                     <h3>{question}</h3>
