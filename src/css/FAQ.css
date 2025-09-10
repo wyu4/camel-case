@@ -1,11 +1,9 @@
 .faq {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing);
-    gap: var(--spacing);
     --speed: 0.5s;
 }
 
@@ -110,8 +108,14 @@
     transition: opacity calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .faq .container {
         grid-template-columns: 1fr;
+    }
+
+    .faq .question.opened {
+        z-index: 40;
+        transform: scale(1);
+        transition: z-index calc(var(--speed) / 2) 0s;
     }
 }

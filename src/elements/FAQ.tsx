@@ -17,8 +17,7 @@ function QuestionResponse({ question, answer }: QuestionProps) {
             const sizeObserver = new ResizeObserver((entries) => {
                 if (entries.length < 1 || !backgroundRef.current) return;
                 const entry = entries[0];
-                if (entry.borderBoxSize) return;
-                setResponseHeight(entry.borderBoxSize[1]);
+                setResponseHeight(entry.borderBoxSize?.[0]?.blockSize);
                 console.log(entry.borderBoxSize);
             });
             sizeObserver.observe(responseRef.current);

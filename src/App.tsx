@@ -66,6 +66,7 @@ export default function App() {
                 <div className="invisible" style={{ height: "25vh" }} />
                 <Sponsors />
                 <FAQ />
+                <div className="invisible" style={{ height: "20vh" }} />
                 <Footer />
                 <section></section>
             </div>
