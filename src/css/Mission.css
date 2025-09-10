@@ -1,11 +1,14 @@
 .mission {
-    perspective: 1000px;
-    transform-style: preserve-3d;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing);
+    padding-left: 20%;
+    padding-right: var(--spacing);
 }
 
-.mission .mission-container {
-    z-index: 20;
-    min-width: 15em;
-    max-width: 20vw;
-    transform: translateX(calc(100vw - 30em));
+.mission .container {
+    max-width: 40rem;
 }
