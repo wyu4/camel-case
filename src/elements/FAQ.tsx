@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Plack from "./Plack";
+import Line from "./Line";
 
 type QuestionProps = {
     question: string;
-    answer: string;
+    children?: React.ReactNode;
 };
 
-function QuestionResponse({ question, answer }: QuestionProps) {
+function QuestionResponse({ question, children = [] }: QuestionProps) {
     const [opened, setOpened] = useState(false);
     const [responseHeight, setResponseHeight] = useState(0);
     const backgroundRef = useRef<HTMLDivElement>(null);
@@ -53,7 +54,7 @@ function QuestionResponse({ question, answer }: QuestionProps) {
                     <span className="material-icons">keyboard_arrow_down</span>
                 </button>
                 <div className="response" ref={responseRef}>
-                    <p>{answer}</p>
+                    <p>{children}</p>
                 </div>
             </div>
         </div>
@@ -66,18 +67,91 @@ export default function FAQ() {
             <h2>FAQ</h2>
             <div className="container">
                 <QuestionResponse
-                    question="Why did the chicken cross the road?"
-                    answer="To get to the other side!"
-                />
-                <QuestionResponse
                     question="How much does this cost?"
-                    answer="This costs roughly $1000000 to attend."
+                    children={
+                        <p>
+                            It's free! Sign ups are entirely cost-free, and food
+                            / beverages are included!
+                        </p>
+                    }
                 />
                 <QuestionResponse
-                    question="What should I make?"
-                    answer="Anything sweet. Baked goods are recommended."
+                    question="What's our mission?"
+                    children={<p>Mission</p>}
+                />
+                <QuestionResponse
+                    question="I don't know anyone..."
+                    children={
+                        <p>
+                            We HIGHLY recommend teaming up someone. We can help
+                            you find a teammate if you don't know anyone at the
+                            event!
+                        </p>
+                    }
+                />
+                <QuestionResponse
+                    question="How do we decide winners?"
+                    children={<p>Bla bla bla</p>}
+                />
+                <QuestionResponse
+                    question="What should I bring?"
+                    children={
+                        <>
+                            <ul>
+                                <li>Sleeping bags / pillows</li>
+                                <li>Cellphone</li>
+                                <li>
+                                    Something to code with (preferrably a
+                                    laptop)
+                                </li>
+                                <li>Extra change of clothes</li>
+                            </ul>
+                            <p>
+                                ... and anything else you need to pass the
+                                night.
+                            </p>
+                        </>
+                    }
+                />
+                <QuestionResponse
+                    question="Is this safe?"
+                    children={
+                        <p>
+                            All participants will be supervised 24/7, and will
+                            not be allowed to leave without special permission.
+                            Bla bla bla.
+                        </p>
+                    }
+                />
+                <QuestionResponse
+                    question="Can I join as a beginner?"
+                    children={
+                        <p>
+                            Yes! This event is for highschoolers with any level
+                            of experience. There will be mentors circulating, as
+                            well as optional workshops scheduled throughout the
+                            event.
+                        </p>
+                    }
                 />
             </div>
+            <div className="invisible" style={{ height: "5vh" }} />
+            <QuestionResponse
+                question="I still have more questions!"
+                children={
+                    <>
+                        <p>
+                            Feel free to reach out to any of our email / social
+                            media accounts. We would love to get in touch with
+                            you!
+                        </p>
+                        <Line />
+                        <div>
+                            <i>(tbd social media buttons here)</i>
+                        </div>
+                    </>
+                }
+            />
         </section>
     );
 }
