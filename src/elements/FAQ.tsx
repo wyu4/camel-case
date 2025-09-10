@@ -1,40 +1,83 @@
-import { useEffect, useRef, useState, type JSX } from "react";
+import { useEffect, useRef, useState } from "react";
+import Plack from "./Plack";
 
 type QuestionProps = {
     question: string;
     answer: string;
-}
+};
 
-function QuestionResponse({question, answer} : QuestionProps) {
+function QuestionResponse({ question, answer }: QuestionProps) {
     const [opened, setOpened] = useState(false);
+    const [responseHeight, setResponseHeight] = useState(0);
+    const backgroundRef = useRef<HTMLDivElement>(null);
     const responseRef = useRef<HTMLDivElement>(null);
 
-    return (
-    <div className="question plack rounded padded">
-        <button onClick={
-            () => {
-                setOpened((old) => !old)
+    useEffect(() => {
+        if (responseRef.current) {
+            const sizeObserver = new ResizeObserver((entries) => {
+                if (entries.length < 1 || !backgroundRef.current) return;
+                const entry = entries[0];
+                if (entry.borderBoxSize) return;
+                setResponseHeight(entry.borderBoxSize[1]);
+                console.log(entry.borderBoxSize);
+            });
+            sizeObserver.observe(responseRef.current);
+            setResponseHeight(
+                responseRef.current.getBoundingClientRect().height
+            );
+            return () => {
+                sizeObserver.disconnect();
+            };
+        }
+    }, []);
+
+    useEffect(() => {
+        if (backgroundRef.current) {
+            if (opened) {
+                backgroundRef.current.style.bottom = `-${responseHeight}px`;
+            } else {
+                backgroundRef.current.style.bottom = "0";
             }
-        }>
-            <h3>{question}</h3>
-            <span className="material-icons" style={{
-                transform: `rotateZ(${opened ? 180 : 0}deg)`
-            }}>keyboard_arrow_down</span>
-        </button>
-        <div className={`response${opened ? " visible" : ""}`}><p>{answer}</p></div>
-    </div>
+        }
+    }, [opened, responseHeight]);
+
+    return (
+        <div className={`question${opened ? " opened" : ""}`}>
+            <Plack className="background" ref={backgroundRef} />
+            <div className="content">
+                <button
+                    onClick={() => {
+                        setOpened((old) => !old);
+                    }}
+                >
+                    <h3>{question}</h3>
+                    <span className="material-icons">keyboard_arrow_down</span>
+                </button>
+                <div className="response" ref={responseRef}>
+                    <p>{answer}</p>
+                </div>
+            </div>
+        </div>
     );
 }
 
 export default function FAQ() {
-
     return (
         <section className="faq">
             <h2>FAQ</h2>
             <div className="container">
-                <QuestionResponse question="Why did the chicken cross the road?" answer="To get to the other side!"/>
-                <QuestionResponse question="How much does this cost?" answer="This costs roughly $1000000 to attend."/>
-                <QuestionResponse question="What should I make?" answer="Anything sweet. Baked goods are recommended."/>
+                <QuestionResponse
+                    question="Why did the chicken cross the road?"
+                    answer="To get to the other side!"
+                />
+                <QuestionResponse
+                    question="How much does this cost?"
+                    answer="This costs roughly $1000000 to attend."
+                />
+                <QuestionResponse
+                    question="What should I make?"
+                    answer="Anything sweet. Baked goods are recommended."
+                />
             </div>
         </section>
     );

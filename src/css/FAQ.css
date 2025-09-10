@@ -6,6 +6,7 @@
     justify-content: center;
     padding: var(--spacing);
     gap: var(--spacing);
+    --speed: 0.5s;
 }
 
 .faq h2 {
@@ -22,26 +23,50 @@
 
 .faq .question {
     position: relative;
-    
     padding: 0;
     gap: 0;
-    z-index: 20;
-    transition: transform 0.25s ease-out;
+    z-index: 30;
+    transform: scale(1);
+    transition: z-index calc(var(--speed) / 2) calc(var(--speed) / 2), transform calc(var(--speed) / 2) ease-in-out;
+}
+
+.faq .question.opened {
+    position: relative;
+    z-index: 40;
+    transform: scale(1.1);
+    transition: z-index calc(var(--speed) / 2) 0s, transform calc(var(--speed) / 2) ease-in-out;
+}
+
+.faq .question .background {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 25;
+    transition: bottom calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
+}
+
+.faq .question.opened .background {
+    transition: bottom calc(var(--speed) / 2) ease-out 0s;
 }
 
 .faq .question button {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: space-between;
-    padding: calc(var(--spacing)/3);
-    gap: calc(var(--spacing)/4);
-    background: none;
+    padding: calc(var(--spacing) / 3);
+    gap: calc(var(--spacing) / 4);
     border-width: 0;
     border-radius: var(--radius);
     width: 100%;
-    z-index: 25;
+    z-index: 35;
+    cursor: pointer;
+    background: none;
 }
 
 .faq .question button h3 {
@@ -50,11 +75,18 @@
     color: var(--high-dark-brown);
     font-size: 1.6rem;
     line-height: 1rem;
+    z-index: 35;
 }
 
 .faq .question .material-icons {
     aspect-ratio: 1/1;
-    transition: transform 0.25s ease-out;
+    transform: rotateZ(0deg);
+    transition: transform var(--speed) ease-out;
+    z-index: 35;
+}
+
+.faq .question.opened .material-icons {
+    transform: rotateZ(180deg);
 }
 
 .faq .question .response {
@@ -66,17 +98,16 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: var(--spacing);
-    transform: translateY(0%);
     opacity: 0;
-    transition: opacity 0.25s ease-out 0s;
+    transition: opacity calc(var(--speed) / 2) ease-out 0s;
     pointer-events: none;
-    z-index: 25;
+    z-index: 35;
 }
 
-.faq .question .response.visible {
+.faq .question.opened .response {
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.25s ease-out 0.25s;
+    transition: opacity calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
 }
 
 @media (max-width: 800px) {
