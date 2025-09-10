@@ -148,14 +148,14 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
                     className="last transparent"
                     onClick={onLastButtonClick}
                 >
-                    {"<"}
+                    <span className="material-icons">arrow_left</span>
                 </button>
                 <h3>{`Day ${dayNumber + 1}`}</h3>
                 <button
                     className="next transparent"
                     onClick={onNextButtonClick}
                 >
-                    {">"}
+                    <span className="material-icons">arrow_right</span>
                 </button>
             </div>
             <div className="events-container plack darkener rounded">
