@@ -1,13 +1,11 @@
-import { useRef } from "react";
 import Plack from "./Plack";
 import Line from "./Line";
 
 export default function Mission() {
-    const plack = useRef<HTMLDivElement>(null);
 
     return (
         <section className="mission">
-            <Plack className="mission-container" ref={plack}>
+            <Plack className="container">
                 <h2>Our Mission</h2>
                 <Line />
                 <p>
