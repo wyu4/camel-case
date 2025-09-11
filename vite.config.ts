@@ -19,6 +19,11 @@ export default defineConfig({
                     "placeholder",
                     "index.html"
                 ),
+                sponsorship: resolve(
+                    root,
+                    "sponsorship",
+                    "index.html"
+                ),
             },
         },
     },

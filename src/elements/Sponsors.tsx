@@ -1,10 +1,7 @@
 import { useEffect, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
-import { getImagePath } from "../global/APIHelpers";
-
-const SPONSORS_API =
-    "https://raw.githubusercontent.com/wyu4/camel-storage/refs/heads/main/sponsors.json";
+import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
 
 type SectionProps = {
     tier: string;
@@ -79,7 +76,7 @@ export default function Sponsors() {
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat. For more information, see our{" "}
                         <u>
-                            <a>sponsorship package</a>
+                            <a href="/sponsorship/" target="_blank">sponsorship package</a>
                         </u>
                         .
                     </p>
