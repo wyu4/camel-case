@@ -1,3 +1,3 @@
 export default function App() {
-    return <object id="content" data={"/documents/SponsorshipPackage.pdf"} />;
+    return <embed id="content" src="/documents/SponsorshipPackage.pdf" type="application/pdf" />;
 }
