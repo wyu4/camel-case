@@ -9,8 +9,9 @@ body {
     overflow-y: hidden;
 }
 
-embed {
+iframe {
     position: absolute;
     left: 0;
     top: 0;
+    border-width: 0;
 }
