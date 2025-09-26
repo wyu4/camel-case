@@ -1,3 +1,14 @@
 export default function App() {
-    return <iframe src="/documents/SponsorshipPackage.pdf" width="100%" height="100%" />;
+    const redirect = () => {
+        window.location.href = "/documents/SponsorshipPackage.pdf"; // Sets the URL to the PDF
+    };
+
+    return (
+        <>
+            <div className="container">
+                <h1>Redirecting to Sponsorship Package...</h1>
+                <button onClick={redirect}>...or click here</button>
+            </div>
+        </>
+    );
 }
