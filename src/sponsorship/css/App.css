@@ -1,5 +1,24 @@
+@font-face {
+    font-family: 'intro-rust';
+    src: url('../fonts/intro-rust.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'betm-rounded';
+    src: url('../fonts/betm-rounded-regular.ttf') format('truetype');
+}
+
+@keyframes button-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 body {
-    background-color: black;
     z-index: 0;
     margin: 0;
     padding: 0;
@@ -7,11 +26,37 @@ body {
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-color: aliceblue;
 }
 
-iframe {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-width: 0;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: 'intro-rust', Arial;
+    text-align: center;
+    color: black;
+}
+
+button {
+    font-family: 'betm-rounded', Arial;
+    font-size: 1.5rem;
+    text-align: center;
+    text-wrap: nowrap;
+    color: black;
+    opacity: 0;
+    animation-name: button-fade-in;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
