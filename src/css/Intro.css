@@ -5,10 +5,15 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing);
-    padding-right: 20%;
+    padding-right: 40%;
     padding-left: var(--spacing);
+    background-color: var(--main-blue);
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    background-color: var(--main-green);
 }
 
 .intro .container {
     max-width: 40rem;
+    z-index: 20;
 }

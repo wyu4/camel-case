@@ -5,8 +5,10 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing);
-    padding-left: 20%;
+    padding-left: 40%;
     padding-right: var(--spacing);
+    background-color: var(--main-green);
+    padding-bottom: var(--spacing);
 }
 
 .mission .container {

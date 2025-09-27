@@ -1,5 +1,6 @@
 .title-banner {
     width: 100%;
+    background-color: var(--high-beige-2);
 }
 
 .title-banner #title {
@@ -11,9 +12,10 @@
     gap: 1vw;
     width: 100%;
     height: 100vh;
-    z-index: 1;
 }
 
 .title-banner #title h1 {
     font-size: 15vw;
+    z-index: 1;
+    padding-bottom: 0.25em;
 }

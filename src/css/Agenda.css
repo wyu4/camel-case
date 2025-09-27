@@ -1,12 +1,15 @@
 .agenda {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: start;
     flex-wrap: nowrap;
     flex-direction: row;
     padding-left: 10vw;
     padding-right: 10vw;
     gap: var(--spacing);
+    padding-top: calc(var(--spacing) * 4);
+    padding-bottom: var(--spacing);
+    background-color: var(--main-blue);
 }
 
 .agenda .info {
@@ -25,7 +28,6 @@
     flex-wrap: nowrap;
     flex-direction: column;
     gap: var(--spacing);
-    transform: translateY(2rem);
     min-width: 40vw;
     max-width: 50vw;
 }

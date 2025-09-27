@@ -32,6 +32,7 @@
     overflow-x: hidden;
     --main-blue: #cae2d8;
     --main-green: #287a5c;
+    --main-green-2: #4c8155;
     --main-brown: #ca9459;
     --high-brown: #905b41;
     --high-dark-brown: #4f4d39;
@@ -79,7 +80,7 @@ h3 {
 
 p, div, button {
     font-family: 'betm-rounded', Arial;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--high-dark-brown);
 }
 
@@ -117,4 +118,8 @@ a, u {
 
 .darkener {
     background: #00000010;
+}
+
+.square {
+    aspect-ratio: 1/1;
 }
