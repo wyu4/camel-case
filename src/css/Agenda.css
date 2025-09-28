@@ -134,19 +134,19 @@
         padding-left: 0;
         padding-right: 0;
         clip-path: polygon(
-        0% calc(var(--grooves) / 2),
-        10% calc(var(--grooves) / 1.5),
-        25% calc(var(--grooves) / 3),
-        45% var(--grooves),
-        75% calc(var(--grooves) / 3),
-        100% calc(var(--grooves) / 1.5),
-        100% 100%,
-        90% calc(100% - var(--grooves)),
-        60% calc(100% - (var(--grooves) / 3)),
-        40% calc(100% - (var(--grooves) / 1.5)),
-        20% 100%,
-        0% calc(100% - var(--grooves))
-    );
+            0% calc(var(--grooves) / 2),
+            10% calc(var(--grooves) / 1.5),
+            25% calc(var(--grooves) / 3),
+            45% var(--grooves),
+            75% calc(var(--grooves) / 3),
+            100% calc(var(--grooves) / 1.5),
+            100% 100%,
+            90% calc(100% - var(--grooves)),
+            60% calc(100% - (var(--grooves) / 3)),
+            40% calc(100% - (var(--grooves) / 1.5)),
+            20% 100%,
+            0% calc(100% - var(--grooves))
+        );
     }
 
     .agenda .info {
