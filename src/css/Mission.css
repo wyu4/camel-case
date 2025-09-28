@@ -1,16 +1,28 @@
 .mission {
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing);
-    padding-left: 40%;
-    padding-right: var(--spacing);
     background-color: var(--main-green);
-    padding-bottom: var(--spacing);
+    padding: var(--spacing);
 }
 
 .mission .container {
     max-width: 40rem;
+    z-index: 20;
+    margin-right: 40%;
+}
+
+
+@media (max-width: 800px) {
+    .mission {
+        flex-direction: column;
+    }
+
+    .mission .container {
+        max-width: 95vw;
+        margin-right: 0%;
+    }
 }
