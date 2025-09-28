@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing);
-    background-color: var(--main-green);
+    background-color: var(--main-brown);
     padding: var(--spacing);
     padding-bottom: calc(var(--grooves) * 2);
 }

@@ -5,8 +5,10 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing);
-    background-color: var(--main-green);
+    background-color: var(--main-brown);
     padding: var(--spacing);
+    position: relative;
+    z-index: 30;
 }
 
 .intro .container {
@@ -16,7 +18,6 @@
 }
 
 @media (max-width: 800px) {
-
     .intro .container {
         max-width: 95vw;
         margin-left: 0%;

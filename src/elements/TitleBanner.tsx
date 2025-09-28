@@ -14,6 +14,54 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
     return (
         <section className="title-banner">
             <div id="title">{headers}</div>
+            <div className="dunes">
+                <div className="layer-1">
+                    <div
+                        className="dune"
+                        style={{
+                            right: "-30%",
+                            width: "90%",
+                        }}
+                    />
+                    <div
+                        className="dune"
+                        style={{
+                            left: "-20%",
+                            width: "90%",
+                            bottom: "-2%"
+                        }}
+                    />
+                </div>
+                <div className="layer-2">
+                    <div
+                        className="dune"
+                        style={{
+                            left: "-30%",
+                            width: "90%",
+                        }}
+                    />
+                </div>
+                <div className="layer-3">
+                    <div
+                        className="dune"
+                        style={{
+                            left: "0%",
+                            width: "90%",
+                        }}
+                    />
+                </div>
+                <div className="layer-4">
+                    <div
+                        className="dune"
+                        style={{
+                            right: "-40%",
+                            bottom: "-5%",
+                            width: "100%",
+                        }}
+                    />
+                </div>
+            </div>
+            <div className="sun" />
         </section>
     );
 }
