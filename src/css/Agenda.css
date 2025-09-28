@@ -30,6 +30,8 @@
         17% calc(100% - (var(--grooves) / 1.25)),
         0% calc(100% - (var(--grooves) / 3))
     );
+    position: relative;
+    z-index: 40;
 }
 
 .agenda .info {

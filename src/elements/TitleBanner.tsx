@@ -13,9 +13,18 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
 
     return (
         <section className="title-banner">
-            <div id="title">{headers}</div>
+            <div
+                id="title"
+                style={{
+                    transform: `translateY(${props.scrollPosition / 5}px)`,
+                }}
+            >
+                {headers}
+            </div>
             <div className="dunes">
-                <div className="layer-1">
+                <div className="layer-1" style={{
+                        transform: `translateY(${props.scrollPosition / 25}px)`,
+                    }}>
                     <div
                         className="dune"
                         style={{
@@ -28,11 +37,16 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                         style={{
                             left: "-20%",
                             width: "90%",
-                            bottom: "-2%"
+                            bottom: "-2%",
                         }}
                     />
                 </div>
-                <div className="layer-2">
+                <div
+                    className="layer-2"
+                    style={{
+                        transform: `translateY(${props.scrollPosition / 20}px)`,
+                    }}
+                >
                     <div
                         className="dune"
                         style={{
@@ -41,7 +55,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                         }}
                     />
                 </div>
-                <div className="layer-3">
+                <div
+                    className="layer-3"
+                    style={{
+                        transform: `translateY(${props.scrollPosition / 10}px)`,
+                    }}
+                >
                     <div
                         className="dune"
                         style={{
@@ -50,7 +69,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                         }}
                     />
                 </div>
-                <div className="layer-4">
+                <div
+                    className="layer-4"
+                    style={{
+                        transform: `translateY(${props.scrollPosition / 7}px)`,
+                    }}
+                >
                     <div
                         className="dune"
                         style={{
@@ -61,7 +85,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                     />
                 </div>
             </div>
-            <div className="sun" />
+            <div
+                className="sun"
+                style={{
+                    transform: `translateY(${props.scrollPosition * 0.75}px)`,
+                }}
+            />
         </section>
     );
 }
