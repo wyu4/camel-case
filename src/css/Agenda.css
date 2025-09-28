@@ -7,9 +7,29 @@
     padding-left: 10vw;
     padding-right: 10vw;
     gap: var(--spacing);
-    padding-top: calc(var(--spacing) * 4);
-    padding-bottom: var(--spacing);
-    background-color: var(--main-blue);
+    padding-top: calc(var(--grooves) + var(--spacing));
+    padding-bottom: calc(var(--grooves) + var(--spacing));
+    background-color: var(--high-beige);
+    transform: translateY(calc(-1 * var(--grooves)));
+    clip-path: polygon(
+        0% calc(var(--grooves) / 2),
+        20% var(--grooves),
+        25% calc(var(--grooves) / 1.25),
+        40% calc(var(--grooves) / 3),
+        60% var(--grooves),
+        70% calc(var(--grooves) / 1.5),
+        80% calc(var(--grooves) / 2),
+        95% calc(var(--grooves) / 3),
+        100% var(--grooves),
+        100% 100%,
+        90% calc(100% - (var(--grooves) / 2)),
+        80% calc(100% - (var(--grooves) / 1.5)),
+        65% calc(100% - (var(--grooves) / 1.75)),
+        50% calc(100% - (var(--grooves))),
+        35% calc(100% - (var(--grooves) / 2)),
+        17% calc(100% - (var(--grooves) / 1.25)),
+        0% calc(100% - (var(--grooves) / 3))
+    );
 }
 
 .agenda .info {
@@ -39,7 +59,7 @@
 }
 
 .agenda .schedule .day button {
-    font-family: 'intro-rust', Arial;
+    font-family: "intro-rust", Arial;
     font-size: 1.2em;
     aspect-ratio: 1/1;
     width: 2rem;
@@ -113,6 +133,20 @@
         flex-direction: column;
         padding-left: 0;
         padding-right: 0;
+        clip-path: polygon(
+        0% calc(var(--grooves) / 2),
+        10% calc(var(--grooves) / 1.5),
+        25% calc(var(--grooves) / 3),
+        45% var(--grooves),
+        75% calc(var(--grooves) / 3),
+        100% calc(var(--grooves) / 1.5),
+        100% 100%,
+        90% calc(100% - var(--grooves)),
+        60% calc(100% - (var(--grooves) / 3)),
+        40% calc(100% - (var(--grooves) / 1.5)),
+        20% 100%,
+        0% calc(100% - var(--grooves))
+    );
     }
 
     .agenda .info {

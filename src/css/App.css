@@ -41,6 +41,7 @@
     --high-grey: #8f8f8f;
     --spacing: 1.5rem;
     --radius: 0.5rem;
+    --grooves: calc(var(--spacing) * 2);
 }
 
 h1,
@@ -54,7 +55,7 @@ p {
 
 body {
     width: 100%;
-    background: var(--main-blue);
+    background: var(--high-beige-2);
     margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
