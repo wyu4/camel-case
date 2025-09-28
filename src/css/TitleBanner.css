@@ -11,6 +11,8 @@
 .title-banner {
     width: 100%;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .title-banner #title {
