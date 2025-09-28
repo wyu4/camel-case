@@ -1,4 +1,5 @@
 .mission {
+    --grooves: calc(var(--spacing) * 2);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,6 +8,20 @@
     gap: var(--spacing);
     background-color: var(--main-green);
     padding: var(--spacing);
+    padding-bottom: calc(var(--grooves) * 2);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        95% calc(100% - var(--grooves)),
+        80% calc(100% - (var(--grooves) / 2)),
+        70% calc(100% - (var(--grooves) / 1.5)),
+        50% calc(100% - var(--grooves)),
+        40% calc(100% - (var(--grooves) / 3)),
+        25% calc(100% - (var(--grooves) / 1.5)),
+        20% calc(100% - var(--grooves)),
+        0% calc(100% - var(--grooves) / 2)
+    );
 }
 
 .mission .container {
@@ -15,10 +30,19 @@
     margin-right: 40%;
 }
 
-
 @media (max-width: 800px) {
     .mission {
         flex-direction: column;
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            95% calc(100% - var(--grooves)),
+            80% calc(100% - (var(--grooves) / 2)),
+            50% calc(100% - var(--grooves)),
+            25% calc(100% - (var(--grooves) / 3)),
+            0% calc(100% - var(--grooves) / 2)
+        );
     }
 
     .mission .container {
