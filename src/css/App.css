@@ -54,6 +54,10 @@ p {
     line-height: 1;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     width: 100%;
     background: var(--main-blue);
