@@ -9,7 +9,7 @@
 }
 
 .title-banner {
-    width: 100%;
+    width: 100vw;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
     overflow-x: hidden;
     overflow-y: hidden;
