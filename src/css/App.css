@@ -43,6 +43,7 @@
     --spacing: 1.5rem;
     --radius: 0.5rem;
     --grooves: calc(var(--spacing) * 2);
+    --outline: 3px;
 }
 
 h1,
@@ -56,13 +57,14 @@ p {
 
 html {
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 body {
     width: 100%;
     background: var(--main-blue);
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: hidden;
 }
 

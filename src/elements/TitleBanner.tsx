@@ -1,6 +1,7 @@
 import type { JSX } from "react";
-import CababasImage from "/images/Cababas.webp";
-import SnowberryImage from "/images/Snowberry.webp";
+import PalmTree from "/images/PalmTree.svg";
+import DesertGrass from "/images/DesertGrass.svg";
+import Plack from "./Plack";
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
@@ -22,9 +23,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                 {headers}
             </div>
             <div className="dunes">
-                <div className="layer-1" style={{
+                <div
+                    className="layer-1"
+                    style={{
                         transform: `translateY(${props.scrollPosition / 25}px)`,
-                    }}>
+                    }}
+                >
                     <div
                         className="dune"
                         style={{
@@ -40,6 +44,21 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                             bottom: "-2%",
                         }}
                     />
+
+                    <span className="sign padded">
+                        <h2>
+                            <span
+                                className="material-icons"
+                                style={{
+                                    transform:
+                                        "translateX(-50%) scaleX(1.25) rotateZ(10deg)",
+                                }}
+                            >
+                                arrow_back
+                            </span>
+                            OASIS
+                        </h2>
+                    </span>
                 </div>
                 <div
                     className="layer-2"
@@ -54,6 +73,24 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                             width: "90%",
                         }}
                     />
+                    <img
+                        className="tree reverse"
+                        src={PalmTree}
+                        style={{
+                            bottom: "0",
+                            left: "33%",
+                            width: "18%",
+                        }}
+                    />
+                    <img
+                        className="grass"
+                        src={DesertGrass}
+                        style={{
+                            bottom: "7%",
+                            left: "41%",
+                            width: "5%",
+                        }}
+                    />
                 </div>
                 <div
                     className="layer-3"
@@ -66,6 +103,43 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                         style={{
                             left: "0%",
                             width: "90%",
+                        }}
+                    />
+                    <img
+                        className="grass reverse"
+                        src={DesertGrass}
+                        style={{
+                            bottom: "4.5%",
+                            right: "40%",
+                            width: "5%",
+                        }}
+                    />
+                    <img
+                        className="tree reverse"
+                        src={PalmTree}
+                        style={{
+                            bottom: "-2%",
+                            right: "45%",
+                            width: "15%",
+                        }}
+                    />
+
+                    <img
+                        className="tree"
+                        src={PalmTree}
+                        style={{
+                            bottom: "0",
+                            left: "50%",
+                            width: "15%",
+                        }}
+                    />
+                    <img
+                        className="grass"
+                        src={DesertGrass}
+                        style={{
+                            bottom: "4.5%",
+                            right: "43%",
+                            width: "5%",
                         }}
                     />
                 </div>
@@ -85,12 +159,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                     />
                 </div>
             </div>
-            <div
+            {/* <div
                 className="sun"
                 style={{
-                    transform: `translateY(${props.scrollPosition * 0.75}px)`,
+                    transform: `translateX(-50%) translateY(${props.scrollPosition * 0.75}px)`,
                 }}
-            />
+            /> */}
         </section>
     );
 }
