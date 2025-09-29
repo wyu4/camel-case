@@ -11,6 +11,7 @@
 .title-banner {
     position: relative;
     width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
     overflow: hidden;
 }
@@ -157,6 +158,13 @@
 @media (max-width: 800px) {
     .title-banner .sign {
         transform: scale(0.5) rotateZ(25deg) translateX(50%);
-        right: 1vw;
+        right: 1%;
+        bottom: 2%;
+    }
+}
+
+@supports (height: 100dvh) {
+    .title-banner {
+        height: 100dvh;
     }
 }
