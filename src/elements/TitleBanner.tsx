@@ -1,7 +1,6 @@
 import type { JSX } from "react";
 import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
-import Plack from "./Plack";
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
@@ -44,21 +43,6 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                             bottom: "-2%",
                         }}
                     />
-
-                    <span className="sign padded">
-                        <h2>
-                            <span
-                                className="material-icons"
-                                style={{
-                                    transform:
-                                        "translateX(-50%) scaleX(1.25) rotateZ(10deg)",
-                                }}
-                            >
-                                arrow_back
-                            </span>
-                            OASIS
-                        </h2>
-                    </span>
                 </div>
                 <div
                     className="layer-2"
@@ -159,6 +143,20 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                     />
                 </div>
             </div>
+            <span className="sign padded">
+                <h2>
+                    <span
+                        className="material-icons"
+                        style={{
+                            transform:
+                                "translateX(-50%) scaleX(1.25) rotateZ(10deg)",
+                        }}
+                    >
+                        arrow_back
+                    </span>
+                    OASIS
+                </h2>
+            </span>
             {/* <div
                 className="sun"
                 style={{

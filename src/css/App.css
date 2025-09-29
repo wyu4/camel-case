@@ -44,6 +44,7 @@
     --radius: 0.5rem;
     --grooves: calc(var(--spacing) * 2);
     --outline: 3px;
+    overflow-x: hidden;
 }
 
 h1,
@@ -53,11 +54,6 @@ p {
     margin: 0;
     padding: 0;
     line-height: 1;
-}
-
-html {
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 body {

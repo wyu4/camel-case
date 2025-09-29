@@ -11,8 +11,7 @@
 .title-banner {
     width: 100vw;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: clip;
 }
 
 .title-banner #title {
@@ -123,27 +122,27 @@
 .title-banner .sign {
     position: absolute;
     bottom: 5%;
-    right: 25%;
+    right: 10vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(
-        0 10%,
-        60% 0%,
-        100% 0,
-        100% 40%,
-        60% 90%,
-        5% 100%
-    );
-    transform: scale(0.75) rotateZ(25deg);
-    background-image: linear-gradient(155deg,  var(--high-beige) 0%,  var(--high-beige) 55%, var(--main-brown) 100%);
+    clip-path: polygon(0 10%,
+            60% 0%,
+            100% 0,
+            100% 40%,
+            60% 90%,
+            5% 100%);
+    transform: scale(0.75) rotateZ(25deg) translateX(50%);
+    background-image: linear-gradient(155deg, var(--high-beige) 0%, var(--high-beige) 55%, var(--main-brown) 100%);
+    z-index: 22;
 }
 
 .title-banner .sign h2 {
     color: #55492d;
     opacity: 0.7;
+    white-space: nowrap;
 }
 
 .title-banner .burial {
@@ -151,4 +150,12 @@
     background-color: #ffffff;
     width: 10vw;
     height: 10vh;
+}
+
+
+@media (max-width: 800px) {
+    .title-banner .sign {
+        transform: scale(0.5) rotateZ(25deg) translateX(50%);
+        right: 1vw;
+    }
 }
