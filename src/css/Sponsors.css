@@ -1,12 +1,12 @@
 .sponsors {
+    --fog: #212807;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: flex-start;
     padding: var(--spacing);
-    margin-left: var(--spacing);
-    margin-right: var(--spacing);
+    background-color: var(--fog);
 }
 
 .sponsors .info {

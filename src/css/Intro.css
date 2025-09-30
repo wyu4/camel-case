@@ -15,6 +15,11 @@
     max-width: 40rem;
     z-index: 20;
     margin-left: 40%;
+    background-image: linear-gradient(
+        to right,
+        var(--high-beige-2) 0%,
+        var(--high-beige) 100%
+    );
 }
 
 @media (max-width: 800px) {
