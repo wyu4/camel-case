@@ -1,8 +1,10 @@
 export default function TopBar({ ...props }: VerticalWindowProps) {
     return (
         <div
-            className="top-bar"
-            style={{ opacity: props.scrollPosition > props.viewHeight / 10 ? 1 : 0 }}
+            className={
+                "top-bar " +
+                (props.scrollPosition > (props.viewHeight/2) ? "visible" : "")
+            }
         >
             <button>Top Bar</button>
         </div>

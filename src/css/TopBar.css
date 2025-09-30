@@ -11,7 +11,12 @@
     gap: var(--spacing);
     margin: 0;
     transition: opacity 0.25s ease-in-out;
+    opacity: 0;
     pointer-events: none;
+}
+
+.top-bar.visible {
+    opacity: 1;
 }
 
 .top-bar a,.top-bar button {

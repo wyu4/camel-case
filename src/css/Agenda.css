@@ -1,4 +1,5 @@
 .agenda {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -10,7 +11,7 @@
     padding-top: calc(var(--grooves) + var(--spacing));
     padding-bottom: calc(var(--grooves) + var(--spacing));
     background-color: var(--high-beige);
-    transform: translateY(calc(-1 * var(--grooves)));
+    /* transform: translateY(calc(-1 * var(--grooves))); */
     clip-path: polygon(
         0% calc(var(--grooves) / 2),
         20% var(--grooves),
@@ -67,6 +68,7 @@
     width: 2rem;
     border: none;
     color: var(--high-dark-brown);
+    transition: color 0.25s ease-in-out;
 }
 
 .agenda .schedule .day button:hover {
@@ -76,21 +78,21 @@
 .agenda .schedule .day .last {
     position: absolute;
     right: 50%;
-    transform: translateX(-5rem);
+    transform: translateX(-5rem) scale(2);
 }
 
 .agenda .schedule .day h3 {
     position: absolute;
     text-align: center;
     left: 50%;
-    transform: translateX(-50%);
-    line-height: 0.75;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .agenda .schedule .day .next {
     position: absolute;
     left: 50%;
-    transform: translateX(5rem);
+    transform: translateX(5rem) scale(2);
 }
 
 .agenda .schedule .events-container {

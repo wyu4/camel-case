@@ -1,10 +1,39 @@
 .people {
+    position: relative;
+    background-color: var(--high-dark-brown);
     padding: var(--spacing);
+    padding-bottom: calc(var(--spacing) + var(--grooves));
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 30;
+    --img-width: 10rem;
+    clip-path: polygon(
+        0% var(--ngrooves),
+        100% var(--ngrooves),
+        100% 100%,
+        80% calc(100% - (var(--grooves) / 2)),
+        70% calc(100% - (var(--grooves) / 3)),
+        55% calc(100% - (var(--grooves) / 1)),
+        35% calc(100% - (var(--grooves) / 1.75)),
+        20% calc(100% - (var(--grooves) / 1.2)),
+        0% calc(100% - (var(--grooves) / 4))
+    );
+}
 
-    --img-width: 15rem;
+.people .extension {
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: var(--grooves);
+}
+
+.people .extension.top {
+    top: var(--ngrooves);
+}
+
+.people .extension.bottom {
+    bottom: var(--ngrooves);
 }
 
 .people .plack {
@@ -38,12 +67,12 @@
 
 .people .plack .person h3 {
     color: var(--high-dark-brown);
+    font-size: 1em;
 }
 
 .people .plack .person p {
     color: var(--high-grey);
 }
-
 
 .people .plack .person img {
     aspect-ratio: 1/1;

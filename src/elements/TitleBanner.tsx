@@ -145,15 +145,7 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
             </div>
             <span className="sign padded">
                 <h2>
-                    <span
-                        className="material-icons"
-                        style={{
-                            transform:
-                                "translateX(-50%) scaleX(1.25) rotateZ(10deg)",
-                        }}
-                    >
-                        arrow_back
-                    </span>
+                    <span className="material-icons">arrow_back</span>
                     OASIS
                 </h2>
             </span>
