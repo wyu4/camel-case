@@ -14,9 +14,17 @@ function Section({ tier, data }: SectionProps) {
         // Inlined img generator
         <div className="tier">
             <h3>{tier}</h3>
-            <div className="content" >{data.map((sponsor, i) => (<img key={`${sponsor.name}-${i}`} src={getImagePath(sponsor.icon)} draggable={false} />))}</div>
+            <div className="content">
+                {data.map((sponsor, i) => (
+                    <img
+                        key={`${sponsor.name}-${i}`}
+                        src={getImagePath(sponsor.icon)}
+                        draggable={false}
+                    />
+                ))}
+            </div>
         </div>
-    ); 
+    );
 }
 
 export default function Sponsors() {
@@ -65,18 +73,19 @@ export default function Sponsors() {
 
     return (
         <section className="sponsors">
+            <div className="ceiling">
+                <div className="layer-1"></div>
+            </div>
             <div className="info">
                 <Plack className="about">
                     <h2>Sponsors</h2>
                     <Line />
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. For more information, see our{" "}
+                        For more information, see our{" "}
                         <u>
-                            <a href="/sponsorship/" target="_blank">sponsorship package</a>
+                            <a href="/sponsorship/" target="_blank">
+                                sponsorship package
+                            </a>
                         </u>
                         .
                     </p>
@@ -85,6 +94,11 @@ export default function Sponsors() {
                 <Plack className="contact">
                     <h2>Contact us!</h2>
                     <Line />
+                    <div className="contacts">
+                        <a className="mail" href="mailto:camelcasehackathon@gmail.com">
+                            <span className="material-icons">mail_outline</span>
+                        </a>
+                    </div>
                 </Plack>
             </div>
 

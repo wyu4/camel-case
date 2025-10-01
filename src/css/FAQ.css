@@ -1,10 +1,13 @@
 .faq {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     --speed: 0.5s;
+    background-color: var(--fog);
+    z-index: 19;
 }
 
 .faq h2 {
