@@ -87,6 +87,16 @@ export default function FAQ() {
                     children={<p>Mission</p>}
                 />
                 <QuestionResponse
+                    question="How much are the teams?"
+                    children={
+                        <>
+                            <p>
+                                Teams can have up to three participants.
+                            </p>
+                        </>
+                    }
+                />
+                <QuestionResponse
                     question="I don't know anyone..."
                     children={
                         <p>
