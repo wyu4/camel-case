@@ -36,8 +36,6 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
-    min-width: calc(30rem - (var(--spacing) * 2));
-    width: calc(25% - (var(--spacing) * 2));
     gap: var(--spacing);
     transform: translateY(var(--grooves));
     z-index: 20;
