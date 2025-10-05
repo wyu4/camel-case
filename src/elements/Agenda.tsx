@@ -8,17 +8,29 @@ import Line from "./Line";
 
 const SCHEDULE_API =
     "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
+const coordinates: LatLngExpression = [45.323467111163716, -75.89449784098387];
 
-function EventInfo() {
-    const coordinates: LatLngExpression = [
-        45.323467111163716, -75.89449784098387,
-    ];
-
+function EventMap() {
     const markerIcon = new L.Icon({
         iconUrl: "/images/Cababas.webp",
         iconSize: [41, 41],
     });
 
+    return (
+        <MapContainer
+            center={coordinates}
+            zoom={13}
+            scrollWheelZoom={true}
+            attributionControl={false}
+            className="map-container rounded"
+        >
+            <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+            <Marker position={coordinates} icon={markerIcon} />
+        </MapContainer>
+    );
+}
+
+function EventInfo({ schedule }: { schedule: ScheduleProps }) {
     return (
         <Plack className="info">
             <h2>Event Rundown</h2>
@@ -29,17 +41,7 @@ function EventInfo() {
             <p>
                 <b>Location: </b>???
             </p>
-            <div className="invisible" style={{ height: "var(--spacing)" }} />
-            <MapContainer
-                center={coordinates}
-                zoom={13}
-                scrollWheelZoom={true}
-                attributionControl={false}
-                className="map-container rounded"
-            >
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
-                <Marker position={coordinates} icon={markerIcon} />
-            </MapContainer>
+            <EventSchedule schedule={schedule} />
         </Plack>
     );
 }
@@ -188,8 +190,8 @@ export default function Agenda() {
 
     return (
         <section className="agenda">
-            <EventInfo />
-            <EventSchedule schedule={scheduleData} />
+            <EventMap />
+            <EventInfo schedule={scheduleData} />
         </section>
     );
 }

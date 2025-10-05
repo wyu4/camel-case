@@ -1,6 +1,6 @@
 .people {
     position: relative;
-    background-color: var(--high-beige-2);
+    background-color: var(--high-brown);
     padding: var(--spacing);
     display: flex;
     flex-direction: column;
@@ -63,6 +63,7 @@
 
 .people h2 {
     text-align: center;
+    color: var(--high-beige);
 }
 
 .people .person h3 {

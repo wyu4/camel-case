@@ -77,7 +77,7 @@ export default function People() {
             <div className="extension top" />
             <div className="container">
                 <h2>Who's involved?</h2>
-                <Line />
+                <Line lineColor="var(--high-beige)" />
                 <div className="people-container">{peopleElements}</div>
             </div>
             <div className="extension bottom" />

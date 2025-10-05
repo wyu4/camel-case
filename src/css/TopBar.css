@@ -23,3 +23,8 @@
     pointer-events: all;
     font-size: 2em;
 }
+
+.top-bar button:active {
+  opacity: 1 !important;
+  background-color: none;
+}
