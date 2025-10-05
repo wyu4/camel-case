@@ -75,6 +75,10 @@ export default function Sponsors() {
         <section className="sponsors">
             <div className="ceiling">
                 <div className="layer-1"></div>
+                <div className="layer-2"></div>
+                <div className="layer-3"></div>
+                <div className="layer-4"></div>
+                <div className="layer-5"></div>
             </div>
             <div className="info">
                 <Plack className="about">

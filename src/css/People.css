@@ -1,12 +1,15 @@
 .people {
     position: relative;
-    background-color: var(--high-dark-brown);
+    background-color: var(--high-beige-2);
     padding: var(--spacing);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 30;
     --img-width: 10rem;
+    padding: var(--spacing);
+    gap: var(--spacing);
     clip-path: polygon(
         0% var(--ngrooves),
         100% var(--ngrooves),
@@ -35,13 +38,11 @@
     bottom: var(--ngrooves);
 }
 
-.people .plack {
-    width: calc(var(--img-width) * 4);
+.people .container {
     padding: var(--spacing);
-    gap: var(--spacing);
 }
 
-.people .container {
+.people .people-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -50,7 +51,7 @@
     gap: var(--spacing);
 }
 
-.people .plack .person {
+.people .person {
     display: flex;
     justify-items: center;
     flex-direction: column;
@@ -60,20 +61,20 @@
     background: var(--high-beige);
 }
 
-.people .plack h2 {
+.people h2 {
     text-align: center;
 }
 
-.people .plack .person h3 {
+.people .person h3 {
     color: var(--high-dark-brown);
     font-size: 1em;
 }
 
-.people .plack .person p {
+.people .person p {
     color: var(--high-grey);
 }
 
-.people .plack .person img {
+.people .person img {
     aspect-ratio: 1/1;
     max-width: var(--img-width);
 }
