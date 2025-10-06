@@ -83,7 +83,7 @@ export default function Sponsors() {
             </div>
             <div className="info">
                 <Plack className="about">
-                    <h2>Sponsors</h2>
+                    <h2>Sponsor Us!</h2>
                     <Line />
                     <p>
                         Wanna help us make this event possible? Feel free to
