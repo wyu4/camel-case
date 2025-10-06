@@ -33,7 +33,7 @@ function EventMap() {
 function EventInfo({ schedule }: { schedule: ScheduleProps }) {
     return (
         <Plack className="info">
-            <h2>Event Rundown</h2>
+            <h2>Event Info</h2>
             <Line />
             <p>
                 <b>Date: </b>November 29 - 30, 2025

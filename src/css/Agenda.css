@@ -143,7 +143,11 @@
     }
 
     .agenda .info {
-        width: auto;
+        width: calc(100% - (2 * var(--spacing)));
+    }
+
+    .agenda .schedule .event p {
+        font-size: 1.5rem;
     }
 
     .agenda .map-container {
