@@ -67,11 +67,6 @@
     color: var(--high-grey);
 }
 
-.agenda .schedule .day button:active {
-  opacity: 1 !important;
-  background-color: none;
-}
-
 .agenda .schedule .day .last {
     position: absolute;
     right: 50%;

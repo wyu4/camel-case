@@ -57,7 +57,6 @@ export default function App() {
                 <TopBar {...windowProps} />
                 <TitleBanner {...windowProps} />
                 <Intro />
-                <Mission />
                 <Agenda />
                 <People />
                 <Sponsors />

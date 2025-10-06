@@ -2,6 +2,7 @@ import { useEffect, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
 import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
+import EmailLink from "./EmailLink";
 
 type SectionProps = {
     tier: string;
@@ -85,24 +86,20 @@ export default function Sponsors() {
                     <h2>Sponsors</h2>
                     <Line />
                     <p>
-                        For more information, see our{" "}
-                        <u>
-                            <a href="/sponsorship/" target="_blank">
-                                sponsorship package
-                            </a>
-                        </u>
+                        Wanna help us make this event possible? Feel free to
+                        reach out to us at <EmailLink />
+                        .<br />
+                        <br />
+                        <i>
+                            For more information, see our{" "}
+                            <u>
+                                <a href="/sponsorship/" target="_blank">
+                                    sponsorship package
+                                </a>
+                            </u>
+                        </i>
                         .
                     </p>
-                </Plack>
-
-                <Plack className="contact">
-                    <h2>Contact us!</h2>
-                    <Line />
-                    <div className="contacts">
-                        <a className="mail" href="mailto:camelcasehackathon@gmail.com">
-                            <span className="material-icons">mail_outline</span>
-                        </a>
-                    </div>
                 </Plack>
             </div>
 

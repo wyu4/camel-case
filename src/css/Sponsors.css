@@ -42,6 +42,7 @@
     align-items: stretch;
     gap: var(--spacing);
     transform: translateY(var(--grooves));
+    max-width: 50rem;
     z-index: 20;
 }
 

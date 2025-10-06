@@ -9,7 +9,6 @@
     background-color: var(--main-brown);
     padding: var(--spacing);
     padding-bottom: calc(var(--grooves) * 2);
-    position: relative;
     z-index: 30;
 }
 

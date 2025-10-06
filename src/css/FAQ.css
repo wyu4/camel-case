@@ -28,14 +28,16 @@
     gap: 0;
     z-index: 30;
     transform: scale(1);
-    transition: z-index calc(var(--speed) / 2) calc(var(--speed) / 2), transform calc(var(--speed) / 2) ease-in-out;
+    transition: z-index calc(var(--speed) / 2) calc(var(--speed) / 2),
+        transform calc(var(--speed) / 2) ease-in-out;
 }
 
 .faq .question.opened {
     position: relative;
     z-index: 40;
     transform: scale(1.1);
-    transition: z-index calc(var(--speed) / 2) 0s, transform calc(var(--speed) / 2) ease-in-out;
+    transition: z-index calc(var(--speed) / 2) 0s,
+        transform calc(var(--speed) / 2) ease-in-out;
 }
 
 .faq .question .background {
