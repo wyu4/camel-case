@@ -4,12 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import TopBar from "./elements/TopBar";
 import TitleBanner from "./elements/TitleBanner";
 import Intro from "./elements/Intro";
-import Mission from "./elements/Mission";
 import Agenda from "./elements/Agenda";
 import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
-import People from "./elements/People";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -58,7 +56,6 @@ export default function App() {
                 <TitleBanner {...windowProps} />
                 <Intro />
                 <Agenda />
-                <People />
                 <Sponsors />
                 <FAQ />
                 <div className="invisible" style={{ height: "30vh" }} />

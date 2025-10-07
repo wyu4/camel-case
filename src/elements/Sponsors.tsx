@@ -5,25 +5,23 @@ import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
 import EmailLink from "./EmailLink";
 
 type SectionProps = {
-    tier: string;
+    size?: string;
     data: SponsorProps[];
 };
 
-function Section({ tier, data }: SectionProps) {
+function Section({ size = "small", data }: SectionProps) {
     // Each tier / section
     return (
         // Inlined img generator
-        <div className="tier">
-            <h3>{tier}</h3>
-            <div className="content">
-                {data.map((sponsor, i) => (
-                    <img
-                        key={`${sponsor.name}-${i}`}
-                        src={getImagePath(sponsor.icon)}
-                        draggable={false}
-                    />
-                ))}
-            </div>
+        <div className="section">
+            {data.map((sponsor, i) => (
+                <img
+                    className={size}
+                    key={`${sponsor.name}-${i}`}
+                    src={getImagePath(sponsor.icon)}
+                    draggable={false}
+                />
+            ))}
         </div>
     );
 }
@@ -62,34 +60,40 @@ export default function Sponsors() {
     useEffect(() => {
         // Generate sections for tiers with sponsor logos when data is recieved
         const tempSections: JSX.Element[] = [];
-        Object.entries(sponsorsData.tiers).forEach(([tier, data]) => {
-            if (data.length > 0) {
-                tempSections.push(
-                    <Section key={`${tier}`} tier={tier} data={data} />
-                );
-            }
-        });
+        const { tiers } = sponsorsData;
+
+        if (tiers.kilobyte.length > 0 || tiers.byte.length > 0) {
+            tempSections.push(
+                <Section
+                    size="small"
+                    data={tiers.kilobyte.concat(tiers.byte)}
+                />
+            );
+        }
+
+        if (tiers.megabyte.length > 0) {
+            tempSections.push(<Section size="medium" data={tiers.megabyte} />);
+        }
+
+        if (tiers.gigabyte.length > 0) {
+            tempSections.push(<Section size="big" data={tiers.gigabyte} />);
+        }
+
         setSectionElements(tempSections);
     }, [sponsorsData]);
 
     return (
         <section className="sponsors">
-            <div className="ceiling">
-                <div className="layer-1"></div>
-                <div className="layer-2"></div>
-                <div className="layer-3"></div>
-                <div className="layer-4"></div>
-                <div className="layer-5"></div>
-            </div>
+            <div className="ceiling"></div>
             <div className="info">
-                <Plack className="about">
+                <Plack>
                     <h2>Sponsor Us!</h2>
                     <Line />
-                    <p>
-                        Wanna help us make this event possible? Feel free to
-                        reach out to us at <EmailLink />
-                        .<br />
-                        <br />
+                    <div className="about">
+                        <p>
+                            Wanna help us make this event possible? Feel free to
+                            reach out to us at <EmailLink />.
+                        </p>
                         <i>
                             For more information, see our{" "}
                             <u>
@@ -97,13 +101,12 @@ export default function Sponsors() {
                                     sponsorship package
                                 </a>
                             </u>
+                            .
                         </i>
-                        .
-                    </p>
+                        <div className="tiers">{sectionElements}</div>
+                    </div>
                 </Plack>
             </div>
-
-            <div className="tiers">{sectionElements}</div>
         </section>
     );
 }

@@ -3,7 +3,6 @@ declare type SponsorProps = {
     icon: string;
 };
 
-declare type SponsorTier = "byte" | "kilobyte" | "megabyte" | "gigabyte";
 declare type AllSponsorsProps = {
     tiers: {
         byte: SponsorProps[];

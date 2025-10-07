@@ -1,10 +1,12 @@
 .sponsors {
+    --fog-temp: #fffcf1;
+    --fog: var(--fog-temp);
     position: relative;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: var(--spacing);
     background-color: var(--fog);
     gap: var(--spacing);
@@ -14,12 +16,12 @@
 
 .sponsors .ceiling {
     position: absolute;
-    top: 0;
+    top: var(--ngrooves);
     left: 0;
     right: 0;
     height: 10%;
     z-index: 18;
-    transform: translateY(var(--ngrooves));
+    background-color: inherit;
 }
 
 .sponsors .ceiling div {
@@ -29,89 +31,68 @@
     top: 0;
 }
 
-.sponsors .ceiling .layer-1 {
-    
-}
-
 .sponsors .info {
     position: relative;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--spacing);
-    transform: translateY(var(--grooves));
-    max-width: 50rem;
     z-index: 20;
 }
 
-.sponsors .info .contacts {
+.sponsors .info .about {
     display: flex;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
-}
-
-.sponsors .info .contacts a {
-    transition: transform 0.2s ease-in-out;
-    
-}
-
-.sponsors .info .contacts a:hover {
-    transform: scale(1.1);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--spacing);
 }
 
 .sponsors .tiers {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
-    flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: var(--spacing);
-    background-color: #00000038;
+    align-items: center;
     border-radius: var(--radius);
-    border-width: 1px;
-    border-color: #ffffff2b;
-    border-style: solid;
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
-    transform: translateY(var(--grooves));
+    border-width: 3px;
+    border-color: var(--high-dark-brown);
+    border-style: dashed;
+    padding: var(--spacing);
+    padding-bottom: 0;
     z-index: 20;
 }
 
-.sponsors .tiers h3 {
-    color: var(--high-beige-2);
-}
-
-.sponsors .tiers .tier {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: var(--spacing);
-    width: 100%;
-}
-
-.sponsors .tiers .tier .content {
+.sponsors .tiers .section {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: var(--spacing);
+    padding-bottom: var(--spacing);
 }
 
-.sponsors img {
-    max-width: 10rem;
-    margin-bottom: var(--spacing);
+.sponsors .tiers img {
+    --normal: 10rem;
+    max-width: var(--normal);
 }
 
-@media (max-width: 1000px) {
-    .sponsors {
-        flex-direction: column;
-        align-items: center;
+.sponsors .tiers img.big {
+    max-width: calc(var(--normal) * 1.5);
+}
+
+.sponsors .tiers img.medium {
+    max-width: calc(var(--normal) * 1.2);
+}
+
+.sponsors .tiers img.small {
+    max-width: calc(var(--normal) * 0.9);
+}
+
+@media (max-width: 50rem) {
+    .sponsors .tiers img {
+        --normal: 20vw;
     }
 }
