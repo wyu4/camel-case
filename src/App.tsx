@@ -8,6 +8,7 @@ import Agenda from "./elements/Agenda";
 import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
+import Guide from "./elements/Guide";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -56,6 +57,7 @@ export default function App() {
                 <TitleBanner {...windowProps} />
                 <Intro />
                 <Agenda />
+                <Guide />
                 <Sponsors />
                 <FAQ />
                 <div className="invisible" style={{ height: "30vh" }} />

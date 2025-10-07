@@ -8,6 +8,15 @@
     }
 }
 
+.dune {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--main-brown);
+    transform: translateY(75%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+    bottom: 0;
+}
+
 .title-banner {
     position: relative;
     width: 100vw;

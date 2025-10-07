@@ -1,0 +1,64 @@
+.guide {
+    position: relative;
+    background-color: var(--high-brown);
+    padding: var(--spacing);
+    z-index: 30;
+    --img-width: 10rem;
+    padding: var(--spacing);
+    padding-top: calc(2 * var(--grooves));
+    padding-bottom: calc(2 * var(--grooves));
+    gap: var(--spacing);
+    clip-path: polygon(
+        0% var(--ngrooves),
+        100% var(--ngrooves),
+        100% calc((100% + var(--grooves))),
+        80% calc((100% + var(--grooves)) - (var(--grooves) / 2)),
+        70% calc((100% + var(--grooves)) - (var(--grooves) / 3)),
+        55% calc((100% + var(--grooves)) - (var(--grooves) / 1)),
+        35% calc((100% + var(--grooves)) - (var(--grooves) / 1.75)),
+        20% calc((100% + var(--grooves)) - (var(--grooves) / 1.2)),
+        0% calc((100% + var(--grooves)) - (var(--grooves) / 4))
+    )
+}
+
+.guide .extension {
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: var(--grooves);
+}
+
+.guide .extension.top {
+    top: var(--ngrooves);
+    left: 0;
+}
+
+.guide .extension.bottom {
+    bottom: var(--ngrooves);
+    left: 0;
+}
+
+.guide .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--spacing);
+    gap: var(--spacing);
+}
+
+.guide .container div {
+    background-color: var(--high-beige);
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    gap: calc(var(--spacing) / 2);
+    border-radius: var(--radius);
+}
+
+.guide h2,
+.guide h3 {
+    text-align: center;
+    color: var(--high-brown);
+}

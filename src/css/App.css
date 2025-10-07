@@ -2,6 +2,7 @@
 @import url('./TitleBanner.css');
 @import url('./Intro.css');
 @import url('./Agenda.css');
+@import url('./Guide.css');
 @import url('./Sponsors.css');
 @import url('./FAQ.css');
 @import url('./Footer.css');
@@ -128,16 +129,3 @@ a, u {
     aspect-ratio: 1/1;
 }
 
-.dune {
-    position: absolute;
-    border-radius: 50%;
-    background-color: var(--main-brown);
-    transform: translateY(75%);
-    clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% 50%,
-        0% 50%
-    );
-    bottom: 0;
-}

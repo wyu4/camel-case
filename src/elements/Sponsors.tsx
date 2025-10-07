@@ -3,6 +3,7 @@ import Line from "./Line";
 import Plack from "./Plack";
 import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
 import EmailLink from "./EmailLink";
+import Jukebox from "./Guide";
 
 type SectionProps = {
     size?: string;
