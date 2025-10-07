@@ -67,17 +67,30 @@ export default function Sponsors() {
             tempSections.push(
                 <Section
                     size="small"
+                    key={"small" + Math.random()}
                     data={tiers.kilobyte.concat(tiers.byte)}
                 />
             );
         }
 
         if (tiers.megabyte.length > 0) {
-            tempSections.push(<Section size="medium" data={tiers.megabyte} />);
+            tempSections.push(
+                <Section
+                    size="medium"
+                    key={"medium" + Math.random()}
+                    data={tiers.megabyte}
+                />
+            );
         }
 
         if (tiers.gigabyte.length > 0) {
-            tempSections.push(<Section size="big" data={tiers.gigabyte} />);
+            tempSections.push(
+                <Section
+                    size="big"
+                    key={"big" + Math.random()}
+                    data={tiers.gigabyte}
+                />
+            );
         }
 
         setSectionElements(tempSections);

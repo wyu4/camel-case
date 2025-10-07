@@ -61,7 +61,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
                     <span className="material-icons">keyboard_arrow_down</span>
                 </button>
                 <div className="response" ref={responseRef}>
-                    <p>{children}</p>
+                    {children}
                 </div>
             </div>
         </div>

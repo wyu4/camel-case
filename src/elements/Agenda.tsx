@@ -182,6 +182,16 @@ export default function Agenda() {
                 const formattedResult: ScheduleProps = await response.json();
                 setScheduleData(formattedResult);
             } catch (e: unknown) {
+                setScheduleData(
+                    [
+                        [
+                            {
+                                "time": "",
+                                "name": "Couldn't get events."
+                            }                            
+                        ]
+                    ]
+                )
                 console.error(`Couldn't get schedule: ${e}`);
             }
         };

@@ -28,6 +28,7 @@
 }
 
 :root {
+    --fog-temp: #fffcf1;
     overflow-x: hidden;
     --main-blue: #cae2d8;
     --main-green: #287a5c;
@@ -39,6 +40,7 @@
     --high-beige-2: #f8f3e6;
     --high-grey: #8f8f8f;
     --sky: #3e95f3;
+    --fog: var(--fog-temp);
     --spacing: 1.5rem;
     --radius: 0.5rem;
     --grooves: calc(var(--spacing) * 2);

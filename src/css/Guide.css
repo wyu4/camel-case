@@ -18,7 +18,7 @@
         35% calc((100% + var(--grooves)) - (var(--grooves) / 1.75)),
         20% calc((100% + var(--grooves)) - (var(--grooves) / 1.2)),
         0% calc((100% + var(--grooves)) - (var(--grooves) / 4))
-    )
+    );
 }
 
 .guide .extension {
@@ -45,7 +45,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: var(--spacing);
-    gap: var(--spacing);
+    gap: calc(var(--spacing) * 3);
 }
 
 .guide .container div {

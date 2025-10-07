@@ -1,6 +1,4 @@
 .sponsors {
-    --fog-temp: #fffcf1;
-    --fog: var(--fog-temp);
     position: relative;
     display: flex;
     flex-direction: column;
