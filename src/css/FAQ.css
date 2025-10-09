@@ -5,13 +5,24 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    gap: var(--spacing);
     --speed: 0.5s;
-    background-color: var(--fog);
-    z-index: 19;
+    background-color: var(--jungle-green);
+    z-index: 20;
+    clip-path: polygon(
+        0 var(--ngrooves),
+        20% calc(var(--ngrooves) / 3),
+        55% calc(var(--ngrooves) / 2),
+        70% calc(var(--ngrooves)/4),
+        100% calc(var(--ngrooves)),
+        100% 100%,
+        0% 100%
+    );
 }
 
 .faq h2 {
     text-align: center;
+    color: var(--high-beige);
 }
 
 .faq .container {
@@ -110,6 +121,24 @@
     opacity: 1;
     pointer-events: auto;
     transition: opacity calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
+}
+
+.faq .extension {
+    height: 50vh;
+    width: 100%;
+}
+
+.faq .extension.top {
+    position: absolute;
+    top: var(--ngrooves);
+    left: 0;
+    height: var(--grooves);
+    width: 100%;
+    background-color: inherit;
+}
+
+.faq .extension.bottom {
+    background-image: linear-gradient(to bottom, var(--jungle-green) 20%, black);
 }
 
 @media (max-width: 1000px) {

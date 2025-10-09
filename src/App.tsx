@@ -53,15 +53,14 @@ export default function App() {
         <>
             <div className="production background" ref={background} />
             <div className="production container">
-                <TopBar {...windowProps} />
+                {/* <TopBar {...windowProps} /> */}
                 <TitleBanner {...windowProps} />
                 <Intro />
                 <Agenda />
                 <Guide />
-                <Sponsors />
+                <Sponsors {...windowProps} />
                 <FAQ />
-                <div className="invisible" style={{ height: "30vh" }} />
-                <Footer />
+                {/* <Footer /> */}
                 <section></section>
             </div>
         </>

@@ -1,9 +1,9 @@
-import { useEffect, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
 import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
 import EmailLink from "./EmailLink";
-import Jukebox from "./Guide";
+import JungleImage from "/images/JungleBackground.svg";
 
 type SectionProps = {
     size?: string;
@@ -27,7 +27,10 @@ function Section({ size = "small", data }: SectionProps) {
     );
 }
 
-export default function Sponsors() {
+export default function Sponsors({ ...props }: WindowProps) {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [sectionPosition, setSectionPosition] = useState(0);
+
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
             byte: [],
@@ -96,9 +99,24 @@ export default function Sponsors() {
         setSectionElements(tempSections);
     }, [sponsorsData]);
 
+    useEffect(() => {
+        if (sectionRef.current) {
+            setSectionPosition(sectionRef.current.getBoundingClientRect().top + props.scrollPosition);
+        }
+    }, [sectionRef, props.scrollPosition]);
+
     return (
-        <section className="sponsors">
+        <section ref={sectionRef} className="sponsors">
             <div className="ceiling"></div>
+            <img
+                className="background"
+                src={JungleImage}
+                style={{
+                    transform: `translateY(${
+                        (props.scrollPosition - sectionPosition) * 0.25
+                    }px)`,
+                }}
+            />
             <div className="info">
                 <Plack>
                     <h2>Sponsor Us!</h2>

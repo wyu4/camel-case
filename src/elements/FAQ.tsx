@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Plack from "./Plack";
 import Line from "./Line";
+import EmailLink from "./EmailLink";
 
 type QuestionProps = {
     question: string;
@@ -71,6 +72,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
 export default function FAQ() {
     return (
         <section className="faq">
+            <div className="extension top" />
             <h2>FAQ</h2>
             <div className="container">
                 <QuestionResponse
@@ -134,17 +136,17 @@ export default function FAQ() {
                 children={
                     <>
                         <p>
-                            Feel free to reach out to any of our email / social
-                            media accounts. We would love to get in touch with
+                            Feel free to reach out to our email! We would love to get in touch with
                             you!
                         </p>
                         <Line />
                         <div>
-                            <i>(tbd social media buttons here)</i>
+                            <EmailLink />
                         </div>
                     </>
                 }
             />
+            <div className="extension bottom" />
         </section>
     );
 }

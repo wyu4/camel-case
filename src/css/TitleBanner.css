@@ -23,6 +23,7 @@
     height: 100vh;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
     overflow: hidden;
+    z-index: 21;
 }
 
 .title-banner #title {

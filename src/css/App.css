@@ -41,6 +41,7 @@
     --high-grey: #8f8f8f;
     --sky: #3e95f3;
     --fog: var(--fog-temp);
+    --jungle-green: #416137;
     --spacing: 1.5rem;
     --radius: 0.5rem;
     --grooves: calc(var(--spacing) * 2);
