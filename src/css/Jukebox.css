@@ -1,11 +1,7 @@
-.people {
+.jukebox {
     position: relative;
     background-color: var(--high-brown);
     padding: var(--spacing);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 30;
     --img-width: 10rem;
     padding: var(--spacing);
@@ -23,59 +19,45 @@
     );
 }
 
-.people .extension {
+.jukebox .extension {
     position: absolute;
     background-color: inherit;
     width: 100%;
     height: var(--grooves);
 }
 
-.people .extension.top {
+.jukebox .extension.top {
     top: var(--ngrooves);
+    left: 0;
 }
 
-.people .extension.bottom {
+.jukebox .extension.bottom {
     bottom: var(--ngrooves);
+    left: 0;
 }
 
-.people .container {
-    padding: var(--spacing);
-}
-
-.people .people-container {
+.jukebox .promo {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--spacing);
-}
-
-.people .person {
-    display: flex;
-    justify-items: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: var(--spacing);
-    gap: calc(var(--spacing) / 2);
-    background: var(--high-beige);
+    gap: calc(var(--spacing)/2);
 }
 
-.people h2 {
+.jukebox .promo h2, .jukebox .promo h3 {
     text-align: center;
     color: var(--high-beige);
 }
 
-.people .person h3 {
-    color: var(--high-dark-brown);
-    font-size: 1em;
+.jukebox .promo button {
+    background-color: #ff8383;
+    border-radius: var(--radius);
+    border-width: 0;
+    padding: var(--spacing);
+    transition: transform 0.25s ease-in-out;
 }
 
-.people .person p {
-    color: var(--high-grey);
-}
-
-.people .person img {
-    aspect-ratio: 1/1;
-    max-width: var(--img-width);
+.jukebox .promo button:hover {
+    transform: scale(1.1);
 }

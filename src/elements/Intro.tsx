@@ -8,12 +8,13 @@ export default function Intro() {
                 <h2>What is this?</h2>
                 <Line />
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Join us on November 29th-30th to attend camelCase, an
+                    overnight hackathon with 100 other teenagers! You'll have 24
+                    hours to make something new and original from scratch! Sound
+                    fun? Find out more below!
                 </p>
             </Plack>
+            <div className="extension" />
         </section>
     );
 }

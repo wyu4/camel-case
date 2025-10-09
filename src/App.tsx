@@ -4,12 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import TopBar from "./elements/TopBar";
 import TitleBanner from "./elements/TitleBanner";
 import Intro from "./elements/Intro";
-import Mission from "./elements/Mission";
 import Agenda from "./elements/Agenda";
 import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
-import People from "./elements/People";
+import Guide from "./elements/Guide";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -54,20 +53,14 @@ export default function App() {
         <>
             <div className="production background" ref={background} />
             <div className="production container">
-                <TopBar {...windowProps} />
+                {/* <TopBar {...windowProps} /> */}
                 <TitleBanner {...windowProps} />
                 <Intro />
-                <div className="invisible" style={{ height: "35vh" }} />
-                <Mission />
-                <div className="invisible" style={{ height: "40vh" }} />
                 <Agenda />
-                <div className="invisible" style={{ height: "50vh" }} />
-                <People />
-                <div className="invisible" style={{ height: "25vh" }} />
-                <Sponsors />
+                <Guide />
+                <Sponsors {...windowProps} />
                 <FAQ />
-                <div className="invisible" style={{ height: "20vh" }} />
-                <Footer />
+                {/* <Footer /> */}
                 <section></section>
             </div>
         </>

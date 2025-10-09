@@ -1,14 +1,12 @@
-.people {
+.guide {
     position: relative;
     background-color: var(--high-brown);
     padding: var(--spacing);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 30;
     --img-width: 10rem;
     padding: var(--spacing);
+    padding-top: calc(2 * var(--grooves));
+    padding-bottom: calc(2 * var(--grooves));
     gap: var(--spacing);
     clip-path: polygon(
         0% var(--ngrooves),
@@ -23,59 +21,44 @@
     );
 }
 
-.people .extension {
+.guide .extension {
     position: absolute;
     background-color: inherit;
     width: 100%;
     height: var(--grooves);
 }
 
-.people .extension.top {
+.guide .extension.top {
     top: var(--ngrooves);
+    left: 0;
 }
 
-.people .extension.bottom {
+.guide .extension.bottom {
     bottom: var(--ngrooves);
+    left: 0;
 }
 
-.people .container {
-    padding: var(--spacing);
-}
-
-.people .people-container {
+.guide .container {
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
-    gap: var(--spacing);
+    padding: var(--spacing);
+    gap: calc(var(--spacing) * 3);
 }
 
-.people .person {
+.guide .container div {
+    background-color: var(--high-beige);
     display: flex;
-    justify-items: center;
     flex-direction: column;
-    align-items: center;
     padding: var(--spacing);
     gap: calc(var(--spacing) / 2);
-    background: var(--high-beige);
+    border-radius: var(--radius);
 }
 
-.people h2 {
+.guide h2,
+.guide h3 {
     text-align: center;
-    color: var(--high-beige);
-}
-
-.people .person h3 {
-    color: var(--high-dark-brown);
-    font-size: 1em;
-}
-
-.people .person p {
-    color: var(--high-grey);
-}
-
-.people .person img {
-    aspect-ratio: 1/1;
-    max-width: var(--img-width);
+    color: var(--high-brown);
 }

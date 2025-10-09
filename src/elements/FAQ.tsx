@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Plack from "./Plack";
 import Line from "./Line";
+import EmailLink from "./EmailLink";
 
 type QuestionProps = {
     question: string;
@@ -61,7 +62,7 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
                     <span className="material-icons">keyboard_arrow_down</span>
                 </button>
                 <div className="response" ref={responseRef}>
-                    <p>{children}</p>
+                    {children}
                 </div>
             </div>
         </div>
@@ -71,73 +72,60 @@ function QuestionResponse({ question, children = [] }: QuestionProps) {
 export default function FAQ() {
     return (
         <section className="faq">
+            <div className="extension top" />
             <h2>FAQ</h2>
             <div className="container">
                 <QuestionResponse
-                    question="How much does this cost?"
+                    question="How much does it cost?"
                     children={
                         <p>
-                            It's free! Sign ups are entirely cost-free, and food
-                            / beverages are included!
+                            Everything is free! From food to merch to drinks,
+                            it's all free!
                         </p>
                     }
-                />
-                <QuestionResponse
-                    question="What's our mission?"
-                    children={<p>Mission</p>}
-                />
-                <QuestionResponse
-                    question="I don't know anyone..."
-                    children={
-                        <p>
-                            We HIGHLY recommend teaming up someone. We can help
-                            you find a teammate if you don't know anyone at the
-                            event!
-                        </p>
-                    }
-                />
-                <QuestionResponse
-                    question="How do we decide winners?"
-                    children={<p>Bla bla bla</p>}
                 />
                 <QuestionResponse
                     question="What should I bring?"
                     children={
                         <>
                             <ul>
-                                <li>Sleeping bags / pillows</li>
-                                <li>Cellphone</li>
-                                <li>
-                                    Something to code with (preferrably a
-                                    laptop)
-                                </li>
-                                <li>Extra change of clothes</li>
+                                <li>A laptop</li>
+                                <li>A charger</li>
+                                <li>A sleeping bag</li>
+                                <li>Toiletries</li>
                             </ul>
-                            <p>
-                                ... and anything else you need to pass the
-                                night.
-                            </p>
+                            <p>... and yourself.</p>
                         </>
+                    }
+                />
+                <QuestionResponse
+                    question="How big are the teams?"
+                    children={
+                        <p>
+                            Each team will have up to 3 participants. Teams will
+                            be formed at the event so don't worry if you don't
+                            have a team!
+                        </p>
                     }
                 />
                 <QuestionResponse
                     question="Is this safe?"
                     children={
                         <p>
-                            All participants will be supervised 24/7, and will
-                            not be allowed to leave without special permission.
-                            Bla bla bla.
+                            Yes! This event will be fully supervised at all
+                            times, if you have more concerns or questions check
+                            out our safety guide (tbd) or feel free to reach out
+                            to us!
                         </p>
                     }
                 />
                 <QuestionResponse
-                    question="Can I join as a beginner?"
+                    question="What if I don't know how to code?"
                     children={
                         <p>
-                            Yes! This event is for highschoolers with any level
-                            of experience. There will be mentors circulating, as
-                            well as optional workshops scheduled throughout the
-                            event.
+                            This hackathon is completely beginner friendly,
+                            we'll guide you through every step to make sure you
+                            successfully complete your project!
                         </p>
                     }
                 />
@@ -148,17 +136,17 @@ export default function FAQ() {
                 children={
                     <>
                         <p>
-                            Feel free to reach out to any of our email / social
-                            media accounts. We would love to get in touch with
+                            Feel free to reach out to our email! We would love to get in touch with
                             you!
                         </p>
                         <Line />
                         <div>
-                            <i>(tbd social media buttons here)</i>
+                            <EmailLink />
                         </div>
                     </>
                 }
             />
+            <div className="extension bottom" />
         </section>
     );
 }

@@ -1,15 +1,28 @@
 .faq {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    gap: var(--spacing);
     --speed: 0.5s;
+    background-color: var(--jungle-green);
+    z-index: 20;
+    clip-path: polygon(
+        0 var(--ngrooves),
+        20% calc(var(--ngrooves) / 3),
+        55% calc(var(--ngrooves) / 2),
+        70% calc(var(--ngrooves)/4),
+        100% calc(var(--ngrooves)),
+        100% 100%,
+        0% 100%
+    );
 }
 
 .faq h2 {
-    width: 100%;
     text-align: center;
+    color: var(--high-beige);
 }
 
 .faq .container {
@@ -25,14 +38,16 @@
     gap: 0;
     z-index: 30;
     transform: scale(1);
-    transition: z-index calc(var(--speed) / 2) calc(var(--speed) / 2), transform calc(var(--speed) / 2) ease-in-out;
+    transition: z-index calc(var(--speed) / 2) calc(var(--speed) / 2),
+        transform calc(var(--speed) / 2) ease-in-out;
 }
 
 .faq .question.opened {
     position: relative;
     z-index: 40;
     transform: scale(1.1);
-    transition: z-index calc(var(--speed) / 2) 0s, transform calc(var(--speed) / 2) ease-in-out;
+    transition: z-index calc(var(--speed) / 2) 0s,
+        transform calc(var(--speed) / 2) ease-in-out;
 }
 
 .faq .question .background {
@@ -108,9 +123,31 @@
     transition: opacity calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
 }
 
+.faq .extension {
+    height: 50vh;
+    width: 100%;
+}
+
+.faq .extension.top {
+    position: absolute;
+    top: var(--ngrooves);
+    left: 0;
+    height: var(--grooves);
+    width: 100%;
+    background-color: inherit;
+}
+
+.faq .extension.bottom {
+    background-image: linear-gradient(to bottom, var(--jungle-green) 20%, black);
+}
+
 @media (max-width: 1000px) {
     .faq .container {
         grid-template-columns: 1fr;
+    }
+
+    .faq .question button h3 {
+        font-size: 1.25rem;
     }
 
     .faq .question.opened {

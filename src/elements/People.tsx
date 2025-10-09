@@ -74,11 +74,13 @@ export default function People() {
 
     return (
         <section className="people">
-            <Plack>
+            <div className="extension top" />
+            <div className="container">
                 <h2>Who's involved?</h2>
-                <Line />
-                <div className="container">{peopleElements}</div>
-            </Plack>
+                <Line lineColor="var(--high-beige)" />
+                <div className="people-container">{peopleElements}</div>
+            </div>
+            <div className="extension bottom" />
         </section>
     );
 }

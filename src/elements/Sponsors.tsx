@@ -1,25 +1,36 @@
-import { useEffect, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
 import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
+import EmailLink from "./EmailLink";
+import JungleImage from "/images/JungleBackground.svg";
 
 type SectionProps = {
-    tier: string;
+    size?: string;
     data: SponsorProps[];
 };
 
-function Section({ tier, data }: SectionProps) {
+function Section({ size = "small", data }: SectionProps) {
     // Each tier / section
     return (
         // Inlined img generator
-        <div className="tier">
-            <h3>{tier}</h3>
-            <div className="content" >{data.map((sponsor, i) => (<img key={`${sponsor.name}-${i}`} src={getImagePath(sponsor.icon)} draggable={false} />))}</div>
+        <div className="section">
+            {data.map((sponsor, i) => (
+                <img
+                    className={size}
+                    key={`${sponsor.name}-${i}`}
+                    src={getImagePath(sponsor.icon)}
+                    draggable={false}
+                />
+            ))}
         </div>
-    ); 
+    );
 }
 
-export default function Sponsors() {
+export default function Sponsors({ ...props }: WindowProps) {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [sectionPosition, setSectionPosition] = useState(0);
+
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
             byte: [],
@@ -53,42 +64,81 @@ export default function Sponsors() {
     useEffect(() => {
         // Generate sections for tiers with sponsor logos when data is recieved
         const tempSections: JSX.Element[] = [];
-        Object.entries(sponsorsData.tiers).forEach(([tier, data]) => {
-            if (data.length > 0) {
-                tempSections.push(
-                    <Section key={`${tier}`} tier={tier} data={data} />
-                );
-            }
-        });
+        const { tiers } = sponsorsData;
+
+        if (tiers.kilobyte.length > 0 || tiers.byte.length > 0) {
+            tempSections.push(
+                <Section
+                    size="small"
+                    key={"small" + Math.random()}
+                    data={tiers.kilobyte.concat(tiers.byte)}
+                />
+            );
+        }
+
+        if (tiers.megabyte.length > 0) {
+            tempSections.push(
+                <Section
+                    size="medium"
+                    key={"medium" + Math.random()}
+                    data={tiers.megabyte}
+                />
+            );
+        }
+
+        if (tiers.gigabyte.length > 0) {
+            tempSections.push(
+                <Section
+                    size="big"
+                    key={"big" + Math.random()}
+                    data={tiers.gigabyte}
+                />
+            );
+        }
+
         setSectionElements(tempSections);
     }, [sponsorsData]);
 
-    return (
-        <section className="sponsors">
-            <div className="info">
-                <Plack className="about">
-                    <h2>Sponsors</h2>
-                    <Line />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. For more information, see our{" "}
-                        <u>
-                            <a href="/sponsorship/" target="_blank">sponsorship package</a>
-                        </u>
-                        .
-                    </p>
-                </Plack>
+    useEffect(() => {
+        if (sectionRef.current) {
+            setSectionPosition(sectionRef.current.getBoundingClientRect().top + props.scrollPosition);
+        }
+    }, [sectionRef, props.scrollPosition]);
 
-                <Plack className="contact">
-                    <h2>Contact us!</h2>
+    return (
+        <section ref={sectionRef} className="sponsors">
+            <div className="ceiling"></div>
+            <img
+                className="background"
+                src={JungleImage}
+                style={{
+                    transform: `translateY(${
+                        (props.scrollPosition - sectionPosition) * 0.25
+                    }px)`,
+                }}
+            />
+            <div className="info">
+                <Plack>
+                    <h2>Sponsor Us!</h2>
                     <Line />
+                    <div className="about">
+                        <p>
+                            Wanna help us make this event possible? Feel free to
+                            reach out to us at <EmailLink />.
+                        </p>
+                        <i>
+                            For more information, see our{" "}
+                            <u>
+                                <a href="/sponsorship/" target="_blank">
+                                    sponsorship package
+                                </a>
+                            </u>
+                            .
+                        </i>
+                        <div className="tiers">{sectionElements}</div>
+                    </div>
                 </Plack>
             </div>
-
-            <div className="tiers">{sectionElements}</div>
         </section>
     );
 }
