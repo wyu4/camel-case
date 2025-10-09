@@ -1,0 +1,106 @@
+.sponsors {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing);
+    background-color: var(--fog);
+    gap: var(--spacing);
+    z-index: 20;
+    margin: 0;
+    min-height: 75vh;
+}
+
+.sponsors .ceiling {
+    position: absolute;
+    top: var(--ngrooves);
+    left: 0;
+    right: 0;
+    height: 10%;
+    z-index: 18;
+    /* background-color: inherit; */
+}
+
+.sponsors .ceiling div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.sponsors .info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--spacing);
+    z-index: 20;
+}
+
+.sponsors .info .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--spacing);
+}
+
+.sponsors .tiers {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: var(--radius);
+    border-width: 3px;
+    border-color: var(--high-dark-brown);
+    border-style: dashed;
+    padding: var(--spacing);
+    padding-bottom: 0;
+    z-index: 20;
+}
+
+.sponsors .tiers .section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+.sponsors .tiers img {
+    --normal: 10rem;
+    max-width: var(--normal);
+}
+
+.sponsors .tiers img.big {
+    max-width: calc(var(--normal) * 1.5);
+}
+
+.sponsors .tiers img.medium {
+    max-width: calc(var(--normal) * 1.2);
+}
+
+.sponsors .tiers img.small {
+    max-width: calc(var(--normal) * 0.9);
+}
+
+.sponsors .background {
+    position: absolute;
+    margin: 0;
+    aspect-ratio: 1/1;
+    left: -5%;
+    bottom: -50%;
+    width: 110%;
+}
+
+@media (max-width: 50rem) {
+    .sponsors .tiers img {
+        --normal: 20vw;
+    }
+}

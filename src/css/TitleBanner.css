@@ -1,0 +1,186 @@
+@keyframes text-in-1 {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(30%);
+    }
+}
+
+.dune {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--main-brown);
+    transform: translateY(75%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+    bottom: 0;
+}
+
+.title-banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
+    overflow: hidden;
+    z-index: 21;
+}
+
+.title-banner #title {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+.title-banner #title h1 {
+    font-size: 15vw;
+    padding-bottom: 0.25em;
+}
+
+.title-banner .dunes {
+    position: absolute;
+    aspect-ratio: 10/6;
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 20;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+}
+
+.title-banner .dunes div {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.title-banner .dunes .layer-1 {
+    z-index: 20;
+}
+
+.title-banner .dunes .layer-1 .dune {
+    height: 50%;
+}
+
+.title-banner .dunes .layer-2 {
+    z-index: 19;
+}
+
+.title-banner .dunes .layer-2 .dune {
+    height: 75%;
+    background-color: rgb(235, 184, 118);
+}
+
+.title-banner .dunes .layer-3 {
+    z-index: 18;
+}
+
+.title-banner .dunes .layer-3 .dune {
+    height: 80%;
+    background-color: rgb(219, 174, 116);
+}
+
+.title-banner .dunes .layer-4 {
+    z-index: 17;
+}
+
+.title-banner .dunes .layer-4 .dune {
+    height: 100%;
+    background-color: rgb(231, 191, 139);
+}
+
+.title-banner .sun {
+    --border-color: #f6bd6e;
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 2cm;
+    left: 10%;
+    top: 10%;
+    background-color: #ffb752;
+    border-width: 2mm;
+    border-color: var(--border-color);
+    border-style: solid;
+    box-shadow: 0 0 3mm 1mm var(--border-color);
+    opacity: 0.9;
+    z-index: 8;
+}
+
+.title-banner .tree {
+    aspect-ratio: 1/1;
+    position: absolute;
+}
+
+.title-banner .grass {
+    aspect-ratio: 1/1;
+    position: absolute;
+}
+
+.title-banner .tree.reverse,
+.title-banner .grass.reverse {
+    transform: scaleX(-100%);
+}
+
+.title-banner .sign {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 10%, 60% 0%, 100% 0, 100% 40%, 60% 90%, 5% 100%);
+    transform: scale(0.75) rotateZ(25deg) translateX(50%);
+    background-image: linear-gradient(
+        155deg,
+        var(--high-beige) 0%,
+        var(--high-beige) 55%,
+        var(--main-brown) 100%
+    );
+    z-index: 22;
+}
+
+.title-banner .sign h2 {
+    color: #55492d;
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+.title-banner .sign .material-icons {
+    transform: translateX(-50%) scaleX(1.25) rotateZ(10deg);
+}
+
+.title-banner .burial {
+    position: absolute;
+    background-color: #ffffff;
+    width: 10vw;
+    height: 10vh;
+}
+
+@media (max-width: 800px) {
+    .title-banner {
+        height: 80vh;
+    }
+
+    .title-banner .sign {
+        transform: scale(0.5) rotateZ(25deg) translateX(50%);
+        right: 1%;
+        bottom: 2%;
+    }
+}
+
+@supports (height: 100dvh) {
+    .title-banner {
+        height: 100dvh;
+    }
+}

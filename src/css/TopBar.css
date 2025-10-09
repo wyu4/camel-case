@@ -1,0 +1,30 @@
+.top-bar {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    background: #ffffff00;
+    z-index: 9999;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+    margin: 0;
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.top-bar.visible {
+    opacity: 1;
+}
+
+.top-bar a,.top-bar button {
+    pointer-events: all;
+    font-size: 2em;
+}
+
+.top-bar button:active {
+  opacity: 1 !important;
+  background-color: none;
+}

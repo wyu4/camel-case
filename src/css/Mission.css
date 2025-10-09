@@ -1,0 +1,39 @@
+.mission {
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing);
+    background-color: var(--main-brown);
+    padding: var(--spacing);
+    padding-bottom: calc(var(--grooves) * 2);
+    z-index: 30;
+}
+
+.mission .extension {
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: var(--grooves);
+    bottom: var(--ngrooves);
+    z-index: 30;
+}
+
+.mission .container {
+    max-width: 40rem;
+    z-index: 20;
+    margin-right: 40%;
+}
+
+@media (max-width: 800px) {
+    .mission {
+        flex-direction: column;
+    }
+
+    .mission .container {
+        max-width: 95vw;
+        margin-right: 0%;
+    }
+}

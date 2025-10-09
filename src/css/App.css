@@ -1,16 +1,134 @@
-@import url("./Cababas.css");
-@import url("./PlaceholderErrorPage.css");
+@import url('./TopBar.css');
+@import url('./TitleBanner.css');
+@import url('./Intro.css');
+@import url('./Agenda.css');
+@import url('./Guide.css');
+@import url('./Sponsors.css');
+@import url('./FAQ.css');
+@import url('./Footer.css');
+
+@font-face {
+    font-family: 'lazy-dog';
+    src: url('../fonts/lazy-dog.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'intro-rust';
+    src: url('../fonts/intro-rust.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'etna';
+    src: url('../fonts/etna.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'betm-rounded';
+    src: url('../fonts/betm-rounded-regular.ttf') format('truetype');
+}
 
 :root {
-    overflow: hidden;
+    --fog-temp: #fffcf1;
+    overflow-x: hidden;
+    --main-blue: #cae2d8;
+    --main-green: #287a5c;
+    --main-green-2: #4c8155;
+    --main-brown: #ca9459;
+    --high-brown: #905b41;
+    --high-dark-brown: #4f4d39;
+    --high-beige: #f4e5c9;
+    --high-beige-2: #f8f3e6;
+    --high-grey: #8f8f8f;
+    --sky: #3e95f3;
+    --fog: var(--fog-temp);
+    --jungle-green: #416137;
+    --spacing: 1.5rem;
+    --radius: 0.5rem;
+    --grooves: calc(var(--spacing) * 2);
+    --ngrooves: calc(-1 * var(--grooves));
+    --outline: 3px;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
     margin: 0;
     padding: 0;
-    color-scheme: light dark;
+    line-height: 1;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    background-color: var(--sky);
     margin: 0;
-    padding: 0;
+    overflow-x: clip;
+    overflow-y: hidden;
+    transition: background-color 1s ease-in-out;
 }
+
+h1 {
+    font-family: 'lazy-dog', Arial;
+    font-size: 15rem;
+    color: var(--high-dark-brown);
+}
+
+h2 {
+    font-family: 'intro-rust', Arial;
+    font-size: 3rem;
+    color: var(--high-brown);
+}
+
+h3 {
+    font-family: 'etna', Arial;
+    font-size: 2rem;
+    color: var(--main-green);
+}
+
+p, div, button {
+    font-family: 'betm-rounded', Arial;
+    font-size: 1.75rem;
+    color: var(--high-dark-brown);
+}
+
+a, u {
+    color: var(--high-brown);
+}
+
+.production.container {
+    background: #00000000;
+}
+
+.production.background {
+    background: var(--main-blue);
+}
+
+.rounded {
+    border-radius: var(--radius);
+}
+
+.plack {
+    background: var(--high-beige-2);
+}
+
+.padded {
+    padding: var(--spacing);
+}
+
+.invisible { 
+    opacity: 0;
+}
+
+.transparent { 
+    background: #00000000;
+}
+
+.darkener {
+    background: #00000010;
+}
+
+.square {
+    aspect-ratio: 1/1;
+}
+

@@ -1,0 +1,158 @@
+.agenda {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    background-color: var(--high-beige);
+    clip-path: polygon(
+        0 0,
+        20% var(--grooves),
+        25% calc(var(--grooves) / 1.25),
+        40% calc(var(--grooves) / 3),
+        60% calc(var(--grooves) / 2),
+        70% calc(var(--grooves) / 1.5),
+        80% calc(var(--grooves) / 2),
+        95% calc(var(--grooves) / 3),
+        100% var(--grooves),
+        100% 100%,
+        90% calc(100% - (var(--grooves) / 2)),
+        80% calc(100% - (var(--grooves) / 1.5)),
+        65% calc(100% - (var(--grooves) / 1.75)),
+        50% calc(100% - (var(--grooves))),
+        35% calc(100% - (var(--grooves) / 2)),
+        17% calc(100% - (var(--grooves) / 1.25)),
+        0% calc(100% - (var(--grooves) / 3))
+    );
+    z-index: 40;
+}
+
+.agenda .map-container {
+    width: 100%;
+}
+
+.agenda .info {
+    gap: var(--spacing);
+    padding: var(--spacing);
+    padding-top: var(--grooves);
+    padding-bottom: var(--grooves);
+    width: 50%;
+}
+
+.agenda .schedule {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.agenda .schedule .day {
+    position: relative;
+    gap: var(--spacing);
+    height: 2rem;
+}
+
+.agenda .schedule .day button {
+    font-family: "intro-rust", Arial;
+    font-size: 1.2em;
+    aspect-ratio: 1/1;
+    width: 2rem;
+    border: none;
+    color: var(--high-dark-brown);
+    transition: color 0.25s ease-in-out;
+}
+
+.agenda .schedule .day button:hover {
+    color: var(--high-grey);
+}
+
+.agenda .schedule .day .last {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-5rem) scale(2);
+}
+
+.agenda .schedule .day h3 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.agenda .schedule .day .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(5rem) scale(2);
+}
+
+.agenda .schedule .events-container {
+    overflow-x: hidden;
+}
+
+.agenda .schedule .events {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    transition: transform 0.25s ease-in-out;
+}
+
+.agenda .schedule .events .tab {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex: 0 0 100%;
+}
+
+.agenda .schedule .event {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: calc(var(--spacing) / 3);
+    gap: var(--spacing);
+}
+
+.agenda .schedule .event .time {
+    text-wrap: nowrap;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    .agenda {
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        clip-path: polygon(
+            0% 0%,
+            25% calc(var(--grooves) / 3),
+            45% var(--grooves),
+            75% calc(var(--grooves) / 3),
+            100% calc(var(--grooves) / 1.5),
+            100% 100%,
+            90% calc(100% - var(--grooves)),
+            60% calc(100% - (var(--grooves) / 3)),
+            40% calc(100% - (var(--grooves) / 1.5)),
+            20% 100%,
+            0% calc(100% - var(--grooves))
+        );
+    }
+
+    .agenda .info {
+        width: calc(100% - (2 * var(--spacing)));
+    }
+
+    .agenda .schedule .event p {
+        font-size: 1.5rem;
+    }
+
+    .agenda .map-container {
+        aspect-ratio: 1/1;
+        max-height: 60vh;
+        width: 100%;
+    }
+}
