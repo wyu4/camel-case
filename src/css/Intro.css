@@ -11,15 +11,7 @@
     padding-bottom: calc(var(--grooves) * 2);
     position: relative;
     z-index: 30;
-}
-
-.intro .extension {
-    background-color: inherit;
-    position: absolute;
-    width: 100%;
-    height: var(--grooves);
-    bottom: var(--ngrooves);
-    z-index: 30;
+    margin-bottom: var(--ngrooves);
 }
 
 .intro .container {

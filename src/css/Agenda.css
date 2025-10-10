@@ -25,6 +25,7 @@
         0% calc(100% - (var(--grooves) / 3))
     );
     z-index: 40;
+    margin-bottom: var(--ngrooves);
 }
 
 .agenda .map-container {

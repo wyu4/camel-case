@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type JSX } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
 import { getImagePath, SPONSORS_API } from "../global/APIHelpers";
-import EmailLink from "./EmailLink";
 import JungleImage from "/images/JungleBackground.svg";
+import Contacts from "./Contacts";
 
 type SectionProps = {
     size?: string;
@@ -124,8 +124,9 @@ export default function Sponsors({ ...props }: WindowProps) {
                     <div className="about">
                         <p>
                             Wanna help us make this event possible? Feel free to
-                            reach out to us at <EmailLink />.
+                            reach out to us!
                         </p>
+                        <Contacts />
                         <i>
                             For more information, see our{" "}
                             <u>

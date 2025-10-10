@@ -9,8 +9,8 @@
     background-color: var(--fog);
     gap: var(--spacing);
     z-index: 20;
-    margin: 0;
     min-height: 75vh;
+    margin-bottom: var(--ngrooves);
 }
 
 .sponsors .ceiling {
@@ -96,7 +96,9 @@
     aspect-ratio: 1/1;
     left: -5%;
     bottom: -50%;
-    width: 110%;
+    min-height: 70vh;
+    min-width: 110%;
+    
 }
 
 @media (max-width: 50rem) {
