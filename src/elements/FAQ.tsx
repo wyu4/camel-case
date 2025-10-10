@@ -89,6 +89,7 @@ export default function FAQ() {
 
         return (
             <QuestionResponse
+                key={question}
                 question={question}
                 children={answer}
                 opened={openedIndex === index}
@@ -112,12 +113,17 @@ export default function FAQ() {
                         ),
                     },
                     {
-                        question: "How much does it cost?",
+                        question: "What should I bring?",
                         answer: (
-                            <p>
-                                Everything is free! From food to merch to
-                                drinks, it's all free!
-                            </p>
+                            <>
+                                <ul>
+                                    <li>A laptop</li>
+                                    <li>A charger</li>
+                                    <li>A sleeping bag</li>
+                                    <li>Toiletries</li>
+                                </ul>
+                                <p>... and yourself.</p>
+                            </>
                         ),
                     },
                     {
