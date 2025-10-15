@@ -112,9 +112,9 @@ export default function Sponsors({ ...props }: WindowProps) {
                 className="background"
                 src={JungleImage}
                 style={{
-                    transform: `translateY(${
+                    transform: `translateX(-50%) translateY(calc(${
                         (props.scrollPosition - sectionPosition) * 0.25
-                    }px)`,
+                    }px + 50%))`,
                 }}
             />
             <div className="info">
