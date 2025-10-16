@@ -60,8 +60,7 @@ export default function App() {
                 <Guide />
                 <Sponsors {...windowProps} />
                 <FAQ />
-                {/* <Footer /> */}
-                <section></section>
+                <Footer />
             </div>
         </>
     );

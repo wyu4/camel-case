@@ -4,6 +4,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #000000;
-    z-index: 0;
+    z-index: 20;
+    padding: var(--spacing);
+    padding-top: 30vh;
+    background-image: linear-gradient(
+        to bottom,
+        var(--jungle-green) 0%,
+        #000000 40vh
+    );
+    max-height: 40vh;
+}
+
+.footer p {
+    color: #ffffff;
+}
+
+.footer .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+}
+
+.footer .heart {
+    mask: url("/images/Heart.webp");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: rgb(255, 123, 123);
+    aspect-ratio: 1/1;
+    width: 1.5rem;
 }

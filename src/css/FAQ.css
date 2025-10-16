@@ -8,17 +8,17 @@
     gap: var(--spacing);
     --speed: 0.5s;
     background-color: var(--jungle-green);
-    z-index: 20;
+    z-index: 21;
     clip-path: polygon(
         0 0,
         20% calc(var(--grooves) / 2),
         55% calc(var(--grooves)),
         70% calc(var(--grooves) / 3),
         100% calc(var(--grooves) / 2),
-        100% 100%,
-        0% 100%
+        100% 100vh,
+        0% 100vh
     );
-    padding-top: var(--grooves);
+    padding-top: calc(2 * var(--grooves));
 }
 
 .faq h2 {
@@ -122,16 +122,6 @@
     opacity: 1;
     pointer-events: auto;
     transition: opacity calc(var(--speed) / 2) ease-out calc(var(--speed) / 2);
-}
-
-.faq .extension.bottom {
-    height: 50vh;
-    width: 100%;
-    background-image: linear-gradient(
-        to bottom,
-        var(--jungle-green) 20%,
-        black
-    );
 }
 
 .faq .contacts-div {

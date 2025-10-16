@@ -176,7 +176,6 @@ export default function FAQ() {
                 </>,
                 -1
             )}
-            <div className="extension bottom" />
         </section>
     );
 }
