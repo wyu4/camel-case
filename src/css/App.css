@@ -62,11 +62,10 @@ p {
 
 body {
     width: 100%;
-    background-color: var(--sky);
+    background-color: #000000;
     margin: 0;
     overflow-x: clip;
     overflow-y: hidden;
-    transition: background-color 1s ease-in-out;
 }
 
 h1 {
