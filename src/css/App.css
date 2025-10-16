@@ -62,11 +62,7 @@ p {
 
 body {
     width: 100%;
-    background-image: linear-gradient(
-        to bottom,
-        var(--sky) 100vh,
-        #000000 80%
-    );
+    background-color: #000000;
     margin: 0;
     overflow-x: clip;
     overflow-y: hidden;
