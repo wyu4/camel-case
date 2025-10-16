@@ -65,6 +65,10 @@
     transform: scale(2);
 }
 
+.footer .signature.fiona {
+    transform: translateX(10%);
+}
+
 .footer .signature.umaiza {
-    transform: scale(2);
+    transform: scale(1.5);
 }
