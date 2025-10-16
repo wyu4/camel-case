@@ -1,3 +1,4 @@
+import Contacts from "./Contacts";
 import Alyn from "/images/AlynSignature.webp";
 import Elliott from "/images/ElliottSignature.webp";
 import Erin from "/images/ErinSignature.webp";
@@ -26,13 +27,22 @@ export default function Footer() {
                 <p>by</p>
             </div>
             <div className="signatures">
-               <Signature name="alyn" src={Alyn} />
-               <Signature name="elliott" src={Elliott} />
-               <Signature name="erin" src={Erin} />
-               <Signature name="fiona" src={Fiona} />
-               <Signature name="jocelyn" src={Jocelyn} />
-               <Signature name="umaiza" src={Umaiza} />
-               <Signature name="wilson" src={Wilson} />
+                <Signature name="alyn" src={Alyn} />
+                <Signature name="elliott" src={Elliott} />
+                <Signature name="erin" src={Erin} />
+                <Signature name="fiona" src={Fiona} />
+                <Signature name="jocelyn" src={Jocelyn} />
+                <Signature name="umaiza" src={Umaiza} />
+                <Signature name="wilson" src={Wilson} />
+            </div>
+            <div className="shortlinks contacts">
+                <a href="mailto:camelcasehackathon@gmail.com">email</a>
+                <a href="/sponsorship/" target="_blank">
+                    sponsorship
+                </a>
+                <a href="/signup/" target="_blank">
+                    sign up
+                </a>
             </div>
         </section>
     );

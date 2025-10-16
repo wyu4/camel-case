@@ -12,10 +12,9 @@
         var(--jungle-green) 0%,
         #000000 40vh
     );
-    max-height: 40vh;
 }
 
-.footer p {
+.footer p, .footer a {
     color: #ffffff;
 }
 
@@ -25,7 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 0.25rem;
+    gap: 0.3rem;
 }
 
 .footer .header p {
@@ -38,7 +37,7 @@
     mask-repeat: no-repeat;
     background-color: rgb(255, 123, 123);
     aspect-ratio: 1/1;
-    width: 1.5rem;
+    width: 1.2rem;
 }
 
 .footer .signatures {
@@ -47,7 +46,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: var(--spacing);
+    pointer-events: none;
 }
 
 .footer .signature {
@@ -57,6 +56,17 @@
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: contain;
+    pointer-events: none;
+}
+
+.footer .shortlinks {
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.footer .shortlinks a {
+    text-wrap: nowrap;
+    font-size: 0.75em;
 }
 
 
