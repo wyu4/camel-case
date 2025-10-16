@@ -1,4 +1,3 @@
-import Contacts from "./Contacts";
 import Alyn from "/images/AlynSignature.webp";
 import Elliott from "/images/ElliottSignature.webp";
 import Erin from "/images/ErinSignature.webp";
