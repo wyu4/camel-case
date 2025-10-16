@@ -28,6 +28,10 @@
     gap: 0.25rem;
 }
 
+.footer .header p {
+    text-wrap: nowrap;
+}
+
 .footer .heart {
     mask: url("/images/Heart.webp");
     mask-size: contain;
@@ -35,4 +39,32 @@
     background-color: rgb(255, 123, 123);
     aspect-ratio: 1/1;
     width: 1.5rem;
+}
+
+.footer .signatures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--spacing);
+}
+
+.footer .signature {
+    background-color: #ffffff;
+    width: 7.5rem;
+    height: 5rem;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+
+
+/* Adjusting the sizes of some signatures using CSS cuz I'm lazy - Wilson */
+.footer .signature.erin {
+    transform: scale(2);
+}
+
+.footer .signature.umaiza {
+    transform: scale(2);
 }

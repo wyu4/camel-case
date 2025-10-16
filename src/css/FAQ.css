@@ -15,8 +15,8 @@
         55% calc(var(--grooves)),
         70% calc(var(--grooves) / 3),
         100% calc(var(--grooves) / 2),
-        100% 100vh,
-        0% 100vh
+        100% 1000vh,
+        0% 1000vh
     );
     padding-top: calc(2 * var(--grooves));
 }
