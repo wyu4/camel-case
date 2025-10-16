@@ -14,7 +14,6 @@ export default function Intro() {
                     fun? Find out more below!
                 </p>
             </Plack>
-            <div className="extension" />
         </section>
     );
 }

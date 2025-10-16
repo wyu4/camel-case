@@ -34,7 +34,6 @@ function QuestionResponse({
                 if (entries.length < 1 || !backgroundRef.current) return;
                 const entry = entries[0];
                 setResponseHeight(entry.borderBoxSize?.[0]?.blockSize);
-                console.log(entry.borderBoxSize);
             });
             sizeObserver.observe(responseRef.current);
 
