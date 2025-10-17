@@ -1,10 +1,9 @@
 import { useEffect, useState, type JSX } from "react";
 import Plack from "./Plack";
 import Line from "./Line";
-import { getImagePath } from "../global/APIHelpers";
+import { getImagePath, PEOPLE_API } from "../global/APIHelpers";
 
-const PEOPLE_API =
-    "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/people.json";
+
 
 function Person({
     icon = "media/Incognito.svg", // Default to incognito is there isn't an icon property

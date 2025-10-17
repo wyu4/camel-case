@@ -5,11 +5,7 @@ import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import Line from "./Line";
 import type { LatLngExpression } from "leaflet";
 import L from "leaflet";
-
-const SCHEDULE_API =
-    "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
-const VENU_API =
-    "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/venue.json";
+import { SCHEDULE_API, VENU_API } from "../global/APIHelpers";
 
 function MapViewController({
     zoom,
