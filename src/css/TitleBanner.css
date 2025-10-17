@@ -26,21 +26,51 @@
     z-index: 21;
 }
 
-.title-banner #title {
+.title-banner .title {
     position: absolute;
     bottom: 5%;
+    left: 0%;
+    right: 0%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 1vw;
-    width: 100%;
-    height: 100vh;
     z-index: 10;
 }
 
-.title-banner #title h1 {
+.title-banner .scroll-button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-width: 0;
+    border-color: var(--high-dark-brown);
+    background-color: var(--high-beige-2);
+    transform: translateX(-50%);
+    transition: background-color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    font-size: 0.2vw;
+    color: var(--high-brown);
+    opacity: 0;
+    z-index: 40;
+}
+
+.title-banner .scroll-button.visible {
+    opacity: 1;
+}
+
+.title-banner .scroll-button.visible:hover {
+    background-color: var(--high-beige);
+}
+
+.title-banner .scroll-button.visible:active {
+    opacity: 0.75;
+}
+
+.title-banner .title h1 {
     font-size: 15vw;
     padding-bottom: 0.25em;
 }
@@ -54,6 +84,7 @@
     left: 50%;
     bottom: 0px;
     transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .title-banner .dunes div {
@@ -61,10 +92,12 @@
     bottom: 0px;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 .title-banner .dunes .layer-1 {
     z-index: 20;
+    pointer-events: none;
 }
 
 .title-banner .dunes .layer-1 .dune {
@@ -73,6 +106,7 @@
 
 .title-banner .dunes .layer-2 {
     z-index: 19;
+    pointer-events: none;
 }
 
 .title-banner .dunes .layer-2 .dune {
@@ -82,6 +116,7 @@
 
 .title-banner .dunes .layer-3 {
     z-index: 18;
+    pointer-events: none;
 }
 
 .title-banner .dunes .layer-3 .dune {
@@ -91,6 +126,7 @@
 
 .title-banner .dunes .layer-4 {
     z-index: 17;
+    pointer-events: none;
 }
 
 .title-banner .dunes .layer-4 .dune {
@@ -98,31 +134,16 @@
     background-color: rgb(231, 191, 139);
 }
 
-.title-banner .sun {
-    --border-color: #f6bd6e;
-    position: absolute;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    width: 2cm;
-    left: 10%;
-    top: 10%;
-    background-color: #ffb752;
-    border-width: 2mm;
-    border-color: var(--border-color);
-    border-style: solid;
-    box-shadow: 0 0 3mm 1mm var(--border-color);
-    opacity: 0.9;
-    z-index: 8;
-}
-
 .title-banner .tree {
     aspect-ratio: 1/1;
     position: absolute;
+    pointer-events: none;
 }
 
 .title-banner .grass {
     aspect-ratio: 1/1;
     position: absolute;
+    pointer-events: none;
 }
 
 .title-banner .tree.reverse,
@@ -148,6 +169,7 @@
         var(--main-brown) 100%
     );
     z-index: 22;
+    pointer-events: none;
 }
 
 .title-banner .sign h2 {

@@ -1,10 +1,15 @@
 import type { JSX } from "react";
 import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
+import { SIGNUP_URL } from "../global/APIHelpers";
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
     const headers: JSX.Element[] = [];
+
+    const scroll = () => {
+        console.log("Scroll")
+    };
 
     // Splits the title into seperate header elements
     TITLE.split("").forEach((character, i) => {
@@ -14,13 +19,16 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
     return (
         <section className="title-banner">
             <div
-                id="title"
+                className="title"
                 style={{
                     transform: `translateY(${props.scrollPosition / 5}px)`,
                 }}
             >
                 {headers}
             </div>
+            <button className="scroll-button" onClick={scroll}>
+                <span className="material-icons">arrow_downward</span>
+            </button>
             <div className="dunes">
                 <div
                     className="layer-1"
@@ -149,12 +157,6 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                     OASIS
                 </h2>
             </span>
-            {/* <div
-                className="sun"
-                style={{
-                    transform: `translateX(-50%) translateY(${props.scrollPosition * 0.75}px)`,
-                }}
-            /> */}
         </section>
     );
 }
