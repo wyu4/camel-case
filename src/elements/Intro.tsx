@@ -68,7 +68,9 @@ function Ground() {
     useEffect(() => {
         if (groundRef.current) {
             setGroundY(
-                window.screenY + (window.innerHeight/2) - groundRef.current.getBoundingClientRect().top
+                window.screenY +
+                    window.innerHeight / 2 -
+                    groundRef.current.getBoundingClientRect().top
             );
         }
     }, [window.scrollY, window.innerHeight]);
