@@ -48,6 +48,7 @@
     --grooves: calc(var(--spacing) * 2);
     --ngrooves: calc(-1 * var(--grooves));
     --outline: 3px;
+    --dark-sand: #806039;
     overflow-x: hidden;
 }
 

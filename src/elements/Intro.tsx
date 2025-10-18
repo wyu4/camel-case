@@ -2,42 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
 
-export default function Intro({ viewHeight }: VerticalWindowProps) {
-    const ceilingRef = useRef<HTMLDivElement>(null);
-    const [ceilingY, setCeilingY] = useState(0);
-
-    useEffect(() => {
-        if (ceilingRef.current) {
-            setCeilingY(
-                window.screenY - ceilingRef.current.getBoundingClientRect().top
-            );
-        }
-    }, [window.scrollY]);
-
+export default function Intro() {
     return (
         <section className="intro">
             <div className="extension top" />
-            <div id="intro" className="ceiling" ref={ceilingRef}>
-                <div className="layer l1" />
-                <div
-                    className="layer l2"
-                    style={{
-                        transform: `translateY(calc(${ceilingY * 0.05}px + 5%))`,
-                    }}
-                />
-                <div
-                    className="layer l3"
-                    style={{
-                        transform: `translateY(calc(${ceilingY * 0.075}px + 10%))`,
-                    }}
-                />
-                <div
-                    className="layer l4"
-                    style={{
-                        transform: `translateY(calc(${ceilingY * 0.1}px + 15%))`,
-                    }}
-                />
-            </div>
+            <Ceiling />
             <div className="info">
                 <Plack>
                     <h2>What is this?</h2>
@@ -50,6 +19,104 @@ export default function Intro({ viewHeight }: VerticalWindowProps) {
                     </p>
                 </Plack>
             </div>
+            <Ground />
         </section>
+    );
+}
+
+function Ceiling() {
+    const ceilingRef = useRef<HTMLDivElement>(null);
+    const [ceilingY, setCeilingY] = useState(0);
+
+    useEffect(() => {
+        if (ceilingRef.current) {
+            setCeilingY(
+                window.screenY - ceilingRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY]);
+
+    return (
+        <div id="intro" className="ceiling" ref={ceilingRef}>
+            <div className="layer l1" />
+            <div
+                className="layer l2"
+                style={{
+                    transform: `translateY(calc(${ceilingY * 0.05}px + 5%))`,
+                }}
+            />
+            <div
+                className="layer l3"
+                style={{
+                    transform: `translateY(calc(${ceilingY * 0.075}px + 10%))`,
+                }}
+            />
+            <div
+                className="layer l4"
+                style={{
+                    transform: `translateY(calc(${ceilingY * 0.1}px + 15%))`,
+                }}
+            />
+        </div>
+    );
+}
+
+function Ground() {
+    const groundRef = useRef<HTMLDivElement>(null);
+    const [groundY, setGroundY] = useState(0);
+
+    useEffect(() => {
+        if (groundRef.current) {
+            setGroundY(
+                window.screenY + (window.innerHeight/2) - groundRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY, window.innerHeight]);
+
+    return (
+        <div className="ground" ref={groundRef}>
+            <div className="left">
+                <div className="layer l1" />
+                <div
+                    className="layer l2"
+                    style={{
+                        transform: `translateY(${groundY * 0.01}px)`,
+                    }}
+                />
+                <div
+                    className="layer l3"
+                    style={{
+                        transform: `translateY(${groundY * 0.02}px)`,
+                    }}
+                />
+                <div
+                    className="layer l4"
+                    style={{
+                        transform: `translateY(${groundY * 0.03}px)`,
+                    }}
+                />
+            </div>
+            <div className="right">
+                <div className="layer l1" />
+                <div
+                    className="layer l2"
+                    style={{
+                        transform: `translateY(${groundY * 0.01}px)`,
+                    }}
+                />
+                <div
+                    className="layer l3"
+                    style={{
+                        transform: `translateY(${groundY * 0.02}px)`,
+                    }}
+                />
+                <div
+                    className="layer l4"
+                    style={{
+                        transform: `translateY(${groundY * 0.03}px)`,
+                    }}
+                />
+            </div>
+        </div>
     );
 }
