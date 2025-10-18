@@ -27,10 +27,18 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: -10vh;
+    top: -20vh;
     bottom: 0;
     z-index: 20;
     margin-bottom: var(--ngrooves);
+}
+
+.guide .background .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .guide .background .left {
@@ -41,6 +49,15 @@
     width: 40%;
 }
 
+.guide .background .middle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: calc(30% + var(--grooves) * 2);
+    transform: translateX(-50%);
+}
+
 .guide .background .right {
     position: absolute;
     right: 0;
@@ -49,31 +66,21 @@
     width: 40%;
 }
 
-.guide .background .layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
 .guide .background .layer.l1 {
-    background-color: var(--dark-sand);
     z-index: 30;
 }
 .guide .background .layer.l2 {
-    background-color: var(--dark-sand-2);
     z-index: 28;
 }
 .guide .background .layer.l3 {
-    background-color: var(--dark-sand-3);
     z-index: 26;
 }
 .guide .background .layer.l4 {
-    background-color: var(--dark-sand-4);
     z-index: 24;
 }
 
-.guide .background .left .layer.l1 {
+.guide .background .layer.l1 .left {
+    background-color: var(--dark-sand);
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 1)) 0,
@@ -90,8 +97,9 @@
         0 100%
     );
 }
-.guide .background .left .layer.l2 {
-    right: -1%;
+.guide .background .layer.l2 .left {
+    background-color: var(--dark-sand-2);
+    width: 40.5%;
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 3)) 0,
@@ -107,8 +115,9 @@
         0 100%
     );
 }
-.guide .background .left .layer.l3 {
-    right: -2%;
+.guide .background .layer.l3 .left {
+    background-color: var(--dark-sand-3);
+    width: 41%;
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 1)) 0,
@@ -126,8 +135,9 @@
         0 100%
     );
 }
-.guide .background .left .layer.l4 {
-    right: -3%;
+.guide .background .layer.l4 .left {
+    background-color: var(--dark-sand-4);
+    width: 41.5%;
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 4)) 0,
@@ -147,7 +157,8 @@
     );
 }
 
-.guide .background .right .layer.l1 {
+.guide .background .layer.l1 .right {
+    background-color: var(--dark-sand);
     clip-path: polygon(
         calc(var(--grooves) / 1) 0,
         calc(var(--grooves) / 3) 10%,
@@ -164,8 +175,9 @@
         100% 0
     );
 }
-.guide .background .right .layer.l2 {
-    left: -1%;
+.guide .background .layer.l2 .right {
+    background-color: var(--dark-sand-2);
+    width: 40.5%;
     clip-path: polygon(
         0 0,
         calc(var(--grooves) / 1.1) 5%,
@@ -182,8 +194,9 @@
         100% 0
     );
 }
-.guide .background .right .layer.l3 {
-    left: -2%;
+.guide .background .layer.l3 .right {
+    background-color: var(--dark-sand-3);
+    width: 41%;
     clip-path: polygon(
         0 0,
         calc(var(--grooves) / 2) 7%,
@@ -201,8 +214,9 @@
         100% 0
     );
 }
-.guide .background .right .layer.l4 {
-    left: -3%;
+.guide .background .layer.l4 .right {
+    background-color: var(--dark-sand-4);
+    width: 41.5%;
     clip-path: polygon(
         0 0,
         calc(var(--grooves) / 4) 7%,
@@ -219,6 +233,25 @@
         100% 100%,
         100% 0
     );
+}
+
+.guide .background .prop {
+    position: absolute;
+    width: 100%;
+    height: calc(var(--grooves) * 2);
+}
+
+.guide .background .layer.l1 .prop {
+    background-color: var(--dark-sand);
+}
+.guide .background .layer.l2 .prop {
+    background-color: var(--dark-sand-2);
+}
+.guide .background .layer.l3 .prop {
+    background-color: var(--dark-sand-3);
+}
+.guide .background .layer.l4 .prop {
+    background-color: var(--dark-sand-4);
 }
 
 .guide .content {
@@ -261,11 +294,11 @@
     border-radius: var(--radius);
 }
 
-.guide .content .plack h2{
+.guide .content .plack h2 {
     font-size: 5rem;
 }
 
-.guide .content .plack h3{
+.guide .content .plack h3 {
     font-size: 3rem;
 }
 
