@@ -1,10 +1,10 @@
-import { useEffect, type JSX } from "react";
+import { type JSX } from "react";
 import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollToPlugin) 
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
@@ -13,9 +13,9 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const scroll = () => {
         gsap.to(window, {
             duration: 2,
-            scrollTo: window.innerHeight * 0.8,
-            ease: "Power1.easeInOut"
-        })
+            scrollTo: "#intro",
+            ease: "Power1.easeInOut",
+        });
     };
 
     // Splits the title into seperate header elements
@@ -25,145 +25,163 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
 
     return (
         <section className="title-banner">
-            <div
-                className="title"
-                style={{
-                    transform: `translateY(${props.scrollPosition / 5}px)`,
-                }}
-            >
-                {headers}
-            </div>
-            <button className={"scroll-button " + (props.scrollPosition < props.viewHeight*0.1 ? "visible" : "")} onClick={scroll}>
-                <span className="material-icons">arrow_downward</span>
-            </button>
-            <div className="dunes">
+            <div className="surface">
                 <div
-                    className="layer-1"
+                    className="title"
                     style={{
-                        transform: `translateY(${props.scrollPosition / 25}px)`,
+                        transform: `translateY(${props.scrollPosition / 5}px)`,
                     }}
                 >
-                    <div
-                        className="dune"
-                        style={{
-                            right: "-30%",
-                            width: "90%",
-                        }}
-                    />
-                    <div
-                        className="dune"
-                        style={{
-                            left: "-20%",
-                            width: "90%",
-                            bottom: "-2%",
-                        }}
-                    />
+                    {headers}
                 </div>
-                <div
-                    className="layer-2"
-                    style={{
-                        transform: `translateY(${props.scrollPosition / 20}px)`,
-                    }}
+                <button
+                    className={
+                        "scroll-button " +
+                        (props.scrollPosition < props.viewHeight * 0.1
+                            ? "visible"
+                            : "")
+                    }
+                    onClick={scroll}
                 >
+                    <span className="material-icons">arrow_downward</span>
+                </button>
+                <div className="dunes">
                     <div
-                        className="dune"
+                        className="layer-1"
                         style={{
-                            left: "-30%",
-                            width: "90%",
+                            transform: `translateY(${
+                                props.scrollPosition / 25
+                            }px)`,
                         }}
-                    />
-                    <img
-                        className="tree reverse"
-                        src={PalmTree}
-                        style={{
-                            bottom: "0",
-                            left: "33%",
-                            width: "18%",
-                        }}
-                    />
-                    <img
-                        className="grass"
-                        src={DesertGrass}
-                        style={{
-                            bottom: "7%",
-                            left: "41%",
-                            width: "5%",
-                        }}
-                    />
-                </div>
-                <div
-                    className="layer-3"
-                    style={{
-                        transform: `translateY(${props.scrollPosition / 10}px)`,
-                    }}
-                >
+                    >
+                        <div
+                            className="dune"
+                            style={{
+                                right: "-30%",
+                                width: "90%",
+                            }}
+                        />
+                        <div
+                            className="dune"
+                            style={{
+                                left: "-20%",
+                                width: "90%",
+                                bottom: "-2%",
+                            }}
+                        />
+                    </div>
                     <div
-                        className="dune"
+                        className="layer-2"
                         style={{
-                            left: "0%",
-                            width: "90%",
+                            transform: `translateY(${
+                                props.scrollPosition / 20
+                            }px)`,
                         }}
-                    />
-                    <img
-                        className="grass reverse"
-                        src={DesertGrass}
+                    >
+                        <div
+                            className="dune"
+                            style={{
+                                left: "-30%",
+                                width: "90%",
+                            }}
+                        />
+                        <img
+                            className="tree reverse"
+                            src={PalmTree}
+                            style={{
+                                bottom: "0",
+                                left: "33%",
+                                width: "18%",
+                            }}
+                        />
+                        <img
+                            className="grass"
+                            src={DesertGrass}
+                            style={{
+                                bottom: "7%",
+                                left: "41%",
+                                width: "5%",
+                            }}
+                        />
+                    </div>
+                    <div
+                        className="layer-3"
                         style={{
-                            bottom: "4.5%",
-                            right: "40%",
-                            width: "5%",
+                            transform: `translateY(${
+                                props.scrollPosition / 10
+                            }px)`,
                         }}
-                    />
-                    <img
-                        className="tree reverse"
-                        src={PalmTree}
-                        style={{
-                            bottom: "-2%",
-                            right: "45%",
-                            width: "15%",
-                        }}
-                    />
+                    >
+                        <div
+                            className="dune"
+                            style={{
+                                left: "0%",
+                                width: "90%",
+                            }}
+                        />
+                        <img
+                            className="grass reverse"
+                            src={DesertGrass}
+                            style={{
+                                bottom: "4.5%",
+                                right: "40%",
+                                width: "5%",
+                            }}
+                        />
+                        <img
+                            className="tree reverse"
+                            src={PalmTree}
+                            style={{
+                                bottom: "-2%",
+                                right: "45%",
+                                width: "15%",
+                            }}
+                        />
 
-                    <img
-                        className="tree"
-                        src={PalmTree}
-                        style={{
-                            bottom: "0",
-                            left: "50%",
-                            width: "15%",
-                        }}
-                    />
-                    <img
-                        className="grass"
-                        src={DesertGrass}
-                        style={{
-                            bottom: "4.5%",
-                            right: "43%",
-                            width: "5%",
-                        }}
-                    />
-                </div>
-                <div
-                    className="layer-4"
-                    style={{
-                        transform: `translateY(${props.scrollPosition / 7}px)`,
-                    }}
-                >
+                        <img
+                            className="tree"
+                            src={PalmTree}
+                            style={{
+                                bottom: "0",
+                                left: "50%",
+                                width: "15%",
+                            }}
+                        />
+                        <img
+                            className="grass"
+                            src={DesertGrass}
+                            style={{
+                                bottom: "4.5%",
+                                right: "43%",
+                                width: "5%",
+                            }}
+                        />
+                    </div>
                     <div
-                        className="dune"
+                        className="layer-4"
                         style={{
-                            right: "-40%",
-                            bottom: "-5%",
-                            width: "100%",
+                            transform: `translateY(${
+                                props.scrollPosition / 7
+                            }px)`,
                         }}
-                    />
+                    >
+                        <div
+                            className="dune"
+                            style={{
+                                right: "-40%",
+                                bottom: "-5%",
+                                width: "100%",
+                            }}
+                        />
+                    </div>
                 </div>
+                <span className="sign padded">
+                    <h2>
+                        <span className="material-icons">arrow_back</span>
+                        OASIS
+                    </h2>
+                </span>
             </div>
-            <span className="sign padded">
-                <h2>
-                    <span className="material-icons">arrow_back</span>
-                    OASIS
-                </h2>
-            </span>
         </section>
     );
 }

@@ -55,7 +55,7 @@ export default function App() {
             <div className="production container">
                 {/* <TopBar {...windowProps} /> */}
                 <TitleBanner {...windowProps} />
-                <Intro />
+                <Intro {...windowProps} />
                 <Agenda />
                 <Guide />
                 <Sponsors {...windowProps} />
