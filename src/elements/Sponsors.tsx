@@ -27,7 +27,7 @@ function Section({ size = "small", data }: SectionProps) {
     );
 }
 
-export default function Sponsors({ ...props }: WindowProps) {
+export default function Sponsors() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [sectionPosition, setSectionPosition] = useState(0);
 
@@ -43,6 +43,14 @@ export default function Sponsors({ ...props }: WindowProps) {
     const [sectionElements, setSectionElements] = useState<
         (JSX.Element | null)[]
     >([]);
+
+    useEffect(() => {
+        if (sectionRef.current) {
+            setSectionPosition(
+                window.screenY - sectionRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY]);
 
     useEffect(() => {
         // Get the sponsors data
@@ -99,12 +107,6 @@ export default function Sponsors({ ...props }: WindowProps) {
         setSectionElements(tempSections);
     }, [sponsorsData]);
 
-    useEffect(() => {
-        if (sectionRef.current) {
-            setSectionPosition(sectionRef.current.getBoundingClientRect().top + props.scrollPosition);
-        }
-    }, [sectionRef, props.scrollPosition]);
-
     return (
         <section ref={sectionRef} className="sponsors">
             <div className="ceiling"></div>
@@ -113,7 +115,7 @@ export default function Sponsors({ ...props }: WindowProps) {
                 src={JungleImage}
                 style={{
                     transform: `translateX(-50%) translateY(calc(${
-                        (props.scrollPosition - sectionPosition) * 0.25
+                        sectionPosition * 0.25
                     }px + 50%))`,
                 }}
             />

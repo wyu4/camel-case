@@ -98,6 +98,7 @@
     min-height: 100vh;
     min-width: 110vw;
     object-fit: cover;
+    will-change: transform;
 }
 
 @media (max-width: 50rem) {
