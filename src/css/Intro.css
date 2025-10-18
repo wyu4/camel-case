@@ -6,7 +6,7 @@
     justify-content: center;
     position: relative;
     z-index: 30;
-    background-color: #47351e;
+    background-color: #45341d;
     margin-bottom: var(--ngrooves);
     overflow-y: hidden;
 }
@@ -207,7 +207,6 @@
         11% calc(var(--grooves) / 2),
         21% calc(var(--grooves) / 2.5),
         32% calc(var(--grooves) / 1.5),
-        38% calc(var(--grooves) / 3),
         41% calc(var(--grooves) / 2),
         49% calc(var(--grooves) / 2.5),
         55% calc(var(--grooves) / 1.5),
@@ -247,62 +246,81 @@
 
 .intro .ground .right .layer.l1 {
     clip-path: polygon(
-        0 calc(var(--grooves) / 4),
-        14% calc(var(--grooves) / 5),
-        24% calc(var(--grooves) / 3),
-        34% calc(var(--grooves) / 4.5),
-        44% calc(var(--grooves) / 4),
-        54% calc(var(--grooves) / 5),
-        64% calc(var(--grooves) / 4.5),
-        74% calc(var(--grooves) / 3),
-        84% calc(var(--grooves) / 3),
-        94% calc(var(--grooves) / 3),
-        95% 7%,
-        calc(100% + var(--ngrooves) / 3) 30%,
-        calc(100% + var(--ngrooves) / 2) 65%,
-        calc(100% + var(--ngrooves) / 4) 73%,
-        calc(100% + var(--ngrooves) / 2.5) 87%,
-        100% 100%,
-        0 100%
+        calc(var(--grooves) / 1.5) 100%,
+        calc(var(--grooves) / 2.5) 82%,
+        calc(var(--grooves) / 1.5) 65%,
+        calc(var(--grooves) / 2) 40%,
+        calc(var(--grooves) / 1.5) 24%,
+        10% calc(var(--grooves) / 1.5),
+        25% calc(var(--grooves) / 2),
+        43% calc(var(--grooves) / 2.5),
+        56% calc(var(--grooves) / 1.5),
+        76% calc(var(--grooves) / 1.8),
+        89% calc(var(--grooves) / 1.5),
+        96% calc(var(--grooves) / 2.3),
+        100% calc(var(--grooves) / 2),
+        100% 100%
     );
 }
 .intro .ground .right .layer.l2 {
     left: -1%;
     clip-path: polygon(
-        0 0,
-        10% calc(var(--grooves) / 4),
-        
-        100% 0,
-
-        100% 100%,
-
-        0 100%
+        0 100%,
+        calc(var(--grooves) / 1.5) 82%,
+        calc(var(--grooves) / 2.5) 56%,
+        calc(var(--grooves) / 1.5) 42%,
+        calc(var(--grooves) / 2) 34%,
+        calc(var(--grooves) / 1.5) 15%,
+        21% calc(var(--grooves) / 4),
+        29% calc(var(--grooves) / 2),
+        36% calc(var(--grooves) / 2.5),
+        42% calc(var(--grooves) / 1.5),
+        56% calc(var(--grooves) / 1.8),
+        68% calc(var(--grooves) / 1.5),
+        84% calc(var(--grooves) / 2.3),
+        100% calc(var(--grooves) / 2),
+        100% 100%
     );
 }
 .intro .ground .right .layer.l3 {
     left: -2%;
     clip-path: polygon(
-        0 0,
-        10% calc(var(--grooves) / 4),
-        
-        100% 0,
-
-        100% 100%,
-
-        0 100%
+        0 100%,
+        calc(var(--grooves) / 1.5) 76%,
+        calc(var(--grooves) / 2.5) 60%,
+        calc(var(--grooves) / 1.5) 35%,
+        calc(var(--grooves) / 2) 21%,
+        10% calc(var(--grooves) / 2),
+        20% calc(var(--grooves) / 2.3),
+        32% calc(var(--grooves) / 1.5),
+        47% calc(var(--grooves) / 1.8),
+        55% calc(var(--grooves) / 1.5),
+        68% calc(var(--grooves) / 2.3),
+        78% calc(var(--grooves) / 1.8),
+        84% calc(var(--grooves) / 2.23),
+        91% calc(var(--grooves) / 2.3),
+        100% calc(var(--grooves) / 3),
+        100% 100%
     );
 }
 .intro .ground .right .layer.l4 {
     left: -3%;
     clip-path: polygon(
-        0 0,
-        10% calc(var(--grooves) / 4),
-        
-        100% 0,
-
-        100% 100%,
-
-        0 100%
+        0 100%,
+        calc(var(--grooves) / 1.5) 76%,
+        calc(var(--grooves) / 2.5) 43%,
+        calc(var(--grooves) / 1.5) 36%,
+        calc(var(--grooves) / 2) 20%,
+        15% calc(var(--grooves) / 2),
+        26% calc(var(--grooves) / 4),
+        35% calc(var(--grooves) / 2),
+        46% calc(var(--grooves) / 2.5),
+        59% calc(var(--grooves) / 1.5),
+        70% calc(var(--grooves) / 1.8),
+        84% calc(var(--grooves) / 1.5),
+        90% calc(var(--grooves) / 2.3),
+        100% calc(var(--grooves) / 2),
+        100% 100%
     );
 }
 
@@ -319,14 +337,14 @@
     max-width: 40rem;
     z-index: 20;
     background-image: linear-gradient(
-        to right,
+        to top,
         var(--high-beige-2) 0%,
         var(--high-beige) 100%
     );
 }
 
 @media (max-width: 800px) {
-    .intro .plack {
+    .intro .info {
         max-width: 95vw;
     }
 }
