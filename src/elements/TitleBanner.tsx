@@ -1,14 +1,21 @@
-import type { JSX } from "react";
+import { useEffect, type JSX } from "react";
 import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
-import { SIGNUP_URL } from "../global/APIHelpers";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin) 
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
     const headers: JSX.Element[] = [];
 
     const scroll = () => {
-        console.log("Scroll")
+        gsap.to(window, {
+            duration: 2,
+            scrollTo: window.innerHeight * 0.8,
+            ease: "Power1.easeInOut"
+        })
     };
 
     // Splits the title into seperate header elements
@@ -26,7 +33,7 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
             >
                 {headers}
             </div>
-            <button className="scroll-button" onClick={scroll}>
+            <button className={"scroll-button " + (props.scrollPosition < props.viewHeight*0.1 ? "visible" : "")} onClick={scroll}>
                 <span className="material-icons">arrow_downward</span>
             </button>
             <div className="dunes">
