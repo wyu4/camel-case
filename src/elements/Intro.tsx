@@ -80,19 +80,19 @@ function Ground() {
                 <div
                     className="layer l2"
                     style={{
-                        transform: `translateY(${groundY * 0.01}px)`,
+                        transform: `translateY(${groundY * 0.02}px)`,
                     }}
                 />
                 <div
                     className="layer l3"
                     style={{
-                        transform: `translateY(${groundY * 0.02}px)`,
+                        transform: `translateY(${groundY * 0.04}px)`,
                     }}
                 />
                 <div
                     className="layer l4"
                     style={{
-                        transform: `translateY(${groundY * 0.03}px)`,
+                        transform: `translateY(${groundY * 0.06}px)`,
                     }}
                 />
             </div>
@@ -101,19 +101,19 @@ function Ground() {
                 <div
                     className="layer l2"
                     style={{
-                        transform: `translateY(${groundY * 0.01}px)`,
+                        transform: `translateY(${groundY * 0.02}px)`,
                     }}
                 />
                 <div
                     className="layer l3"
                     style={{
-                        transform: `translateY(${groundY * 0.02}px)`,
+                        transform: `translateY(${groundY * 0.04}px)`,
                     }}
                 />
                 <div
                     className="layer l4"
                     style={{
-                        transform: `translateY(${groundY * 0.03}px)`,
+                        transform: `translateY(${groundY * 0.06}px)`,
                     }}
                 />
             </div>
