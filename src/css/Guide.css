@@ -1,6 +1,6 @@
 .guide {
     position: relative;
-    background-color: var(--high-brown);
+    background-color: #45341d;
     padding: var(--spacing);
     z-index: 30;
     --img-width: 10rem;
@@ -19,10 +19,136 @@
         20% calc(100% - (var(--grooves) / 1.2)),
         0% calc(100% - (var(--grooves) / 4))
     );
+    min-height: 100vh;
     margin-bottom: var(--ngrooves);
 }
 
-.guide .container {
+.guide .background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10vh;
+    bottom: 0;
+    z-index: 20;
+    margin-bottom: var(--ngrooves);
+}
+
+.guide .background .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+.guide .background .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+.guide .background .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.guide .background .layer.l1 {
+    background-color: var(--dark-sand);
+    z-index: 30;
+}
+.guide .background .layer.l2 {
+    background-color: var(--dark-sand-2);
+    z-index: 28;
+}
+.guide .background .layer.l3 {
+    background-color: var(--dark-sand-3);
+    z-index: 26;
+}
+.guide .background .layer.l4 {
+    background-color: var(--dark-sand-4);
+    z-index: 24;
+}
+
+.guide .background .left .layer.l1 {
+    clip-path: polygon(
+        0 0,
+        calc(100% - (var(--grooves) / 1)) 0,
+        calc(100% - (var(--grooves) / 1.5)) 15%,
+        calc(100% - (var(--grooves) / 3)) 26%,
+        calc(100% - (var(--grooves) / 2.3)) 34%,
+        calc(100% - (var(--grooves) / 3)) 45%,
+        calc(100% - (var(--grooves) / 2)) 58%,
+        calc(100% - (var(--grooves) / 2.5)) 62%,
+        calc(100% - (var(--grooves) / 1.75)) 75%,
+        calc(100% - (var(--grooves) / 1.8)) 89%,
+        calc(100% - (var(--grooves) / 1)) 93%,
+        100% 100%,
+        0 100%
+    );
+}
+.guide .background .left .layer.l2 {
+    right: -1%;
+    clip-path: polygon(
+        0 0,
+        calc(100% - (var(--grooves) / 1)) 0,
+        calc(100% - (var(--grooves) / 2)) 10%,
+        calc(100% - (var(--grooves) / 1.5)) 20%,
+        calc(100% - (var(--grooves) / 3)) 32%,
+        calc(100% - (var(--grooves) / 2.3)) 45%,
+        calc(100% - (var(--grooves) / 3)) 52%,
+        calc(100% - (var(--grooves) / 2)) 65%,
+        calc(100% - (var(--grooves) / 2.5)) 78%,
+        calc(100% - (var(--grooves) / 1.75)) 83%,
+        calc(100% - (var(--grooves) / 1.8)) 96%,
+        0 100%
+    );
+}
+.guide .background .left .layer.l3 {
+    right: -2%;
+    clip-path: polygon(
+        0 0,
+        calc(100% - (var(--grooves) / 3)) 0,
+        calc(100% - (var(--grooves) / 1.5)) 5%,
+        calc(100% - (var(--grooves) / 3)) 14%,
+        calc(100% - (var(--grooves) / 2.3)) 27%,
+        calc(100% - (var(--grooves) / 3)) 32%,
+        calc(100% - (var(--grooves) / 2)) 43%,
+        calc(100% - (var(--grooves) / 2.5)) 55%,
+        calc(100% - (var(--grooves) / 1.75)) 63%,
+        calc(100% - (var(--grooves) / 1.8)) 75%,
+        calc(100% - (var(--grooves) / 1)) 87%,
+        calc(100% - (var(--grooves) / 1)) 90%,
+        100% 100%,
+        0 100%
+    );
+}
+.guide .background .left .layer.l4 {
+    right: -3%;
+    clip-path: polygon(
+        0 0,
+        calc(100% - (var(--grooves) / 3)) 0,
+        calc(100% - (var(--grooves) / 2.5)) 7%,
+        calc(100% - (var(--grooves) / 2.7)) 13%,
+        calc(100% - (var(--grooves) / 1.8)) 23%,
+        calc(100% - (var(--grooves) / 3)) 35%,
+        calc(100% - (var(--grooves) / 2.3)) 42%,
+        calc(100% - (var(--grooves) / 3)) 51%,
+        calc(100% - (var(--grooves) / 2)) 69%,
+        calc(100% - (var(--grooves) / 2.5)) 72%,
+        calc(100% - (var(--grooves) / 1.75)) 84%,
+        calc(100% - (var(--grooves) / 1.8)) 92%,
+        calc(100% - (var(--grooves) / 1)) 96%,
+        100% 100%,
+        0 100%
+    );
+}
+
+.guide .content {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -30,9 +156,10 @@
     flex-wrap: wrap;
     padding: var(--spacing);
     gap: calc(var(--spacing) * 3);
+    z-index: 25;
 }
 
-.guide .container div {
+.guide .content div {
     background-color: var(--high-beige);
     display: flex;
     flex-direction: column;

@@ -34,7 +34,7 @@ function Ceiling() {
                 window.screenY - ceilingRef.current.getBoundingClientRect().top
             );
         }
-    }, [window.scrollY]);
+    }, [window.scrollY, ceilingRef]);
 
     return (
         <div id="intro" className="ceiling" ref={ceilingRef}>
@@ -73,7 +73,7 @@ function Ground() {
                     groundRef.current.getBoundingClientRect().top
             );
         }
-    }, [window.scrollY, window.innerHeight]);
+    }, [window.scrollY, window.innerHeight, groundRef]);
 
     return (
         <div className="ground" ref={groundRef}>

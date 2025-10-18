@@ -43,15 +43,15 @@
     z-index: 30;
 }
 .intro .layer.l2 {
-    background-color: #6d512f;
+    background-color: var(--dark-sand-2);
     z-index: 28;
 }
 .intro .layer.l3 {
-    background-color: #60482a;
+    background-color: var(--dark-sand-3);
     z-index: 26;
 }
 .intro .layer.l4 {
-    background-color: #564026;
+    background-color: var(--dark-sand-4);
     z-index: 24;
 }
 
@@ -133,7 +133,7 @@
 .intro .ground {
     position: relative;
     width: 100%;
-    height: calc(20vh + (var(--grooves) * 2));
+    height: calc(40vh + (var(--grooves) * 2));
     margin-top: var(--ngrooves);
     z-index: 20;
 }
