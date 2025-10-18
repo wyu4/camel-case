@@ -337,9 +337,9 @@
     max-width: 40rem;
     z-index: 20;
     background-image: linear-gradient(
-        to top,
-        var(--high-beige-2) 0%,
-        var(--high-beige) 100%
+        to bottom,
+        var(--high-beige),
+        #f5e1bb
     );
 }
 

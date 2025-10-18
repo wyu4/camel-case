@@ -19,7 +19,7 @@
         20% calc(100% - (var(--grooves) / 1.2)),
         0% calc(100% - (var(--grooves) / 4))
     );
-    min-height: 100vh;
+    min-height: 200vh;
     margin-bottom: var(--ngrooves);
 }
 
@@ -77,15 +77,15 @@
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 1)) 0,
-        calc(100% - (var(--grooves) / 1.5)) 15%,
-        calc(100% - (var(--grooves) / 3)) 26%,
-        calc(100% - (var(--grooves) / 2.3)) 34%,
-        calc(100% - (var(--grooves) / 3)) 45%,
-        calc(100% - (var(--grooves) / 2)) 58%,
-        calc(100% - (var(--grooves) / 2.5)) 62%,
-        calc(100% - (var(--grooves) / 1.75)) 75%,
-        calc(100% - (var(--grooves) / 1.8)) 89%,
-        calc(100% - (var(--grooves) / 1)) 93%,
+        calc(100% - (var(--grooves) / 2)) 15%,
+        calc(100% - (var(--grooves) / 1.2)) 26%,
+        calc(100% - (var(--grooves) / 3)) 34%,
+        calc(100% - (var(--grooves) / 2.1)) 45%,
+        calc(100% - (var(--grooves) / 4)) 58%,
+        calc(100% - (var(--grooves) / 2)) 62%,
+        calc(100% - (var(--grooves) / 2.5)) 75%,
+        calc(100% - (var(--grooves) / 1.2)) 89%,
+        calc(100% - (var(--grooves) / 2)) 93%,
         100% 100%,
         0 100%
     );
@@ -94,16 +94,16 @@
     right: -1%;
     clip-path: polygon(
         0 0,
-        calc(100% - (var(--grooves) / 1)) 0,
-        calc(100% - (var(--grooves) / 2)) 10%,
-        calc(100% - (var(--grooves) / 1.5)) 20%,
-        calc(100% - (var(--grooves) / 3)) 32%,
-        calc(100% - (var(--grooves) / 2.3)) 45%,
-        calc(100% - (var(--grooves) / 3)) 52%,
-        calc(100% - (var(--grooves) / 2)) 65%,
-        calc(100% - (var(--grooves) / 2.5)) 78%,
-        calc(100% - (var(--grooves) / 1.75)) 83%,
-        calc(100% - (var(--grooves) / 1.8)) 96%,
+        calc(100% - (var(--grooves) / 3)) 0,
+        calc(100% - (var(--grooves) / 1)) 10%,
+        calc(100% - (var(--grooves) / 2)) 20%,
+        calc(100% - (var(--grooves) / 1.3)) 32%,
+        calc(100% - (var(--grooves) / 3.4)) 45%,
+        calc(100% - (var(--grooves) / 1.2)) 52%,
+        calc(100% - (var(--grooves) / 3)) 65%,
+        calc(100% - (var(--grooves) / 2.1)) 78%,
+        calc(100% - (var(--grooves) / 3.7)) 83%,
+        calc(100% - (var(--grooves) / 1.2)) 96%,
         0 100%
     );
 }
@@ -111,17 +111,17 @@
     right: -2%;
     clip-path: polygon(
         0 0,
-        calc(100% - (var(--grooves) / 3)) 0,
-        calc(100% - (var(--grooves) / 1.5)) 5%,
-        calc(100% - (var(--grooves) / 3)) 14%,
-        calc(100% - (var(--grooves) / 2.3)) 27%,
-        calc(100% - (var(--grooves) / 3)) 32%,
-        calc(100% - (var(--grooves) / 2)) 43%,
-        calc(100% - (var(--grooves) / 2.5)) 55%,
-        calc(100% - (var(--grooves) / 1.75)) 63%,
-        calc(100% - (var(--grooves) / 1.8)) 75%,
-        calc(100% - (var(--grooves) / 1)) 87%,
-        calc(100% - (var(--grooves) / 1)) 90%,
+        calc(100% - (var(--grooves) / 1)) 0,
+        calc(100% - (var(--grooves) / 3)) 5%,
+        calc(100% - (var(--grooves) / 2)) 14%,
+        calc(100% - (var(--grooves) / 4)) 27%,
+        calc(100% - (var(--grooves) / 1)) 32%,
+        calc(100% - (var(--grooves) / 3)) 43%,
+        calc(100% - (var(--grooves) / 1.6)) 55%,
+        calc(100% - (var(--grooves) / 3.2)) 63%,
+        calc(100% - (var(--grooves) / 2)) 75%,
+        calc(100% - (var(--grooves) / 4.3)) 87%,
+        calc(100% - (var(--grooves) / 2.2)) 90%,
         100% 100%,
         0 100%
     );
@@ -130,42 +130,143 @@
     right: -3%;
     clip-path: polygon(
         0 0,
-        calc(100% - (var(--grooves) / 3)) 0,
-        calc(100% - (var(--grooves) / 2.5)) 7%,
-        calc(100% - (var(--grooves) / 2.7)) 13%,
-        calc(100% - (var(--grooves) / 1.8)) 23%,
-        calc(100% - (var(--grooves) / 3)) 35%,
+        calc(100% - (var(--grooves) / 4)) 0,
+        calc(100% - (var(--grooves) / 2)) 7%,
+        calc(100% - (var(--grooves) / 3.5)) 13%,
+        calc(100% - (var(--grooves) / 1)) 23%,
+        calc(100% - (var(--grooves) / 4.2)) 35%,
         calc(100% - (var(--grooves) / 2.3)) 42%,
-        calc(100% - (var(--grooves) / 3)) 51%,
-        calc(100% - (var(--grooves) / 2)) 69%,
-        calc(100% - (var(--grooves) / 2.5)) 72%,
-        calc(100% - (var(--grooves) / 1.75)) 84%,
-        calc(100% - (var(--grooves) / 1.8)) 92%,
-        calc(100% - (var(--grooves) / 1)) 96%,
+        calc(100% - (var(--grooves) / 4)) 51%,
+        calc(100% - (var(--grooves) / 1.2)) 69%,
+        calc(100% - (var(--grooves) / 3)) 72%,
+        calc(100% - (var(--grooves) / 5.2)) 84%,
+        calc(100% - (var(--grooves) / 2)) 92%,
+        calc(100% - (var(--grooves) / 3.2)) 96%,
         100% 100%,
         0 100%
+    );
+}
+
+.guide .background .right .layer.l1 {
+    clip-path: polygon(
+        calc(var(--grooves) / 1) 0,
+        calc(var(--grooves) / 3) 10%,
+        calc(var(--grooves) / 1) 22%,
+        calc(var(--grooves) / 3.2) 30%,
+        calc(var(--grooves) / 1) 42%,
+        calc(var(--grooves) / 3) 50%,
+        calc(var(--grooves) / 1.2) 62%,
+        calc(var(--grooves) / 3.5) 72%,
+        calc(var(--grooves) / 1.1) 85%,
+        calc(var(--grooves) / 3) 93%,
+        0 100%,
+        100% 100%,
+        100% 0
+    );
+}
+.guide .background .right .layer.l2 {
+    left: -1%;
+    clip-path: polygon(
+        0 0,
+        calc(var(--grooves) / 1.1) 5%,
+        calc(var(--grooves) / 2) 23%,
+        calc(var(--grooves) / 1) 34%,
+        calc(var(--grooves) / 3.2) 42%,
+        calc(var(--grooves) / 1.5) 55%,
+        calc(var(--grooves) / 3.5) 65%,
+        calc(var(--grooves) / 1) 72%,
+        calc(var(--grooves) / 3) 89%,
+        calc(var(--grooves) / 1.1) 95%,
+        0 100%,
+        100% 100%,
+        100% 0
+    );
+}
+.guide .background .right .layer.l3 {
+    left: -2%;
+    clip-path: polygon(
+        0 0,
+        calc(var(--grooves) / 2) 7%,
+        calc(var(--grooves) / 4) 17%,
+        calc(var(--grooves) / 1) 24%,
+        calc(var(--grooves) / 3) 36%,
+        calc(var(--grooves) / 1.25) 42%,
+        calc(var(--grooves) / 2.8) 53%,
+        calc(var(--grooves) / 1) 62%,
+        calc(var(--grooves) / 3) 73%,
+        calc(var(--grooves) / 1.5) 85%,
+        calc(var(--grooves) / 3) 96%,
+        0 100%,
+        100% 100%,
+        100% 0
+    );
+}
+.guide .background .right .layer.l4 {
+    left: -3%;
+    clip-path: polygon(
+        0 0,
+        calc(var(--grooves) / 4) 7%,
+        calc(var(--grooves) / 1.5) 17%,
+        calc(var(--grooves) / 3) 24%,
+        calc(var(--grooves) / 1) 36%,
+        calc(var(--grooves) / 4) 42%,
+        calc(var(--grooves) / 1.5) 53%,
+        calc(var(--grooves) / 3.5) 62%,
+        calc(var(--grooves) / 1) 73%,
+        calc(var(--grooves) / 4) 85%,
+        calc(var(--grooves) / 2) 96%,
+        0 100%,
+        100% 100%,
+        100% 0
     );
 }
 
 .guide .content {
     position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: var(--spacing);
-    gap: calc(var(--spacing) * 3);
+    flex-wrap: nowrap;
+    padding: 0;
+    padding-top: 40vh;
+    padding-bottom: 40vh;
+    gap: 50vh;
+    height: 100%;
     z-index: 25;
 }
 
-.guide .content div {
+.guide .content .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing);
+    width: 100%;
+    gap: var(--spacing);
+}
+
+.guide .content .row img {
+    max-width: 10rem;
+}
+
+.guide .content .plack {
     background-color: var(--high-beige);
     display: flex;
     flex-direction: column;
-    padding: var(--spacing);
-    gap: calc(var(--spacing) / 2);
+    flex-wrap: nowrap;
+    padding: calc(var(--spacing) * 2);
+    gap: var(--spacing);
     border-radius: var(--radius);
+}
+
+.guide .content .plack h2{
+    font-size: 5rem;
+}
+
+.guide .content .plack h3{
+    font-size: 3rem;
 }
 
 .guide h2,
