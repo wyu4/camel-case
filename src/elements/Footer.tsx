@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="header">
                 <p>Made with</p>
                 <div className="heart" />
-                <p>by</p>
+                <p>by highschoolers</p>
             </div>
             <div className="signatures">
                 <Signature name="alyn" src={Alyn} />
