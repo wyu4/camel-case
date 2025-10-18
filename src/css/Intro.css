@@ -141,7 +141,7 @@
 }
 
 @media (max-width: 800px) {
-    .intro .container {
+    .intro .plack {
         max-width: 95vw;
     }
 }
