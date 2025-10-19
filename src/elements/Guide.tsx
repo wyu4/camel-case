@@ -5,7 +5,6 @@ import {
     type ComponentPropsWithoutRef,
 } from "react";
 import Plack from "./Plack";
-import Line from "./Line";
 import { SIGNUP_URL } from "../global/APIHelpers";
 import Leaf1 from "/images/Leaf1.webp";
 import Leaf2 from "/images/Leaf2.webp";
@@ -20,7 +19,7 @@ export default function Guide() {
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
-                            <h3>to attend for free!</h3>
+                            <h3>and attend for free!</h3>
                             <a href={SIGNUP_URL} target="_blank">
                                 Register Now
                             </a>

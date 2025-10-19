@@ -47,6 +47,7 @@
     align-items: center;
     gap: 1vw;
     z-index: 10;
+    pointer-events: none;
 }
 
 .title-banner .scroll-button {
@@ -76,6 +77,53 @@
 
 .title-banner .scroll-button.visible:active {
     color: var(--high-dark-brown);
+}
+
+.title-banner .buttons {
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 30;
+}
+
+.title-banner .buttons.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title-banner .buttons button {
+    border-width: 0;
+    border-radius: 100vw;
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: var(--high-beige-2);
+    background-color: var(--jungle-green);
+    padding: calc(var(--spacing) / 2);
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out;
+}
+
+.title-banner .buttons .sponsor {
+    background-color: var(--high-beige-2);
+    color: var(--high-dark-brown);
+}
+
+.title-banner .buttons button:hover {
+    transform: scale(0.95);
+}
+
+.title-banner .buttons button:active {
+    transform: scale(0.9);
 }
 
 .title-banner .title h1 {

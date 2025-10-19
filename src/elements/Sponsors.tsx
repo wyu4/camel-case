@@ -99,7 +99,7 @@ export default function Sponsors() {
     }, [sponsorsData]);
 
     return (
-        <section className="sponsors">
+        <section id="sponsors" className="sponsors">
             <div className="ceiling"></div>
             <img
                 className="background"
