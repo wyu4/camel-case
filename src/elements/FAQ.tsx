@@ -165,7 +165,7 @@ export default function FAQ() {
                 "I still have more questions!",
                 <>
                     <p>
-                        Feel free to reach out to our email! We would love to
+                        Feel free to reach out to us! We would love to
                         get in touch with you!
                     </p>
                     <div className="contacts-div">
