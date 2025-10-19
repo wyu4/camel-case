@@ -19,11 +19,8 @@ export default function Guide() {
                 <div className="row">
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
-                            <div className="header">
-                                <h2>SIGN UP</h2>
-                                <h3>to attend for free!</h3>
-                            </div>
-                            <Line lineColor="var(--high-brown)" />
+                            <h2>SIGN UP</h2>
+                            <h3>to attend for free!</h3>
                             <a href={SIGNUP_URL} target="_blank">
                                 Register Now
                             </a>
@@ -124,6 +121,13 @@ function Background() {
                         style={{
                             top: "10%",
                             transform: "rotateZ(10deg)",
+                        }}
+                    />
+                    <div
+                        className="prop"
+                        style={{
+                            top: "30%",
+                            transform: "rotateZ(2deg)",
                         }}
                     />
                     <div
