@@ -28,8 +28,6 @@ function Section({ size = "small", data }: SectionProps) {
 }
 
 export default function Sponsors() {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const [sectionPosition, setSectionPosition] = useState(0);
 
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
@@ -43,14 +41,6 @@ export default function Sponsors() {
     const [sectionElements, setSectionElements] = useState<
         (JSX.Element | null)[]
     >([]);
-
-    useEffect(() => {
-        if (sectionRef.current) {
-            setSectionPosition(
-                window.screenY - sectionRef.current.getBoundingClientRect().top
-            );
-        }
-    }, [window.scrollY]);
 
     useEffect(() => {
         // Get the sponsors data
@@ -108,16 +98,11 @@ export default function Sponsors() {
     }, [sponsorsData]);
 
     return (
-        <section ref={sectionRef} className="sponsors">
+        <section className="sponsors">
             <div className="ceiling"></div>
             <img
                 className="background"
                 src={JungleImage}
-                style={{
-                    transform: `translateX(-50%) translateY(calc(${
-                        sectionPosition * 0.25
-                    }px + 50%))`,
-                }}
             />
             <div className="info">
                 <Plack>

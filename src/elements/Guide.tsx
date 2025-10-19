@@ -1,7 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import {
+    useEffect,
+    useRef,
+    useState,
+    type ComponentPropsWithoutRef,
+} from "react";
 import Plack from "./Plack";
-import { getImagePath } from "../global/APIHelpers";
 import Line from "./Line";
+import { SIGNUP_URL } from "../global/APIHelpers";
+import Leaf1 from "/images/Leaf1.webp";
+import Leaf2 from "/images/Leaf2.webp";
+import Leaf3 from "/images/Leaf3.webp";
 
 export default function Guide() {
     return (
@@ -9,30 +17,67 @@ export default function Guide() {
             <Background />
             <div className="content">
                 <div className="row">
-                    <Plack style={{ transform: "rotateZ(5deg)" }}>
-                        <div className="header">
-                            <h2>SIGN UP</h2>
-                            <h3> for free!</h3>
-                        </div>
-                        <Line lineColor="var(--high-brown)" />
-                        <button>Sign up form!</button>
-                    </Plack>
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(5deg)" }}>
+                            <div className="header">
+                                <h2>SIGN UP</h2>
+                                <h3>to attend for free!</h3>
+                            </div>
+                            <Line lineColor="var(--high-brown)" />
+                            <a href={SIGNUP_URL} target="_blank">
+                                Register Now
+                            </a>
+                        </Plack>
+                    </div>
                 </div>
                 <div className="row">
-                    <Plack style={{ transform: "rotateZ(-5deg)" }}>
-                        <h2>TEAM UP</h2>
-                        <h3> with other teens!</h3>
-                    </Plack>
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(-5deg)" }}>
+                            <h2>COLLABORATE</h2>
+                            <h3>in teams of three!</h3>
+                        </Plack>
+                    </div>
                 </div>
-
                 <div className="row">
-                    <Plack style={{ transform: "rotateZ(2deg)" }}>
-                        <h2>BUILD</h2>
-                        <h3> something cool!</h3>
-                    </Plack>
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(2deg)" }}>
+                            <h2>MAKE</h2>
+                            <h3>something in 24 hours!</h3>
+                        </Plack>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(-5deg)" }}>
+                            <h2>SHOW OFF</h2>
+                            <h3>for a chance to win a prize!</h3>
+                        </Plack>
+                    </div>
                 </div>
             </div>
         </section>
+    );
+}
+
+function Leaf({
+    version = 1,
+    ...props
+}: { version?: 1 | 2 | 3 } & ComponentPropsWithoutRef<"img">) {
+    return (
+        <img
+            className="leaf"
+            src={(() => {
+                switch (version) {
+                    case 1:
+                        return Leaf1;
+                    case 2:
+                        return Leaf2;
+                    case 3:
+                        return Leaf3;
+                }
+            })()}
+            {...props}
+        />
     );
 }
 

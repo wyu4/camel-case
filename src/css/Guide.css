@@ -23,6 +23,26 @@
     margin-bottom: var(--ngrooves);
 }
 
+.guide a {
+    border-width: 0;
+    border-radius: 100vw;
+    font-size: 2rem;
+    color: var(--high-beige-2);
+    background-color: var(--jungle-green);
+    padding: calc(var(--spacing) / 2);
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out;
+}
+
+.guide a:hover {
+    transform: scale(0.95);
+}
+
+.guide a:active {
+    transform: scale(0.9);
+}
+
 .guide .background {
     position: absolute;
     left: 0;
@@ -254,6 +274,12 @@
     background-color: var(--dark-sand-4);
 }
 
+.guide .leaf {
+    position: absolute;
+    width: 15rem;
+    box-sizing: content-box;
+}
+
 .guide .content {
     position: relative;
     display: flex;
@@ -278,6 +304,7 @@
     padding: var(--spacing);
     width: 100%;
     gap: var(--spacing);
+    overflow-y: visible;
 }
 
 .guide .content .row img {
