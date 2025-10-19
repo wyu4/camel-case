@@ -334,3 +334,13 @@
     text-align: center;
     color: var(--high-brown);
 }
+
+@media (max-width: 45rem) {
+    .guide .content .plack h2 {
+        font-size: 7vw;
+    }
+
+    .guide .content .plack h3 {
+        font-size: 6vw;
+    }
+}
