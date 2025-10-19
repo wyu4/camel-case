@@ -1,4 +1,4 @@
-import { EMAIL_URL, SIGNUP_URL, SPONSORSHIP_URL } from "../global/APIHelpers";
+import { EMAIL_URL, SIGNUP_DISABLED, SIGNUP_URL, SPONSORSHIP_URL } from "../global/APIHelpers";
 import Alyn from "/images/AlynSignature.webp";
 import Elliott from "/images/ElliottSignature.webp";
 import Erin from "/images/ErinSignature.webp";
@@ -40,7 +40,7 @@ export default function Footer() {
                 <a href={SPONSORSHIP_URL} target="_blank">
                     sponsorship
                 </a>
-                <a href={SIGNUP_URL} target="_blank">
+                <a className={SIGNUP_DISABLED ? "disabled" : ""} href={SIGNUP_URL} target="_blank">
                     sign up
                 </a>
             </div>
