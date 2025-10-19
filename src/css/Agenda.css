@@ -25,6 +25,7 @@
         0% calc(100% - (var(--grooves) / 3))
     );
     z-index: 40;
+    min-height: 50vh;
     margin-bottom: var(--ngrooves);
 }
 
@@ -141,6 +142,7 @@
             20% 100%,
             0% calc(100% - var(--grooves))
         );
+        min-height: 0vh;
     }
 
     .agenda .info {

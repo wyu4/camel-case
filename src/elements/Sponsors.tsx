@@ -21,15 +21,14 @@ function Section({ size = "small", data }: SectionProps) {
                     key={`${sponsor.name}-${i}`}
                     src={getImagePath(sponsor.icon)}
                     draggable={false}
+                    alt={sponsor.name}
                 />
             ))}
         </div>
     );
 }
 
-export default function Sponsors({ ...props }: WindowProps) {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const [sectionPosition, setSectionPosition] = useState(0);
+export default function Sponsors() {
 
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
@@ -99,23 +98,12 @@ export default function Sponsors({ ...props }: WindowProps) {
         setSectionElements(tempSections);
     }, [sponsorsData]);
 
-    useEffect(() => {
-        if (sectionRef.current) {
-            setSectionPosition(sectionRef.current.getBoundingClientRect().top + props.scrollPosition);
-        }
-    }, [sectionRef, props.scrollPosition]);
-
     return (
-        <section ref={sectionRef} className="sponsors">
+        <section id="sponsors" className="sponsors">
             <div className="ceiling"></div>
             <img
                 className="background"
                 src={JungleImage}
-                style={{
-                    transform: `translateX(-50%) translateY(calc(${
-                        (props.scrollPosition - sectionPosition) * 0.25
-                    }px + 50%))`,
-                }}
             />
             <div className="info">
                 <Plack>

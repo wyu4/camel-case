@@ -48,6 +48,10 @@
     --grooves: calc(var(--spacing) * 2);
     --ngrooves: calc(-1 * var(--grooves));
     --outline: 3px;
+    --dark-sand: #967145;
+    --dark-sand-2: #6d512f;
+    --dark-sand-3: #60482a;
+    --dark-sand-4: #564026;
     overflow-x: hidden;
 }
 
@@ -132,3 +136,6 @@ a, u {
     aspect-ratio: 1/1;
 }
 
+.relative {
+    position: relative;
+}

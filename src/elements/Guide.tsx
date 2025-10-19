@@ -1,11 +1,195 @@
+import {
+    useEffect,
+    useRef,
+    useState,
+    type ComponentPropsWithoutRef,
+} from "react";
+import Plack from "./Plack";
+import { SIGNUP_URL } from "../global/APIHelpers";
+import Leaf1 from "/images/Leaf1.webp";
+import Leaf2 from "/images/Leaf2.webp";
+import Leaf3 from "/images/Leaf3.webp";
+
 export default function Guide() {
     return (
         <section className="guide">
-            <div className="container">
-                <div style={{transform: "rotateZ(5deg)"}}><h2>SIGN UP</h2><h3> for free!</h3></div>
-                <div style={{transform: "rotateZ(-5deg)"}}><h2>TEAM UP</h2><h3> with other teens!</h3></div>
-                <div style={{transform: "rotateZ(2deg)"}}><h2>BUILD</h2><h3> something cool!</h3></div>
+            <Background />
+            <div className="content">
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(5deg)" }}>
+                            <h2>SIGN UP</h2>
+                            <h3>and attend for free!</h3>
+                            <a href={SIGNUP_URL} target="_blank">
+                                Register Now
+                            </a>
+                        </Plack>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(-5deg)" }}>
+                            <h2>COLLABORATE</h2>
+                            <h3>in teams of three!</h3>
+                        </Plack>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(2deg)" }}>
+                            <h2>MAKE</h2>
+                            <h3>something in 24 hours!</h3>
+                        </Plack>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(-5deg)" }}>
+                            <h2>SHOW OFF</h2>
+                            <h3>for a chance to win a prize!</h3>
+                        </Plack>
+                    </div>
+                </div>
             </div>
         </section>
+    );
+}
+
+function Leaf({
+    version = 1,
+    ...props
+}: { version?: 1 | 2 | 3 } & ComponentPropsWithoutRef<"img">) {
+    return (
+        <img
+            className="leaf"
+            src={(() => {
+                switch (version) {
+                    case 1:
+                        return Leaf1;
+                    case 2:
+                        return Leaf2;
+                    case 3:
+                        return Leaf3;
+                }
+            })()}
+            {...props}
+        />
+    );
+}
+
+function Background() {
+    const parallax1 = 0;
+    const parallax2 = 1 / 8;
+    const parallax3 = 1 / 7;
+    const parallax4 = 1 / 6;
+
+    const backgroundRef = useRef<HTMLDivElement>(null);
+    const [sectionY, setSectionY] = useState(0);
+
+    useEffect(() => {
+        if (backgroundRef.current) {
+            setSectionY(
+                window.screenY +
+                    window.innerHeight / 2 -
+                    backgroundRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY, window.innerHeight, backgroundRef]);
+
+    return (
+        <div className="background" ref={backgroundRef}>
+            <div
+                className="layer l1"
+                style={{
+                    transform: `translateY(${sectionY * parallax1}px)`,
+                }}
+            >
+                <div className="middle" />
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l2"
+                style={{
+                    transform: `translateY(${sectionY * parallax2}px)`,
+                }}
+            >
+                <div className="middle">
+                    <div
+                        className="prop"
+                        style={{
+                            top: "10%",
+                            transform: "rotateZ(10deg)",
+                        }}
+                    />
+                    <div
+                        className="prop"
+                        style={{
+                            top: "30%",
+                            transform: "rotateZ(2deg)",
+                        }}
+                    />
+                    <div
+                        className="prop"
+                        style={{
+                            top: "70%",
+                            transform: "rotateZ(-5deg)",
+                        }}
+                    />
+                </div>
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l3"
+                style={{
+                    transform: `translateY(${sectionY * parallax3}px)`,
+                }}
+            >
+                <div className="middle">
+                    <div
+                        className="prop"
+                        style={{
+                            top: "20%",
+                            transform: "rotateZ(5deg)",
+                        }}
+                    />
+                    <div
+                        className="prop"
+                        style={{
+                            top: "50%",
+                            transform: "rotateZ(-3deg)",
+                        }}
+                    />
+                </div>
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l4"
+                style={{
+                    transform: `translateY(${sectionY * parallax4}px)`,
+                }}
+            >
+                <div className="middle">
+                    <div
+                        className="prop"
+                        style={{
+                            top: "40%",
+                            transform: "rotateZ(-6deg)",
+                        }}
+                    />
+                    <div
+                        className="prop"
+                        style={{
+                            top: "80%",
+                            transform: "rotateZ(5deg)",
+                        }}
+                    />
+                </div>
+                <div className="left" />
+                <div className="right" />
+            </div>
+        </div>
     );
 }

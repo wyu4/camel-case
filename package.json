@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "leaflet": "^1.9.4",
     "material-icons": "^1.13.14",
     "material-symbols": "^0.36.4",

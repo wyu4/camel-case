@@ -11,6 +11,14 @@ export const VENU_API =
 export const PEOPLE_API =
     "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/people.json";
 
+export const SPONSORSHIP_URL = "/sponsorship/"
+
+export const SIGNUP_URL = "/signup/";
+
+export const EMAIL_URL = "mailto:camelcasehackathon@gmail.com";
+
+export const GMAIL_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=camelcasehackathon@gmail.com&su=Subject";
+
 export function getImagePath(path: string) {
     return path.startsWith("media/") ? IMAGE_API + path : path;
 }

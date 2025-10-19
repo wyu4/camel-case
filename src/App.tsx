@@ -58,7 +58,7 @@ export default function App() {
                 <Intro />
                 <Agenda />
                 <Guide />
-                <Sponsors {...windowProps} />
+                <Sponsors />
                 <FAQ />
                 <Footer />
             </div>

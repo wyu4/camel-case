@@ -1,3 +1,4 @@
+import { EMAIL_URL, SIGNUP_URL, SPONSORSHIP_URL } from "../global/APIHelpers";
 import Alyn from "/images/AlynSignature.webp";
 import Elliott from "/images/ElliottSignature.webp";
 import Erin from "/images/ErinSignature.webp";
@@ -23,7 +24,7 @@ export default function Footer() {
             <div className="header">
                 <p>Made with</p>
                 <div className="heart" />
-                <p>by</p>
+                <p>by highschoolers</p>
             </div>
             <div className="signatures">
                 <Signature name="alyn" src={Alyn} />
@@ -35,11 +36,11 @@ export default function Footer() {
                 <Signature name="wilson" src={Wilson} />
             </div>
             <div className="shortlinks contacts">
-                <a href="mailto:camelcasehackathon@gmail.com">email</a>
-                <a href="/sponsorship/" target="_blank">
+                <a href={EMAIL_URL}>email</a>
+                <a href={SPONSORSHIP_URL} target="_blank">
                     sponsorship
                 </a>
-                <a href="/signup/" target="_blank">
+                <a href={SIGNUP_URL} target="_blank">
                     sign up
                 </a>
             </div>

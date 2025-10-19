@@ -1,10 +1,37 @@
-import type { JSX } from "react";
+import { type JSX } from "react";
 import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { SIGNUP_URL } from "../global/APIHelpers";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
     const TITLE = "CAMELCASE"; // Set this to whatever the name is
     const headers: JSX.Element[] = [];
+
+    const buttonVisibilityRange = 0.1;
+
+    const scroll = () => {
+        gsap.to(window, {
+            duration: 2,
+            scrollTo: "#intro",
+            ease: "Power1.easeInOut",
+        });
+    };
+
+    const signup = () => {
+        window.open(SIGNUP_URL, "_blank")?.focus();
+    };
+
+    const sponsor = () => {
+        gsap.to(window, {
+            duration: 5,
+            scrollTo: "#sponsors",
+            ease: "Power1.easeInOut",
+        });
+    };
 
     // Splits the title into seperate header elements
     TITLE.split("").forEach((character, i) => {
@@ -13,14 +40,52 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
 
     return (
         <section className="title-banner">
-            <div
-                id="title"
-                style={{
-                    transform: `translateY(${props.scrollPosition / 5}px)`,
-                }}
-            >
-                {headers}
+            <div className="surface">
+                <div
+                    className="title"
+                    style={{
+                        transform: `translateY(${props.scrollPosition / 5}px)`,
+                    }}
+                >
+                    {headers}
+                </div>
+                <div
+                    className={
+                        "buttons " +
+                        (props.scrollPosition <
+                        props.viewHeight * buttonVisibilityRange
+                            ? "visible"
+                            : "")
+                    }
+                >
+                    <button className="signup" onClick={signup}>
+                        Sign Up
+                    </button>
+                    <button className="sponsor " onClick={sponsor}>
+                        Sponsor Us
+                    </button>
+                </div>
+                <button
+                    className={
+                        "scroll-button " +
+                        (props.scrollPosition <
+                        props.viewHeight * buttonVisibilityRange
+                            ? "visible"
+                            : "")
+                    }
+                    onClick={scroll}
+                >
+                    <span className="material-icons">arrow_downward</span>
+                </button>
+                <Decor {...props} />
             </div>
+        </section>
+    );
+}
+
+function Decor({ ...props }: VerticalWindowProps) {
+    return (
+        <>
             <div className="dunes">
                 <div
                     className="layer-1"
@@ -149,12 +214,6 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                     OASIS
                 </h2>
             </span>
-            {/* <div
-                className="sun"
-                style={{
-                    transform: `translateX(-50%) translateY(${props.scrollPosition * 0.75}px)`,
-                }}
-            /> */}
-        </section>
+        </>
     );
 }
