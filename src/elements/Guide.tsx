@@ -5,7 +5,7 @@ import {
     type ComponentPropsWithoutRef,
 } from "react";
 import Plack from "./Plack";
-import { SIGNUP_URL } from "../global/APIHelpers";
+import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
 import Leaf1 from "/images/Leaf1.webp";
 import Leaf2 from "/images/Leaf2.webp";
 import Leaf3 from "/images/Leaf3.webp";
@@ -20,7 +20,7 @@ export default function Guide() {
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
                             <h3>and attend for free!</h3>
-                            <a href={SIGNUP_URL} target="_blank">
+                            <a className={SIGNUP_DISABLED ? "disabled" : ""} href={SIGNUP_DISABLED ? "" : SIGNUP_URL} target="_blank">
                                 Register Now
                             </a>
                         </Plack>
@@ -45,7 +45,7 @@ export default function Guide() {
                 <div className="row">
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
-                            <h2>SHOW OFF</h2>
+                            <h2>SUBMIT IT</h2>
                             <h3>for a chance to win a prize!</h3>
                         </Plack>
                     </div>

@@ -24,11 +24,11 @@ export default defineConfig({
                     "sponsorship",
                     "index.html"
                 ),
-                signup: resolve(
-                    root,
-                    "signup",
-                    "index.html"
-                ),
+                // signup: resolve(
+                //     root,
+                //     "signup",
+                //     "index.html"
+                // ),
             },
         },
     },

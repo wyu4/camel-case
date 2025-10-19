@@ -3,7 +3,7 @@ import PalmTree from "/images/PalmTree.svg";
 import DesertGrass from "/images/DesertGrass.svg";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { SIGNUP_URL } from "../global/APIHelpers";
+import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -22,7 +22,9 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
     };
 
     const signup = () => {
-        window.open(SIGNUP_URL, "_blank")?.focus();
+        if (!SIGNUP_DISABLED) {
+            window.open(SIGNUP_URL, "_blank")?.focus();
+        }
     };
 
     const sponsor = () => {
@@ -58,7 +60,12 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                             : "")
                     }
                 >
-                    <button className="signup" onClick={signup}>
+                    <button
+                        className={
+                            "signup " + (SIGNUP_DISABLED ? "disabled" : "")
+                        }
+                        onClick={signup}
+                    >
                         Sign Up
                     </button>
                     <button className="sponsor " onClick={sponsor}>

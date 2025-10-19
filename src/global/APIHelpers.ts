@@ -13,6 +13,8 @@ export const PEOPLE_API =
 
 export const SPONSORSHIP_URL = "/sponsorship/"
 
+export const SIGNUP_DISABLED = true;
+
 export const SIGNUP_URL = "/signup/";
 
 export const EMAIL_URL = "mailto:camelcasehackathon@gmail.com";
