@@ -21,6 +21,7 @@ function Section({ size = "small", data }: SectionProps) {
                     key={`${sponsor.name}-${i}`}
                     src={getImagePath(sponsor.icon)}
                     draggable={false}
+                    alt={sponsor.name}
                 />
             ))}
         </div>
