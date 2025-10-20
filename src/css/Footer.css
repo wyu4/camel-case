@@ -51,8 +51,8 @@
 
 .footer .signature {
     background-color: #ffffff;
+    aspect-ratio: 1/1;
     width: 7.5rem;
-    height: 5rem;
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -67,18 +67,4 @@
 .footer .shortlinks a {
     text-wrap: nowrap;
     font-size: 0.75em;
-}
-
-
-/* Adjusting the sizes of some signatures using CSS cuz I'm lazy - Wilson */
-.footer .signature.erin {
-    transform: scale(2);
-}
-
-.footer .signature.fiona {
-    transform: translateX(10%);
-}
-
-.footer .signature.umaiza {
-    transform: scale(1.5);
 }
