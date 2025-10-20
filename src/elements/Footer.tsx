@@ -1,5 +1,7 @@
 import { EMAIL_URL, SIGNUP_DISABLED, SIGNUP_URL, SPONSORSHIP_URL } from "../global/APIHelpers";
 import Alyn from "/images/AlynSignature.webp";
+import Advita from "/images/AdvitaSignature.webp";
+import Claire from "/images/ClaireSignature.webp";
 import Elliott from "/images/ElliottSignature.webp";
 import Erin from "/images/ErinSignature.webp";
 import Fiona from "/images/FionaSignature.webp";
@@ -28,6 +30,8 @@ export default function Footer() {
             </div>
             <div className="signatures">
                 <Signature name="alyn" src={Alyn} />
+                <Signature name="advita" src={Advita} />
+                <Signature name="claire" src={Claire} />
                 <Signature name="elliott" src={Elliott} />
                 <Signature name="erin" src={Erin} />
                 <Signature name="fiona" src={Fiona} />
