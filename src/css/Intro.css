@@ -39,20 +39,36 @@
     height: 100%;
 }
 .intro .layer.l1 {
-    background-color: var(--dark-sand);
     z-index: 30;
 }
 .intro .layer.l2 {
-    background-color: var(--dark-sand-2);
     z-index: 28;
 }
 .intro .layer.l3 {
-    background-color: var(--dark-sand-3);
     z-index: 26;
 }
 .intro .layer.l4 {
-    background-color: var(--dark-sand-4);
     z-index: 24;
+}
+.intro .ceiling .layer.l1,
+.intro .layer.l1 .left,
+.intro .layer.l1 .right {
+    background-color: var(--dark-sand);
+}
+.intro .ceiling .layer.l2,
+.intro .layer.l2 .left,
+.intro .layer.l2 .right {
+    background-color: var(--dark-sand-2);
+}
+.intro .ceiling .layer.l3,
+.intro .layer.l3 .left,
+.intro .layer.l3 .right {
+    background-color: var(--dark-sand-3);
+}
+.intro .ceiling .layer.l4,
+.intro .layer.l4 .left,
+.intro .layer.l4 .right {
+    background-color: var(--dark-sand-4);
 }
 
 .intro .ceiling .layer.l1 {
@@ -138,6 +154,14 @@
     z-index: 20;
 }
 
+.intro .ground .layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .intro .ground .left {
     position: absolute;
     left: 0;
@@ -154,7 +178,7 @@
     width: 40%;
 }
 
-.intro .ground .left .layer.l1 {
+.intro .ground .layer.l1 .left {
     clip-path: polygon(
         0 0,
         10% calc(var(--grooves) / 2),
@@ -176,8 +200,8 @@
         0 100%
     );
 }
-.intro .ground .left .layer.l2 {
-    right: -1%;
+.intro .ground .layer.l2 .left {
+    width: 40.5%;
     clip-path: polygon(
         0 0,
         5% calc(var(--grooves) / 2),
@@ -200,8 +224,8 @@
         0 100%
     );
 }
-.intro .ground .left .layer.l3 {
-    right: -2%;
+.intro .ground .layer.l3 .left {
+    width: 41%;
     clip-path: polygon(
         0 calc(var(--grooves) / 5),
         11% calc(var(--grooves) / 2),
@@ -222,8 +246,8 @@
         0 100%
     );
 }
-.intro .ground .left .layer.l4 {
-    right: -3%;
+.intro .ground .layer.l4 .left {
+    width: 41.5%;
     clip-path: polygon(
         0 calc(var(--grooves) / 2),
         14% calc(var(--grooves) / 2.5),
@@ -244,7 +268,7 @@
     );
 }
 
-.intro .ground .right .layer.l1 {
+.intro .ground .layer.l1 .right {
     clip-path: polygon(
         calc(var(--grooves) / 1.5) 100%,
         calc(var(--grooves) / 2.5) 82%,
@@ -262,8 +286,8 @@
         100% 100%
     );
 }
-.intro .ground .right .layer.l2 {
-    left: -1%;
+.intro .ground .layer.l2 .right {
+    width: 40.5%;
     clip-path: polygon(
         0 100%,
         calc(var(--grooves) / 1.5) 82%,
@@ -282,8 +306,8 @@
         100% 100%
     );
 }
-.intro .ground .right .layer.l3 {
-    left: -2%;
+.intro .ground .layer.l3 .right {
+    width: 41%;
     clip-path: polygon(
         0 100%,
         calc(var(--grooves) / 1.5) 76%,
@@ -303,8 +327,8 @@
         100% 100%
     );
 }
-.intro .ground .right .layer.l4 {
-    left: -3%;
+.intro .ground .layer.l4 .right {
+    width: 41.5%;
     clip-path: polygon(
         0 100%,
         calc(var(--grooves) / 1.5) 76%,
@@ -331,16 +355,19 @@
     justify-content: center;
     padding-top: 10vh;
     padding-bottom: calc(9vh + (var(--grooves) * 2));
+    gap: var(--spacing);
 }
 
 .intro .plack {
     max-width: 40rem;
     z-index: 20;
-    background-image: linear-gradient(
-        to bottom,
-        var(--high-beige),
-        #f5e1bb
-    );
+    background-image: linear-gradient(to bottom, var(--high-beige), #f5e1bb);
+}
+
+.intro img {
+    position: absolute;
+    max-width: 35rem;
+    z-index: inherit;
 }
 
 @media (max-width: 800px) {

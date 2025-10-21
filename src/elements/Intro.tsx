@@ -77,47 +77,36 @@ function Ground() {
 
     return (
         <div className="ground" ref={groundRef}>
-            <div className="left">
-                <div className="layer l1" />
-                <div
-                    className="layer l2"
-                    style={{
-                        transform: `translateY(${groundY * 0.02}px)`,
-                    }}
-                />
-                <div
-                    className="layer l3"
-                    style={{
-                        transform: `translateY(${groundY * 0.04}px)`,
-                    }}
-                />
-                <div
-                    className="layer l4"
-                    style={{
-                        transform: `translateY(${groundY * 0.06}px)`,
-                    }}
-                />
+            <div className="layer l1">
+                <div className="left" />
+                <div className="right" />
             </div>
-            <div className="right">
-                <div className="layer l1" />
-                <div
-                    className="layer l2"
-                    style={{
-                        transform: `translateY(${groundY * 0.02}px)`,
-                    }}
-                />
-                <div
-                    className="layer l3"
-                    style={{
-                        transform: `translateY(${groundY * 0.04}px)`,
-                    }}
-                />
-                <div
-                    className="layer l4"
-                    style={{
-                        transform: `translateY(${groundY * 0.06}px)`,
-                    }}
-                />
+            <div
+                className="layer l2"
+                style={{
+                    transform: `translateY(${groundY * 0.02}px)`,
+                }}
+            >
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l3"
+                style={{
+                    transform: `translateY(${groundY * 0.04}px)`,
+                }}
+            >
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l4"
+                style={{
+                    transform: `translateY(${groundY * 0.06}px)`,
+                }}
+            >
+                <div className="left" />
+                <div className="right" />
             </div>
         </div>
     );
