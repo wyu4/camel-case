@@ -165,8 +165,8 @@ export default function FAQ() {
                 "I still have more questions!",
                 <>
                     <p>
-                        Feel free to reach out to us! We would love to
-                        get in touch with you!
+                        Feel free to reach out to us! We would love to get in
+                        touch with you!
                     </p>
                     <div className="contacts-div">
                         <Line width="15rem" />
