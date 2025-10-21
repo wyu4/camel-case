@@ -360,13 +360,13 @@
 
 .intro .plack {
     max-width: 40rem;
-    z-index: 20;
+    z-index: 40;
     background-image: linear-gradient(to bottom, var(--high-beige), #f5e1bb);
 }
 
 .intro img {
     position: absolute;
-    max-width: 35rem;
+    max-width: clamp(10rem, 20%, 25rem);
     z-index: inherit;
 }
 

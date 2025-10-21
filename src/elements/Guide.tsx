@@ -9,6 +9,7 @@ import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
 import Leaf1 from "/images/Leaf1.webp";
 import Leaf2 from "/images/Leaf2.webp";
 import Leaf3 from "/images/Leaf3.webp";
+import TeamPhoto from "/images/photos/DSC_1005.webp";
 
 export default function Guide() {
     return (
@@ -20,7 +21,11 @@ export default function Guide() {
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
                             <h3>and attend for free!</h3>
-                            <a className={SIGNUP_DISABLED ? "disabled" : ""} href={SIGNUP_DISABLED ? "" : SIGNUP_URL} target="_blank">
+                            <a
+                                className={SIGNUP_DISABLED ? "disabled" : ""}
+                                href={SIGNUP_DISABLED ? "" : SIGNUP_URL}
+                                target="_blank"
+                            >
                                 Register Now
                             </a>
                         </Plack>
@@ -31,6 +36,17 @@ export default function Guide() {
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
                             <h2>COLLABORATE</h2>
                             <h3>in teams of three!</h3>
+                        </Plack>
+                    </div>
+                    <img className="rounded" src={TeamPhoto} style={{
+                        transform: "rotateZ(4deg)"
+                    }} />
+                </div>
+                <div className="row">
+                    <div className="relative">
+                        <Plack style={{ transform: "rotateZ(2deg)" }}>
+                            <h2>ATTEND</h2>
+                            <h3>workshops and activities</h3>
                         </Plack>
                     </div>
                 </div>

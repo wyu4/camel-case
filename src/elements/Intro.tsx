@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Line from "./Line";
 import Plack from "./Plack";
+import Photo1 from "/images/photos/Batch1Photos-3134.webp";
+import Photo2 from "/images/photos/DSC_1185.webp";
 
 export default function Intro() {
     return (
@@ -87,6 +89,15 @@ function Ground() {
                     transform: `translateY(${groundY * 0.02}px)`,
                 }}
             >
+                <img
+                    className="rounded"
+                    src={Photo2}
+                    style={{
+                        right: "5%",
+                        bottom: "90%",
+                        transform: "rotateZ(2deg)",
+                    }}
+                />
                 <div className="left" />
                 <div className="right" />
             </div>
@@ -105,6 +116,16 @@ function Ground() {
                     transform: `translateY(${groundY * 0.06}px)`,
                 }}
             >
+                <img
+                    className="rounded"
+                    src={Photo1}
+                    style={{
+                        left: "5%",
+                        bottom: "85%",
+                        transform: "rotateZ(-5deg)",
+                    }}
+                />
+
                 <div className="left" />
                 <div className="right" />
             </div>
