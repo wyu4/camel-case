@@ -112,8 +112,8 @@ function Ground() {
                     src={Photo1}
                     style={{
                         left: "5%",
-                        bottom: "85%",
-                        transform: "rotateZ(-5deg)",
+                        bottom: "90%",
+                        transform: "rotateZ(-5deg)"
                     }}
                 />
                 <div className="left" />

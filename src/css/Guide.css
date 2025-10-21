@@ -307,6 +307,12 @@
     overflow-y: visible;
 }
 
+.guide .content .row.signup {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 0;
+}
+
 .guide .content .row img {
     max-width: clamp(15rem, 20vw, 25rem);
 }
