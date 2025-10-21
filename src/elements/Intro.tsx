@@ -107,15 +107,6 @@ function Ground() {
                     transform: `translateY(${groundY * 0.04}px)`,
                 }}
             >
-                <div className="left" />
-                <div className="right" />
-            </div>
-            <div
-                className="layer l4"
-                style={{
-                    transform: `translateY(${groundY * 0.06}px)`,
-                }}
-            >
                 <img
                     className="rounded"
                     src={Photo1}
@@ -125,7 +116,15 @@ function Ground() {
                         transform: "rotateZ(-5deg)",
                     }}
                 />
-
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div
+                className="layer l4"
+                style={{
+                    transform: `translateY(${groundY * 0.06}px)`,
+                }}
+            >
                 <div className="left" />
                 <div className="right" />
             </div>
