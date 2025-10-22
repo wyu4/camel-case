@@ -105,7 +105,7 @@ export default function Guide() {
                             className="rounded"
                             src={MakePhoto2}
                             style={{
-                                transform: "rotateZ(3deg)",
+                                transform: "rotateZ(3deg) translateX(var(--spacing))",
                             }}
                         />
                     </div>
