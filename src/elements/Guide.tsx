@@ -32,6 +32,24 @@ export default function Guide() {
                                     "translateX(-40%) translateY(-60%) rotateZ(-30deg)",
                             }}
                         />
+                        <Leaf
+                            version={2}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(-10%) translateY(60%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={3}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scaleX(-1) translateX(-50%) translateY(20%) rotateZ(-90deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
                             <h3>and attend for free</h3>
@@ -47,6 +65,24 @@ export default function Guide() {
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(50%) translateY(-50%) rotateZ(10deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={2}
+                            style={{
+                                bottom: "0",
+                                right: "0",
+                                transform:
+                                    "scaleX(-1) scale(0.9) translateX(-10%) translateY(60%) rotateZ(180deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
                             <h2>COLLABORATE</h2>
                             <h3>in teams of three</h3>
@@ -105,7 +141,8 @@ export default function Guide() {
                             className="rounded"
                             src={MakePhoto2}
                             style={{
-                                transform: "rotateZ(3deg) translateX(var(--spacing))",
+                                transform:
+                                    "rotateZ(3deg) translateX(var(--spacing))",
                             }}
                         />
                     </div>
