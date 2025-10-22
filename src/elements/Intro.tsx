@@ -95,7 +95,7 @@ function Ground() {
                     style={{
                         right: "5%",
                         bottom: "90%",
-                        transform: "rotateZ(2deg)",
+                        transform: "rotateZ(2deg) scale(1.1)",
                     }}
                 />
                 <div className="left" />
