@@ -307,10 +307,27 @@
     overflow-y: visible;
 }
 
+.guide .content .row.reverse {
+    flex-wrap: wrap-reverse;
+}
+
 .guide .content .row.signup {
     flex-wrap: wrap-reverse;
     justify-content: center;
     gap: 0;
+}
+
+.guide .content .row .bundle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.guide .content .row .bundle img {
+    margin: calc(-1 * var(--spacing));
 }
 
 .guide .content .row img {

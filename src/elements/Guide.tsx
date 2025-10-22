@@ -11,6 +11,9 @@ import Leaf2 from "/images/Leaf2.webp";
 import Leaf3 from "/images/Leaf3.webp";
 import TeamPhoto from "/images/photos/DSC_1005.webp";
 import ActivityPhoto1 from "/images/photos/IMG_20250927_213244426.webp";
+import ActivityPhoto2 from "/images/photos/DSC_1065.webp";
+import MakePhoto1 from "/images/photos/IMG_4345.webp";
+import MakePhoto2 from "/images/photos/Batch2Photos-3233.webp";
 import WinPhoto from "/images/photos/DSC_1346.webp";
 
 export default function Guide() {
@@ -20,14 +23,18 @@ export default function Guide() {
             <div className="content">
                 <div className="row signup">
                     <div className="relative">
-                        <Leaf version={1} style={{
-                            top: "0",
-                            left: "0",
-                            transform: "translateX(-40%) translateY(-60%) rotateZ(-30deg)"
-                        }} />
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(-40%) translateY(-60%) rotateZ(-30deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
-                            <h3>and attend for free!</h3>
+                            <h3>and attend for free</h3>
                             <a
                                 className={SIGNUP_DISABLED ? "disabled" : ""}
                                 href={SIGNUP_DISABLED ? "" : SIGNUP_URL}
@@ -42,7 +49,7 @@ export default function Guide() {
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
                             <h2>COLLABORATE</h2>
-                            <h3>in teams of three!</h3>
+                            <h3>in teams of three</h3>
                         </Plack>
                     </div>
                     <img
@@ -53,21 +60,21 @@ export default function Guide() {
                         }}
                     />
                 </div>
-                <div className="row">
-                    <div>
+                <div className="row reverse">
+                    <div className="bundle">
                         <img
                             className="rounded"
                             src={ActivityPhoto1}
                             style={{
-                                transform:
-                                    " translateX(10%) translateY(-10%) rotateZ(-3deg)",
+                                transform: "rotateZ(-3deg)",
                             }}
                         />
                         <img
                             className="rounded"
-                            src={ActivityPhoto1}
+                            src={ActivityPhoto2}
                             style={{
-                                transform: "rotateZ(2.5deg)",
+                                transform:
+                                    "translateY(var(--spacing)) rotateZ(4deg) scale(0.9)",
                             }}
                         />
                     </div>
@@ -82,22 +89,39 @@ export default function Guide() {
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(2deg)" }}>
                             <h2>CODE</h2>
-                            <h3>something in 24 hours!</h3>
+                            <h3>something in 24 hours</h3>
                         </Plack>
+                    </div>
+                    <div className="bundle">
+                        <img
+                            className="rounded"
+                            src={MakePhoto1}
+                            style={{
+                                transform: "rotateZ(-4deg) scale(1.2)",
+                                margin: "0",
+                            }}
+                        />
+                        <img
+                            className="rounded"
+                            src={MakePhoto2}
+                            style={{
+                                transform: "rotateZ(3deg)",
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="row">
                     <div className="relative">
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
-                            <h2>PRESENT</h2>
-                            <h3>for a chance to win a prize!</h3>
+                            <h2>DEMO</h2>
+                            <h3>for a chance to win a prize</h3>
                         </Plack>
                     </div>
                     <img
                         className="rounded"
                         src={WinPhoto}
                         style={{
-                            transform: "rotateZ(2.5deg)",
+                            transform: "rotateZ(2.5deg) scale(1.25)",
                         }}
                     />
                 </div>
