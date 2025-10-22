@@ -8,19 +8,7 @@
     padding-top: calc(2 * var(--grooves));
     padding-bottom: calc(2 * var(--grooves));
     gap: var(--spacing);
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        80% calc(100% - (var(--grooves) / 2)),
-        70% calc(100% - (var(--grooves) / 3)),
-        55% calc(100% - (var(--grooves) / 1)),
-        35% calc(100% - (var(--grooves) / 1.75)),
-        20% calc(100% - (var(--grooves) / 1.2)),
-        0% calc(100% - (var(--grooves) / 4))
-    );
     min-height: 200vh;
-    margin-bottom: var(--ngrooves);
 }
 
 .guide a {

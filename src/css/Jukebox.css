@@ -1,63 +1,53 @@
 .jukebox {
     position: relative;
-    background-color: var(--high-brown);
-    padding: var(--spacing);
-    z-index: 30;
+    background-color: #f4e1c9;
+    padding: calc(var(--spacing) + var(--grooves));
     --img-width: 10rem;
-    padding: var(--spacing);
     gap: var(--spacing);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--ngrooves);
+    margin-bottom: var(--ngrooves);
+    z-index: 50;
     clip-path: polygon(
-        0% var(--ngrooves),
-        100% var(--ngrooves),
-        100% calc((100% + var(--grooves))),
-        80% calc((100% + var(--grooves)) - (var(--grooves) / 2)),
-        70% calc((100% + var(--grooves)) - (var(--grooves) / 3)),
-        55% calc((100% + var(--grooves)) - (var(--grooves) / 1)),
-        35% calc((100% + var(--grooves)) - (var(--grooves) / 1.75)),
-        20% calc((100% + var(--grooves)) - (var(--grooves) / 1.2)),
-        0% calc((100% + var(--grooves)) - (var(--grooves) / 4))
+        0% calc(var(--grooves) / 3),
+        20% calc(var(--grooves) / 1),
+        45% calc(var(--grooves) / 2),
+        60% calc(var(--grooves) / 1),
+        75% calc(var(--grooves) / 4),
+        90% calc(var(--grooves) / 2),
+        100% 0%,
+        100% 100%,
+        80% calc(100% - (var(--grooves) / 2)),
+        70% calc(100% - (var(--grooves) / 3)),
+        55% calc(100% - (var(--grooves) / 1)),
+        35% calc(100% - (var(--grooves) / 1.75)),
+        20% calc(100% - (var(--grooves) / 1.2)),
+        0% calc(100% - (var(--grooves) / 4))
     );
 }
 
-.jukebox .extension {
-    position: absolute;
-    background-color: inherit;
-    width: 100%;
-    height: var(--grooves);
-}
-
-.jukebox .extension.top {
-    top: var(--ngrooves);
-    left: 0;
-}
-
-.jukebox .extension.bottom {
-    bottom: var(--ngrooves);
-    left: 0;
-}
-
 .jukebox .promo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing);
-    gap: calc(var(--spacing)/2);
-}
-
-.jukebox .promo h2, .jukebox .promo h3 {
-    text-align: center;
-    color: var(--high-beige);
-}
-
-.jukebox .promo button {
     background-color: #ff8383;
     border-radius: var(--radius);
     border-width: 0;
-    padding: var(--spacing);
-    transition: transform 0.25s ease-in-out;
+    padding: calc(var(--spacing) / 4);
+    transition: transform 0.1s ease-in-out;
+    color: var(--high-beige-2);
+    font-size: 1rem;
 }
 
-.jukebox .promo button:hover {
+.jukebox .promo h2 {
+    color: inherit;
+    font-size: inherit;
+}
+
+.jukebox .promo:hover {
     transform: scale(1.1);
+}
+
+.jukebox .promo:active {
+    transform: scale(0.9);
 }
