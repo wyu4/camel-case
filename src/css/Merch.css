@@ -1,4 +1,4 @@
-.jukebox {
+.merch {
     position: relative;
     background-color: #f4e1c9;
     padding: calc(var(--spacing) + var(--grooves));
@@ -29,25 +29,50 @@
     );
 }
 
-.jukebox .promo {
-    background-color: #ff8383;
-    border-radius: var(--radius);
-    border-width: 0;
-    padding: calc(var(--spacing) / 4);
-    transition: transform 0.1s ease-in-out;
-    color: var(--high-beige-2);
-    font-size: 1rem;
+.merch .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-around;
 }
 
-.jukebox .promo h2 {
+.merch .jukebox {
+    margin-top: var(--spacing);
+}
+
+.merch .jukebox i {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.merch .jukebox button {
+    background-color: #ff8383;
+    border-radius: calc(var(--radius) / 2);
+    border-width: 0;
+    padding: calc(var(--spacing) / 3);
+    padding-top: calc(var(--spacing) / 4);
+    padding-bottom: calc(var(--spacing) / 4);
+    transition: transform 0.1s ease-in-out;
+    color: var(--high-beige-2);
+    font-size: 0.5em;
+}
+
+.merch .jukebox button b {
     color: inherit;
     font-size: inherit;
 }
 
-.jukebox .promo:hover {
+.merch .jukebox button:hover {
     transform: scale(1.1);
 }
 
-.jukebox .promo:active {
+.merch .jukebox button:active {
     transform: scale(0.9);
+}
+
+.merch .media {
+    position: relative;
 }

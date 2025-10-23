@@ -9,6 +9,7 @@
     padding-bottom: calc(2 * var(--grooves));
     gap: var(--spacing);
     min-height: 200vh;
+    overflow: hidden;
 }
 
 .guide a {
@@ -296,7 +297,7 @@
 }
 
 .guide .content .row.reverse {
-    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
 }
 
 .guide .content .row.signup {

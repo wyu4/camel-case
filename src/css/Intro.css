@@ -368,7 +368,11 @@
 .intro img {
     position: absolute;
     max-width: clamp(10rem, 20%, 25rem);
-    z-index: inherit;
+    z-index: 30;
+}
+
+.intro img.leaf {
+    z-index: 20;
 }
 
 @media (max-width: 800px) {

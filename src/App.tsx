@@ -9,7 +9,7 @@ import Sponsors from "./elements/Sponsors";
 import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
 import Guide from "./elements/Guide";
-import Jukebox from "./elements/Jukebox";
+import Merch from "./elements/Merch";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -59,7 +59,7 @@ export default function App() {
                 <Intro />
                 <Agenda />
                 <Guide />
-                <Jukebox />
+                <Merch />
                 <Sponsors />
                 <FAQ />
                 <Footer />

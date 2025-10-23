@@ -97,6 +97,30 @@ export default function Guide() {
                     />
                 </div>
                 <div className="row reverse">
+                    <div className="relative">
+                        <Leaf
+                            version={3}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(10%) translateY(60%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(20%) translateY(-70%) rotateZ(10deg)",
+                            }}
+                        />
+                        <Plack style={{ transform: "rotateZ(2deg)" }}>
+                            <h2>ATTEND</h2>
+                            <h3>workshops and activities</h3>
+                        </Plack>
+                    </div>
                     <div className="bundle">
                         <img
                             className="rounded"
@@ -114,15 +138,27 @@ export default function Guide() {
                             }}
                         />
                     </div>
-                    <div className="relative">
-                        <Plack style={{ transform: "rotateZ(2deg)" }}>
-                            <h2>ATTEND</h2>
-                            <h3>workshops and activities</h3>
-                        </Plack>
-                    </div>
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={2}
+                            style={{
+                                top: "50%",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(-70%) translateY(-50%) rotateZ(-60deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={3}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(50%) translateY(-60%) rotateZ(40deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(2deg)" }}>
                             <h2>CODE</h2>
                             <h3>something in 24 hours</h3>
@@ -149,6 +185,24 @@ export default function Guide() {
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={1}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(10%) translateY(70%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={2}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(20%) translateY(-70%) rotateZ(10deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
                             <h2>DEMO</h2>
                             <h3>for a chance to win a prize</h3>
