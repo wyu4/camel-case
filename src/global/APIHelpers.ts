@@ -21,6 +21,8 @@ export const EMAIL_URL = "mailto:camelcasehackathon@gmail.com";
 
 export const GMAIL_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=camelcasehackathon@gmail.com&su=Subject";
 
+export const JUKEBOX_URL = "https://www.jukeboxprint.com/custom-stickers";
+
 export function getImagePath(path: string) {
     return path.startsWith("media/") ? IMAGE_API + path : path;
 }

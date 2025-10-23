@@ -3,6 +3,7 @@
 @import url('./Intro.css');
 @import url('./Agenda.css');
 @import url('./Guide.css');
+@import url('./Merch.css');
 @import url('./Sponsors.css');
 @import url('./FAQ.css');
 @import url('./Footer.css');
@@ -94,6 +95,10 @@ p, div, button {
     font-family: 'betm-rounded', Arial;
     font-size: 1.75rem;
     color: var(--high-dark-brown);
+}
+
+a, button {
+    cursor: pointer;
 }
 
 a, u {

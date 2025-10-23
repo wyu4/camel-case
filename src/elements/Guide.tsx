@@ -10,17 +10,49 @@ import Leaf1 from "/images/Leaf1.webp";
 import Leaf2 from "/images/Leaf2.webp";
 import Leaf3 from "/images/Leaf3.webp";
 import TeamPhoto from "/images/photos/DSC_1005.webp";
+import ActivityPhoto1 from "/images/photos/IMG_20250927_213244426.webp";
+import ActivityPhoto2 from "/images/photos/DSC_1065.webp";
+import MakePhoto1 from "/images/photos/IMG_4345.webp";
+import MakePhoto2 from "/images/photos/Batch2Photos-3233.webp";
+import WinPhoto from "/images/photos/DSC_1346.webp";
 
 export default function Guide() {
     return (
         <section className="guide">
             <Background />
             <div className="content">
-                <div className="row">
+                <div className="row signup">
                     <div className="relative">
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(-40%) translateY(-60%) rotateZ(-30deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={2}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(-10%) translateY(60%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={3}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scaleX(-1) translateX(-50%) translateY(20%) rotateZ(-90deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(5deg)" }}>
                             <h2>SIGN UP</h2>
-                            <h3>and attend for free!</h3>
+                            <h3>and attend for free</h3>
                             <a
                                 className={SIGNUP_DISABLED ? "disabled" : ""}
                                 href={SIGNUP_DISABLED ? "" : SIGNUP_URL}
@@ -33,38 +65,156 @@ export default function Guide() {
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                left: "0",
+                                transform:
+                                    "translateX(50%) translateY(-50%) rotateZ(10deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={2}
+                            style={{
+                                bottom: "0",
+                                right: "0",
+                                transform:
+                                    "scaleX(-1) scale(0.9) translateX(-10%) translateY(60%) rotateZ(180deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
                             <h2>COLLABORATE</h2>
-                            <h3>in teams of three!</h3>
+                            <h3>in teams of three</h3>
                         </Plack>
                     </div>
-                    <img className="rounded" src={TeamPhoto} style={{
-                        transform: "rotateZ(4deg)"
-                    }} />
+                    <img
+                        className="rounded"
+                        src={TeamPhoto}
+                        style={{
+                            transform: "rotateZ(4deg)",
+                        }}
+                    />
                 </div>
-                <div className="row">
+                <div className="row reverse">
                     <div className="relative">
+                        <Leaf
+                            version={3}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(10%) translateY(60%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={1}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(20%) translateY(-70%) rotateZ(10deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(2deg)" }}>
                             <h2>ATTEND</h2>
                             <h3>workshops and activities</h3>
                         </Plack>
                     </div>
+                    <div className="bundle">
+                        <img
+                            className="rounded"
+                            src={ActivityPhoto1}
+                            style={{
+                                transform: "rotateZ(-3deg)",
+                            }}
+                        />
+                        <img
+                            className="rounded"
+                            src={ActivityPhoto2}
+                            style={{
+                                transform:
+                                    "translateY(var(--spacing)) rotateZ(4deg) scale(0.9)",
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={2}
+                            style={{
+                                top: "50%",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(-70%) translateY(-50%) rotateZ(-60deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={3}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(50%) translateY(-60%) rotateZ(40deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(2deg)" }}>
-                            <h2>MAKE</h2>
-                            <h3>something in 24 hours!</h3>
+                            <h2>CODE</h2>
+                            <h3>something in 24 hours</h3>
                         </Plack>
+                    </div>
+                    <div className="bundle">
+                        <img
+                            className="rounded"
+                            src={MakePhoto1}
+                            style={{
+                                transform: "rotateZ(-4deg) scale(1.2)",
+                                margin: "0",
+                            }}
+                        />
+                        <img
+                            className="rounded"
+                            src={MakePhoto2}
+                            style={{
+                                transform:
+                                    "rotateZ(3deg) translateX(var(--spacing))",
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="row">
                     <div className="relative">
+                        <Leaf
+                            version={1}
+                            style={{
+                                bottom: "0",
+                                left: "0",
+                                transform:
+                                    "scale(0.9) translateX(10%) translateY(70%) rotateZ(190deg)",
+                            }}
+                        />
+                        <Leaf
+                            version={2}
+                            style={{
+                                top: "0",
+                                right: "0",
+                                transform:
+                                    "scale(0.9) translateX(20%) translateY(-70%) rotateZ(10deg)",
+                            }}
+                        />
                         <Plack style={{ transform: "rotateZ(-5deg)" }}>
-                            <h2>SUBMIT IT</h2>
-                            <h3>for a chance to win a prize!</h3>
+                            <h2>DEMO</h2>
+                            <h3>for a chance to win a prize</h3>
                         </Plack>
                     </div>
+                    <img
+                        className="rounded"
+                        src={WinPhoto}
+                        style={{
+                            transform: "rotateZ(2.5deg) scale(1.25)",
+                        }}
+                    />
                 </div>
             </div>
         </section>
