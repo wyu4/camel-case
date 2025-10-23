@@ -8,12 +8,13 @@
     }
 }
 
-.dune {
+.title-banner .dune {
     position: absolute;
     border-radius: 50%;
     background-color: var(--main-brown);
     transform: translateY(75%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+    overflow: hidden;
     bottom: 0;
 }
 
@@ -24,6 +25,23 @@
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
     overflow: hidden;
     z-index: 21;
+}
+
+.title-banner .cababas {
+    --width: 10rem;
+    position: absolute;
+    z-index: 100;
+    aspect-ratio: 1/1;
+    width: var(--width);
+    right: calc(var(--width) / -4);
+    top: calc(var(--width) / -4);
+    transform: scaleX(-1) rotateZ(100deg) translateY(100%) translateX(100%);
+    transition: transform 0.25s ease-in-out;
+}
+
+.title-banner .cababas.visible {
+    transform: scaleX(-1) rotateZ(200deg);
+    transition: transform 3s ease-in-out;
 }
 
 .title-banner .surface {

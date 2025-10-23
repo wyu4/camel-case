@@ -4,6 +4,7 @@ import DesertGrass from "/images/DesertGrass.svg";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
+import Cababas from "/images/Cababas.webp";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -42,6 +43,16 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
 
     return (
         <section className="title-banner">
+            <img
+                className={
+                    "cababas " +
+                    (props.scrollPosition <
+                    props.viewHeight * buttonVisibilityRange
+                        ? "visible"
+                        : "")
+                }
+                src={Cababas}
+            />
             <div className="surface">
                 <div
                     className="title"
