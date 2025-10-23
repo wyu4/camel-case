@@ -1,36 +1,81 @@
 import { useEffect, useRef, useState, type JSX } from "react";
 import Plack from "./Plack";
 import { wrapNum } from "../global/NumberHelpers";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import Line from "./Line";
 import type { LatLngExpression } from "leaflet";
 import L from "leaflet";
-import Line from "./Line";
+import { SCHEDULE_API, VENU_API } from "../global/APIHelpers";
 
-const SCHEDULE_API =
-    "https://raw.githubusercontent.com/wyu4/storage/refs/heads/main/schedule.json";
-const coordinates: LatLngExpression = [45.323467111163716, -75.89449784098387];
+function MapViewController({
+    zoom,
+    center,
+}: {
+    zoom: number;
+    center: LatLngExpression;
+}) {
+    const map = useMap();
+    useEffect(() => {
+        if (map.getZoom() !== zoom) {
+            map.setZoom(zoom);
+        }
+        if (map.getCenter() !== center) {
+            map.setView(center);
+        }
+    }, [center, zoom, map]);
 
-function EventMap() {
+    return null;
+}
+
+function EventMap({ venue }: { venue: VenueProps }) {
+    const defaultCenter: LatLngExpression = [31.005863, -41.011643];
+
+    const { name, address, coordinates, url } = venue;
+
+    const [latLong, setLatLong] = useState<LatLngExpression | null>(null);
+    const [zoom, setZoom] = useState<number>(1);
+    const [center, setCenter] = useState<LatLngExpression>(defaultCenter);
+
     const markerIcon = new L.Icon({
         iconUrl: "/images/Cababas.webp",
         iconSize: [41, 41],
     });
 
+    useEffect(() => {
+        setLatLong(
+            coordinates.length == 2 ? (coordinates as LatLngExpression) : null
+        );
+    }, [coordinates]);
+
+    useEffect(() => {
+        setZoom(latLong == null ? 1 : 13);
+        setCenter(latLong != null ? latLong : defaultCenter);
+    }, [latLong]);
+
     return (
         <MapContainer
-            center={coordinates}
-            zoom={13}
+            center={center}
+            zoom={zoom}
             scrollWheelZoom={true}
             attributionControl={false}
             className="map-container rounded"
         >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
-            <Marker position={coordinates} icon={markerIcon} />
+            {latLong != null ? (
+                <Marker position={latLong} icon={markerIcon} />
+            ) : null}
+            <MapViewController zoom={zoom} center={center} />
         </MapContainer>
     );
 }
 
-function EventInfo({ schedule }: { schedule: ScheduleProps }) {
+function EventInfo({
+    schedule,
+    venue,
+}: {
+    schedule: ScheduleProps;
+    venue: VenueProps;
+}) {
     return (
         <Plack className="info">
             <h2>Event Info</h2>
@@ -39,7 +84,12 @@ function EventInfo({ schedule }: { schedule: ScheduleProps }) {
                 <b>Date: </b>November 29 - 30, 2025
             </p>
             <p>
-                <b>Location: </b>???
+                <b>Location: </b>
+                {venue.url === "" ? (
+                    venue.address
+                ) : (
+                    <a href={venue.url}>{venue.address}</a>
+                )}
             </p>
             <EventSchedule schedule={schedule} />
         </Plack>
@@ -171,6 +221,12 @@ function EventSchedule({ schedule }: { schedule: ScheduleProps }) {
 
 export default function Agenda() {
     const [scheduleData, setScheduleData] = useState<ScheduleProps>([]);
+    const [venueData, setVenueData] = useState<VenueProps>({
+        name: "???",
+        address: "Loading",
+        url: "",
+        coordinates: [],
+    });
 
     useEffect(() => {
         const getSchedule = async () => {
@@ -182,26 +238,43 @@ export default function Agenda() {
                 const formattedResult: ScheduleProps = await response.json();
                 setScheduleData(formattedResult);
             } catch (e: unknown) {
-                setScheduleData(
+                setScheduleData([
                     [
-                        [
-                            {
-                                "time": "",
-                                "name": "Couldn't get events."
-                            }                            
-                        ]
-                    ]
-                )
+                        {
+                            time: "",
+                            name: "Couldn't get events.",
+                        },
+                    ],
+                ]);
                 console.error(`Couldn't get schedule: ${e}`);
             }
         };
+        const getVenue = async () => {
+            try {
+                const response = await fetch(VENU_API);
+                if (!response.ok) {
+                    throw new Error(`Request code ${response.status}`);
+                }
+                const formattedResult: VenueProps = await response.json();
+                setVenueData(formattedResult);
+            } catch (e: unknown) {
+                setVenueData({
+                    name: "???",
+                    address: "Couldn't get address.",
+                    url: "",
+                    coordinates: [],
+                });
+                console.error(`Couldn't get venue: ${e}`);
+            }
+        };
         getSchedule();
+        getVenue();
     }, []);
 
     return (
         <section className="agenda">
-            <EventMap />
-            <EventInfo schedule={scheduleData} />
+            <EventMap venue={venueData} />
+            <EventInfo schedule={scheduleData} venue={venueData} />
         </section>
     );
 }

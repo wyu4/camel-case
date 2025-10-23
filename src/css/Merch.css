@@ -1,0 +1,86 @@
+.merch {
+    position: relative;
+    background-color: #f4e1c9;
+    padding: calc(var(--spacing) + var(--grooves));
+    --img-width: 10rem;
+    gap: var(--spacing);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: var(--ngrooves);
+    margin-bottom: var(--ngrooves);
+    z-index: 50;
+    clip-path: polygon(
+        0% calc(var(--grooves) / 3),
+        20% calc(var(--grooves) / 1),
+        45% calc(var(--grooves) / 2),
+        60% calc(var(--grooves) / 1),
+        75% calc(var(--grooves) / 4),
+        90% calc(var(--grooves) / 2),
+        100% 0%,
+        100% 100%,
+        80% calc(100% - (var(--grooves) / 2)),
+        70% calc(100% - (var(--grooves) / 3)),
+        55% calc(100% - (var(--grooves) / 1)),
+        35% calc(100% - (var(--grooves) / 1.75)),
+        20% calc(100% - (var(--grooves) / 1.2)),
+        0% calc(100% - (var(--grooves) / 4))
+    );
+}
+
+.merch .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-around;
+}
+
+.merch .jukebox {
+    margin-top: var(--spacing);
+}
+
+.merch .jukebox i {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.merch .jukebox button {
+    background-color: #ff8383;
+    border-radius: calc(var(--radius) / 2);
+    border-width: 0;
+    padding: calc(var(--spacing) / 3);
+    padding-top: calc(var(--spacing) / 4);
+    padding-bottom: calc(var(--spacing) / 4);
+    transition: transform 0.1s ease-in-out;
+    color: var(--high-beige-2);
+    font-size: 0.5em;
+}
+
+.merch .jukebox button b {
+    color: inherit;
+    font-size: inherit;
+}
+
+.merch .jukebox button:hover {
+    transform: scale(1.1);
+}
+
+.merch .jukebox button:active {
+    transform: scale(0.9);
+}
+
+.merch .media {
+    position: relative;
+    min-width: 30rem;
+    min-height: 30vh;
+}
+
+.merch .media .sticker {
+    position: absolute;
+    width: 10rem;
+}

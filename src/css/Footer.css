@@ -4,6 +4,67 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #000000;
-    z-index: 0;
+    z-index: 20;
+    padding: var(--spacing);
+    padding-top: 30vh;
+    background-image: linear-gradient(
+        to bottom,
+        var(--jungle-green) 0%,
+        #000000 40vh
+    );
+}
+
+.footer p, .footer a {
+    color: #ffffff;
+}
+
+.footer .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+}
+
+.footer .header p {
+    text-wrap: nowrap;
+}
+
+.footer .heart {
+    mask: url("/images/Heart.webp");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: rgb(255, 123, 123);
+    aspect-ratio: 1/1;
+    width: 1.2rem;
+}
+
+.footer .signatures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    pointer-events: none;
+}
+
+.footer .signature {
+    background-color: #ffffff;
+    aspect-ratio: 1/1;
+    width: 7.5rem;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    pointer-events: none;
+}
+
+.footer .shortlinks {
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.footer .shortlinks a {
+    text-wrap: nowrap;
+    font-size: 0.75em;
 }

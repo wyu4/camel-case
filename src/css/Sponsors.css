@@ -20,7 +20,6 @@
     right: 0;
     height: 10%;
     z-index: 18;
-    /* background-color: inherit; */
 }
 
 .sponsors .ceiling div {
@@ -93,12 +92,13 @@
 .sponsors .background {
     position: absolute;
     margin: 0;
-    aspect-ratio: 1/1;
-    left: -5%;
-    bottom: -50%;
-    min-height: 70vh;
-    min-width: 110%;
-    
+    box-sizing: border-box;
+    left: 50%;
+    bottom: 50%;
+    min-height: 100vh;
+    min-width: 110vw;
+    object-fit: cover;
+    transform: translateX(-50%) translateY(50%);
 }
 
 @media (max-width: 50rem) {

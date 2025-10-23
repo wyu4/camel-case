@@ -1,6 +1,7 @@
 import type { ComponentPropsWithRef } from "react";
 import Gmail from "/images/Gmail.webp";
 import Mail from "/images/MailIcon.webp";
+import { EMAIL_URL, GMAIL_URL } from "../global/APIHelpers";
 
 export default function Contacts({
     className = "",
@@ -9,14 +10,14 @@ export default function Contacts({
         <span className={"contacts " + className}>
             <a
                 className="mail"
-                href="mailto:camelcasehackathon@gmail.com"
+                href={EMAIL_URL}
                 target="_blank"
             >
                 <img src={Mail} />
             </a>
             <a
                 className="gmail"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=camelcasehackathon@gmail.com&su=Subject"
+                href={GMAIL_URL}
                 target="_blank"
             >
                 <img src={Gmail} />

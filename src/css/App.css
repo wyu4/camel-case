@@ -3,6 +3,7 @@
 @import url('./Intro.css');
 @import url('./Agenda.css');
 @import url('./Guide.css');
+@import url('./Merch.css');
 @import url('./Sponsors.css');
 @import url('./FAQ.css');
 @import url('./Footer.css');
@@ -48,6 +49,10 @@
     --grooves: calc(var(--spacing) * 2);
     --ngrooves: calc(-1 * var(--grooves));
     --outline: 3px;
+    --dark-sand: #967145;
+    --dark-sand-2: #6d512f;
+    --dark-sand-3: #60482a;
+    --dark-sand-4: #564026;
     overflow-x: hidden;
 }
 
@@ -62,11 +67,10 @@ p {
 
 body {
     width: 100%;
-    background-color: var(--sky);
+    background-color: #000000;
     margin: 0;
     overflow-x: clip;
     overflow-y: hidden;
-    transition: background-color 1s ease-in-out;
 }
 
 h1 {
@@ -93,8 +97,17 @@ p, div, button {
     color: var(--high-dark-brown);
 }
 
+a, button {
+    cursor: pointer;
+}
+
 a, u {
     color: var(--high-brown);
+}
+
+a.disabled, button.disabled {
+    text-decoration: line-through;
+    pointer-events: none;
 }
 
 .production.container {
@@ -133,3 +146,6 @@ a, u {
     aspect-ratio: 1/1;
 }
 
+.relative {
+    position: relative;
+}

@@ -15,6 +15,8 @@ body {
 }
 
 iframe {
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100vh;
     border-width: 0;
@@ -29,5 +31,11 @@ iframe {
 @media (prefers-color-scheme: light) {
     body {
         background-color: var(--bg-light);
+    }
+}
+
+@supports (height: 100dvh) {
+    iframe {
+        height: 100dvh;
     }
 }
