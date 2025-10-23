@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: var(--ngrooves);
     margin-bottom: var(--ngrooves);
     z-index: 50;
@@ -75,4 +76,11 @@
 
 .merch .media {
     position: relative;
+    min-width: 30rem;
+    min-height: 30vh;
+}
+
+.merch .media .sticker {
+    position: absolute;
+    width: 10rem;
 }
