@@ -18,9 +18,22 @@
         20% calc(100% - (var(--grooves) / 1.2)),
         0% calc(100% - (var(--grooves) / 4))
     );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--ngrooves);
+    margin-bottom: var(--ngrooves);
 }
 
 .merch .background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.merch .background .grid {
     --grid-color: #e1cfb9;
     aspect-ratio: 1/1;
     position: absolute;
@@ -28,7 +41,11 @@
     top: 50%;
     width: 150%;
     background-size: 3rem 3rem;
-    background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    background-image: linear-gradient(
+            to right,
+            var(--grid-color) 1px,
+            transparent 1px
+        ),
         linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     transform: rotateZ(-5deg) translateX(-50%) translateY(-50%);
 }
@@ -36,14 +53,12 @@
 .merch .content {
     position: relative;
     padding: calc(var(--spacing) + var(--grooves));
-    gap: var(--spacing);
+    gap: calc(var(--spacing) * 2);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: var(--ngrooves);
-    margin-bottom: var(--ngrooves);
     width: 100%;
     height: 100%;
 }
@@ -53,6 +68,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: space-around;
+    padding: var(--spacing);
+    background-color: var(--high-beige-2);
+    filter: drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
 }
 
 .merch .info .jukebox {
@@ -98,7 +116,13 @@
     min-height: 30vh;
 }
 
-.merch .media .sticker {
+.merch .sticker {
     position: absolute;
     width: 12rem;
+    filter: drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
+}
+
+.merch .background .sticker {
+    width: 20rem;
+    filter: blur(2px) drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
 }
