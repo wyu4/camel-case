@@ -345,3 +345,32 @@
     text-align: center;
     color: var(--high-brown);
 }
+
+.mining {
+    position: absolute;
+    left: var(--grooves);
+    right: var(--grooves);
+    height: 7%;
+    bottom: calc(2% + var(--grooves));
+    background-color: var(--dark-sand-3);
+    clip-path: polygon(
+        0 50%,
+        25% 10%,
+        50% 15%,
+        70% 5%,
+        90% 25%,
+        95% 75%,
+        80% 100%,
+        55% 95%,
+        45% 97%,
+        10% 100%
+    );
+}
+
+.mining .cababas {
+    position: absolute;
+    aspect-ratio: 1/1;
+    max-width: 25%;
+    bottom: -10%;
+    left: 25%;
+}
