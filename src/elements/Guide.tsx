@@ -15,6 +15,8 @@ import ActivityPhoto2 from "/images/photos/DSC_1065.webp";
 import MakePhoto1 from "/images/photos/IMG_4345.webp";
 import MakePhoto2 from "/images/photos/Batch2Photos-3233.webp";
 import WinPhoto from "/images/photos/DSC_1346.webp";
+import Mining1 from "/images/Mining1.webp";
+import Mining2 from "/images/Mining2.webp";
 
 export default function Guide() {
     return (
@@ -272,7 +274,7 @@ function Background() {
             >
                 <div className="middle" />
                 <div className="left" />
-                <div className="right" />
+                <div className="right">{/* <Mining /> */}</div>
             </div>
             <div
                 className="layer l2"
@@ -356,6 +358,14 @@ function Background() {
                 <div className="left" />
                 <div className="right" />
             </div>
+        </div>
+    );
+}
+
+function Mining() {
+    return (
+        <div className="mining">
+            <img className="cababas" src={Mining1} />
         </div>
     );
 }
