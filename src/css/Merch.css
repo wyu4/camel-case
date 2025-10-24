@@ -112,7 +112,7 @@
 
 .merch .media {
     position: relative;
-    min-width: 30rem;
+    min-width: clamp(25rem, 25vw, 30rem);
     min-height: 30vh;
 }
 

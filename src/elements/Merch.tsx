@@ -17,7 +17,7 @@ export default function Merch() {
                 <div className="grid" />
                 <img
                     className="sticker"
-                    src={Myomnyom}
+                    src={TheVoracity}
                     style={{
                         top: "-10%",
                         left: "-5%",
@@ -37,10 +37,10 @@ export default function Merch() {
                 />
                 <img
                     className="sticker"
-                    src={TheVoracity}
+                    src={Myomnyom}
                     style={{
-                        bottom: "-25%",
-                        left: "-10%",
+                        bottom: "0%",
+                        left: "0%",
                         transform:
                             "rotateZ(-20deg)",
                     }}
