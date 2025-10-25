@@ -50,6 +50,7 @@
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to bottom, var(--sky), var(--main-blue));
+    z-index: 21;
 }
 
 .title-banner .title {
