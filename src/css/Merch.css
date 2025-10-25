@@ -126,3 +126,10 @@
     width: 20rem;
     filter: blur(2px) drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
 }
+
+
+@media (max-width: 1000px) {
+    .merch .background .sticker {
+        filter: blur(2px) drop-shadow(-10px 10px 8px rgba(0, 0, 0, 0.5));
+    }
+}
