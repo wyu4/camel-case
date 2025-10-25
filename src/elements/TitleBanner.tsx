@@ -97,6 +97,7 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                 </button>
                 <Decor {...props} />
             </div>
+            <div className="extension bottom" />
         </section>
     );
 }

@@ -53,7 +53,7 @@
     z-index: 21;
 }
 
-.title-banner .title {
+.title-banner .view .title {
     position: absolute;
     bottom: 0%;
     left: 0%;
@@ -69,7 +69,7 @@
     pointer-events: none;
 }
 
-.title-banner .scroll-button {
+.title-banner .view .scroll-button {
     position: absolute;
     bottom: 1vh;
     left: 50%;
@@ -98,7 +98,7 @@
     color: var(--high-dark-brown);
 }
 
-.title-banner .buttons {
+.title-banner .view .buttons {
     position: absolute;
     left: 1%;
     bottom: 1%;
@@ -133,25 +133,25 @@
     transition: transform 0.1s ease-in-out;
 }
 
-.title-banner .buttons .sponsor {
+.title-banner .view .buttons .sponsor {
     background-color: var(--high-beige-2);
     color: var(--high-dark-brown);
 }
 
-.title-banner .buttons button:hover {
+.title-banner .view .buttons button:hover {
     transform: scale(0.95);
 }
 
-.title-banner .buttons button:active {
+.title-banner .view .buttons button:active {
     transform: scale(0.9);
 }
 
-.title-banner .title h1 {
+.title-banner .view .title h1 {
     font-size: 15vw;
     padding-bottom: 0.25em;
 }
 
-.title-banner .dunes {
+.title-banner .view .dunes {
     position: absolute;
     aspect-ratio: 10/6;
     min-height: 100vh;
@@ -163,7 +163,7 @@
     pointer-events: none;
 }
 
-.title-banner .dunes div {
+.title-banner .view .dunes div {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -171,63 +171,63 @@
     pointer-events: none;
 }
 
-.title-banner .dunes .layer-1 {
+.title-banner .view .dunes .layer-1 {
     z-index: 20;
     pointer-events: none;
 }
 
-.title-banner .dunes .layer-1 .dune {
+.title-banner .view .dunes .layer-1 .dune {
     height: 50%;
 }
 
-.title-banner .dunes .layer-2 {
+.title-banner .view .dunes .layer-2 {
     z-index: 19;
     pointer-events: none;
 }
 
-.title-banner .dunes .layer-2 .dune {
+.title-banner .view .dunes .layer-2 .dune {
     height: 75%;
     background-color: rgb(235, 184, 118);
 }
 
-.title-banner .dunes .layer-3 {
+.title-banner .view .dunes .layer-3 {
     z-index: 18;
     pointer-events: none;
 }
 
-.title-banner .dunes .layer-3 .dune {
+.title-banner .view .dunes .layer-3 .dune {
     height: 80%;
     background-color: rgb(219, 174, 116);
 }
 
-.title-banner .dunes .layer-4 {
+.title-banner .view .dunes .layer-4 {
     z-index: 17;
     pointer-events: none;
 }
 
-.title-banner .dunes .layer-4 .dune {
+.title-banner .view .dunes .layer-4 .dune {
     height: 100%;
     background-color: rgb(231, 191, 139);
 }
 
-.title-banner .tree {
+.title-banner .view .tree {
     aspect-ratio: 1/1;
     position: absolute;
     pointer-events: none;
 }
 
-.title-banner .grass {
+.title-banner .view .grass {
     aspect-ratio: 1/1;
     position: absolute;
     pointer-events: none;
 }
 
-.title-banner .tree.reverse,
-.title-banner .grass.reverse {
+.title-banner .view .tree.reverse,
+.title-banner .view .grass.reverse {
     transform: scaleX(-100%);
 }
 
-.title-banner .sign {
+.title-banner .view .sign {
     position: absolute;
     bottom: 5%;
     right: 10%;
@@ -248,21 +248,26 @@
     pointer-events: none;
 }
 
-.title-banner .sign h2 {
+.title-banner .view .sign h2 {
     color: #55492d;
     opacity: 0.7;
     white-space: nowrap;
 }
 
-.title-banner .sign .material-icons {
+.title-banner .view .sign .material-icons {
     transform: translateX(-50%) scaleX(1.25) rotateZ(10deg);
 }
 
-@media (max-width: 800px) {
-    .title-banner {
-        height: 80vh;
-    }
+.title-banner .extension.bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: var(--main-brown);
+}
 
+@media (max-width: 800px) {
     .title-banner .sign {
         transform: scale(0.5) rotateZ(25deg) translateX(50%);
         right: 1%;
@@ -272,6 +277,10 @@
 
 @supports (height: 100dvh) {
     .title-banner .view {
-        height: calc(100vh - (100vh - 100dvh));
+        height: 100dvh;
+    }
+
+    .title-banner .extension.bottom {
+        height: calc(100vh - 100dvh);
     }
 }
