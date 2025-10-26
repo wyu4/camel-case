@@ -29,7 +29,6 @@ function Section({ size = "small", data }: SectionProps) {
 }
 
 export default function Sponsors() {
-
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
             byte: [],
@@ -100,11 +99,7 @@ export default function Sponsors() {
 
     return (
         <section id="sponsors" className="sponsors">
-            <div className="ceiling"></div>
-            <img
-                className="background"
-                src={JungleImage}
-            />
+            <img className="background" src={JungleImage} />
             <div className="info">
                 <Plack>
                     <h2>Sponsor Us!</h2>
@@ -128,6 +123,30 @@ export default function Sponsors() {
                     </div>
                 </Plack>
             </div>
+            <Ceiling />
         </section>
+    );
+}
+
+function Ceiling() {
+    return (
+        <div className="ceiling">
+            <div className="layer l1">
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div className="layer l2">
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div className="layer l3">
+                <div className="left" />
+                <div className="right" />
+            </div>
+            <div className="layer l4">
+                <div className="left" />
+                <div className="right" />
+            </div>
+        </div>
     );
 }

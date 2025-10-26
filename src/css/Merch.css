@@ -70,7 +70,7 @@
     align-items: space-around;
     padding: var(--spacing);
     background-color: var(--high-beige-2);
-    filter: drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
 }
 
 .merch .info .jukebox {
@@ -119,17 +119,10 @@
 .merch .sticker {
     position: absolute;
     width: 12rem;
-    filter: drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
 }
 
 .merch .background .sticker {
     width: 20rem;
-    filter: blur(2px) drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
-}
-
-
-@media (max-width: 1000px) {
-    .merch .background .sticker {
-        filter: blur(2px) drop-shadow(-10px 10px 8px rgba(0, 0, 0, 0.5));
-    }
+    filter: blur(2px)  drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
 }
