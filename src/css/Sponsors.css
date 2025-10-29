@@ -88,10 +88,10 @@
 
 .sponsors .ceiling {
     position: absolute;
-    top: var(--ngrooves);
+    top: 0;
     left: 0;
     right: 0;
-    height: 25vh;
+    height: calc(5vh + var(--grooves));
     z-index: 25;
 }
 
@@ -134,39 +134,43 @@
 
 .sponsors .ceiling .layer.l1 .left {
     background-color: var(--dark-sand);
-}
-
-.sponsors .ceiling .layer.l1 .left {
-    background-color: var(--dark-sand);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 
 .sponsors .ceiling .layer.l2 .left {
     background-color: var(--dark-sand-2);
     width: 40.5%;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 .sponsors .ceiling .layer.l3 .left {
     background-color: var(--dark-sand-3);
     width: 41%;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 .sponsors .ceiling .layer.l4 .left {
     background-color: var(--dark-sand-4);
     width: 41.5%;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 
 .sponsors .ceiling .layer.l1 .right {
     background-color: var(--dark-sand);
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
 }
 .sponsors .ceiling .layer.l2 .right {
     background-color: var(--dark-sand-2);
     width: 40.5%;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
 }
 .sponsors .ceiling .layer.l3 .right {
     background-color: var(--dark-sand-3);
     width: 41%;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
 }
 .sponsors .ceiling .layer.l4 .right {
     background-color: var(--dark-sand-4);
     width: 41.5%;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
 }
 
 @media (max-width: 50rem) {
