@@ -11,22 +11,7 @@
     z-index: 20;
     min-height: 75vh;
     margin-bottom: var(--ngrooves);
-}
-
-.sponsors .ceiling {
-    position: absolute;
-    top: var(--ngrooves);
-    left: 0;
-    right: 0;
-    height: 10%;
-    z-index: 18;
-}
-
-.sponsors .ceiling div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    overflow: hidden;
 }
 
 .sponsors .info {
@@ -36,6 +21,7 @@
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--spacing);
+    margin-top: 6vh;
     z-index: 20;
 }
 
@@ -99,6 +85,163 @@
     min-width: 110vw;
     object-fit: cover;
     transform: translateX(-50%) translateY(50%);
+}
+
+.sponsors .ceiling {
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    right: 0;
+    height: calc(5vh + var(--grooves));
+    z-index: 25;
+}
+
+.sponsors .ceiling .layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.sponsors .ceiling .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+.sponsors .ceiling .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+.sponsors .ceiling .layer.l1 {
+    z-index: 30;
+}
+.sponsors .ceiling .layer.l2 {
+    z-index: 28;
+}
+.sponsors .ceiling .layer.l3 {
+    z-index: 26;
+}
+.sponsors .ceiling .layer.l4 {
+    z-index: 24;
+}
+
+.sponsors .ceiling .layer.l1 .left {
+    background-color: var(--dark-sand);
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        10% calc(100% - (var(--grooves) / 2)),
+        80% calc(100% - (var(--grooves) / 1)),
+        90% calc(100% - (var(--grooves) / 1.5)),
+        100% 0
+    );
+}
+
+.sponsors .ceiling .layer.l2 .left {
+    background-color: var(--dark-sand-2);
+    width: 40.5%;
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        15% calc(100% - (var(--grooves) / 3)),
+        30% calc(100% - (var(--grooves) / 2)),
+        80% calc(100% - (var(--grooves) / 2.5)),
+        100% 0
+    );
+}
+.sponsors .ceiling .layer.l3 .left {
+    background-color: var(--dark-sand-3);
+    width: 41%;
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        5% calc(100% - (var(--grooves) / 4)),
+        80% calc(100% - (var(--grooves) / 2.5)),
+        90% calc(100% - (var(--grooves) / 3)),
+        100% 0
+    );
+}
+.sponsors .ceiling .layer.l4 .left {
+    background-color: var(--dark-sand-4);
+    width: 41.5%;
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        10% calc(100% - (var(--grooves) / 3)),
+        25% calc(100% - (var(--grooves) / 4)),
+        43% calc(100% - (var(--grooves) / 2)),
+        87% calc(100% - (var(--grooves) / 3.5)),
+        100% 0
+    );
+}
+
+.sponsors .ceiling .layer.l1 .right {
+    background-color: var(--dark-sand);
+    clip-path: polygon(
+        100% 0,
+        100% 100%,
+        90% calc(100% - (var(--grooves) / 2)),
+        75% calc(100% - (var(--grooves) / 3)),
+        55% calc(100% - (var(--grooves) / 1)),
+        20% calc(100% - (var(--grooves) / 2)),
+        0 0
+    );
+}
+.sponsors .ceiling .layer.l2 .right {
+    background-color: var(--dark-sand-2);
+    width: 40.5%;
+    clip-path: polygon(
+        100% 0,
+        100% 100%,
+        80% calc(100% - (var(--grooves) / 3)),
+        67% calc(100% - (var(--grooves) / 2)),
+        20% calc(100% - (var(--grooves) / 2.5)),
+        0 0
+    );
+}
+.sponsors .ceiling .layer.l3 .right {
+    background-color: var(--dark-sand-3);
+    width: 41%;
+    clip-path: polygon(
+        100% 0,
+        100% 100%,
+        90% calc(100% - (var(--grooves) / 4)),
+        70% calc(100% - (var(--grooves) / 2)),
+        54% calc(100% - (var(--grooves) / 2.5)),
+        15% calc(100% - (var(--grooves) / 1.5)),
+        0 0
+    );
+}
+.sponsors .ceiling .layer.l4 .right {
+    background-color: var(--dark-sand-4);
+    width: 41.5%;
+    clip-path: polygon(
+        100% 0,
+        100% 100%,
+        70% calc(100% - (var(--grooves) / 2)),
+        50% calc(100% - (var(--grooves) / 3)),
+        30% calc(100% - (var(--grooves) / 1.5)),
+        20% calc(100% - (var(--grooves) / 2)),
+        0 0
+    );
+}
+
+.sponsors .ceiling .environment-glow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--high-beige-2);
+    opacity: 0.1;
 }
 
 @media (max-width: 50rem) {

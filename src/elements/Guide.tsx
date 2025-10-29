@@ -272,7 +272,9 @@ function Background() {
                     transform: `translateY(${sectionY * parallax1}px)`,
                 }}
             >
-                <div className="middle" />
+                <div className="middle">
+                    <div className="exit-glow" />
+                </div>
                 <div className="left" />
                 <div className="right">{/* <Mining /> */}</div>
             </div>
@@ -350,7 +352,7 @@ function Background() {
                     <div
                         className="prop"
                         style={{
-                            top: "80%",
+                            top: "60%",
                             transform: "rotateZ(5deg)",
                         }}
                     />

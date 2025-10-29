@@ -29,7 +29,6 @@ function Section({ size = "small", data }: SectionProps) {
 }
 
 export default function Sponsors() {
-
     const [sponsorsData, setSponsorsData] = useState<AllSponsorsProps>({
         tiers: {
             byte: [],
@@ -42,6 +41,19 @@ export default function Sponsors() {
     const [sectionElements, setSectionElements] = useState<
         (JSX.Element | null)[]
     >([]);
+
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [middleY, setMiddleY] = useState(0);
+
+    useEffect(() => {
+        if (sectionRef.current) {
+            setMiddleY(
+                window.screenY +
+                    window.innerHeight / 2 -
+                    sectionRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY, window.innerHeight, sectionRef]);
 
     useEffect(() => {
         // Get the sponsors data
@@ -99,12 +111,10 @@ export default function Sponsors() {
     }, [sponsorsData]);
 
     return (
-        <section id="sponsors" className="sponsors">
-            <div className="ceiling"></div>
-            <img
-                className="background"
-                src={JungleImage}
-            />
+        <section id="sponsors" className="sponsors" ref={sectionRef}>
+            <img className="background" src={JungleImage} style={{
+                transform: `translateX(-50%) translateY(calc(40% + ${middleY * 0.05}px))`
+            }}/>
             <div className="info">
                 <Plack>
                     <h2>Sponsor Us!</h2>
@@ -128,6 +138,90 @@ export default function Sponsors() {
                     </div>
                 </Plack>
             </div>
+            <Ceiling />
         </section>
+    );
+}
+
+function Ceiling() {
+    const ceilingRef = useRef<HTMLDivElement>(null);
+    const [ceilingY, setCeilingY] = useState(0);
+
+    const parallax1 = 0.01;
+    const parallax2 = 0.02;
+    const parallax3 = 0.03;
+    const parallax4 = 0.04;
+
+    useEffect(() => {
+        if (ceilingRef.current) {
+            setCeilingY(
+                window.screenY - ceilingRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY, ceilingRef]);
+
+    return (
+        <div className="ceiling" ref={ceilingRef}>
+            <div
+                className="layer l1"
+                style={{
+                    transform: `translateY(calc(${
+                        ceilingY * parallax1
+                    }px + 5%))`,
+                }}
+            >
+                <div className="left">
+                    <div className="environment-glow" />
+                </div>
+                <div className="right">
+                    <div className="environment-glow" />
+                </div>
+            </div>
+            <div
+                className="layer l2"
+                style={{
+                    transform: `translateY(calc(${
+                        ceilingY * parallax2
+                    }px + 10%))`,
+                }}
+            >
+                <div className="left">
+                    <div className="environment-glow" />
+                </div>
+                <div className="right">
+                    <div className="environment-glow" />
+                </div>
+            </div>
+            <div
+                className="layer l3"
+                style={{
+                    transform: `translateY(calc(${
+                        ceilingY * parallax3
+                    }px + 15%))`,
+                }}
+            >
+                <div className="left">
+                    <div className="environment-glow" />
+                </div>
+                <div className="right">
+                    <div className="environment-glow" />
+                </div>
+            </div>
+            <div
+                className="layer l4"
+                style={{
+                    transform: `translateY(calc(${
+                        ceilingY * parallax4
+                    }px + 20%))`,
+                }}
+            >
+                <div className="left">
+                    <div className="environment-glow" />
+                </div>
+                <div className="right">
+                    <div className="environment-glow" />
+                </div>
+            </div>
+        </div>
     );
 }
