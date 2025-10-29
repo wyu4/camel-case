@@ -22,7 +22,7 @@
     align-items: stretch;
     gap: var(--spacing);
     margin-top: 6vh;
-    z-index: 20;
+    z-index: 40;
 }
 
 .sponsors .info .about {
