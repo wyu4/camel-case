@@ -112,7 +112,7 @@
 
 .merch .media {
     position: relative;
-    min-width: clamp(25rem, 25vw, 30rem);
+    min-width: clamp(20rem, 20vw, 30rem);
     min-height: 30vh;
 }
 
@@ -124,5 +124,5 @@
 
 .merch .background .sticker {
     width: 20rem;
-    filter: blur(2px)  drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5));
+    filter: blur(2px)  drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5)) grayscale(20%);
 }
