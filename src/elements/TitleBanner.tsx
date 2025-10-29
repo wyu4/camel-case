@@ -53,7 +53,7 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                 }
                 src={Cababas}
             />
-            <div className="surface">
+            <div className="view">
                 <div
                     className="title"
                     style={{
@@ -97,6 +97,7 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                 </button>
                 <Decor {...props} />
             </div>
+            <div className="extension bottom" />
         </section>
     );
 }

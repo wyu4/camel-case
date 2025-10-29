@@ -1,6 +1,5 @@
 import { JUKEBOX_URL } from "../global/APIHelpers";
 import Line from "./Line";
-import Plack from "./Plack";
 import DesertCab from "/images/DesertCab.webp";
 import MoustacheCab from "/images/MoustacheCab.webp";
 import Myomnyom from "/images/Myomnyom.webp";
