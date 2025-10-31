@@ -124,5 +124,5 @@
 
 .merch .background .sticker {
     width: 20rem;
-    filter: blur(2px)  drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5)) grayscale(20%);
+    filter: blur(2px) drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5)) grayscale(20%);
 }

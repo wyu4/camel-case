@@ -54,7 +54,7 @@ export default function App() {
         <>
             <div className="production background" ref={background} />
             <div className="production container">
-                {/* <TopBar {...windowProps} /> */}
+                <TopBar {...windowProps} />
                 <TitleBanner {...windowProps} />
                 <Intro />
                 <Agenda />

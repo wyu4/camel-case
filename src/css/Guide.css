@@ -82,9 +82,11 @@
     z-index: 28;
 }
 .guide .background .layer.l3 {
+    filter: blur(1px);
     z-index: 26;
 }
 .guide .background .layer.l4 {
+    filter: blur(2px);
     z-index: 24;
 }
 

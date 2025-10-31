@@ -272,7 +272,7 @@ export default function Agenda() {
     }, []);
 
     return (
-        <section className="agenda">
+        <section className="agenda" id="schedule">
             <EventMap venue={venueData} />
             <EventInfo schedule={scheduleData} venue={venueData} />
         </section>
