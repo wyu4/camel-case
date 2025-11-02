@@ -78,6 +78,7 @@ function EventInfo({
 }) {
     return (
         <Plack className="info">
+            <div id="schedule" />
             <h2>Event Info</h2>
             <Line />
             <p>

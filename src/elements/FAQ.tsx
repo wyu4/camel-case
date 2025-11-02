@@ -98,7 +98,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="faq">
+        <section className="faq" id="faq">
             <h2>FAQ</h2>
             <div className="container">
                 {[

@@ -7,6 +7,10 @@
 }
 
 .contacts a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.1s ease-in-out;
 }
 
@@ -16,8 +20,4 @@
 
 .contacts a:active {
     transform: scale(0.9);
-}
-
-.contacts img {
-    width: calc(var(--spacing) * 2);
 }

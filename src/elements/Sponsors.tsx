@@ -113,7 +113,7 @@ export default function Sponsors() {
     return (
         <section id="sponsors" className="sponsors" ref={sectionRef}>
             <img className="background" src={JungleImage} style={{
-                transform: `translateX(-50%) translateY(calc(40% + ${middleY * 0.05}px))`
+                transform: `translateX(-50%) translateY(calc(40% + ${middleY * 0.15}px))`
             }}/>
             <div className="info">
                 <Plack>

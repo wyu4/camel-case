@@ -1,30 +1,194 @@
 .top-bar {
-    display: flex;
+    --font-size: clamp(0.75em, 1.5vw, 1em);
+    --top-height: calc(var(--spacing) * 3.5);
+    --open-speed: 1s;
     position: fixed;
-    width: 100vw;
-    background: #ffffff00;
     z-index: 9999;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing);
-    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--top-height);
     transition: opacity 0.25s ease-in-out;
     opacity: 0;
-    pointer-events: none;
+    background-image: linear-gradient(to bottom, #000000d3, #00000060);
+    transition: opacity 0.25s ease-in-out,
+        height calc(var(--open-speed) / 2) ease-in-out
+            calc(var(--open-speed) / 2);
+    overflow: hidden;
+    pointer-events: all;
 }
 
 .top-bar.visible {
     opacity: 1;
 }
 
-.top-bar a,.top-bar button {
-    pointer-events: all;
-    font-size: 2em;
+.top-bar a,
+.top-bar button {
+    font-size: var(--font-size);
+    border-radius: 100vw;
+    border-width: 0;
+    transition: transform 0.1s ease-in-out;
+    background-color: #00000000;
+    color: var(--high-beige-2);
+    z-index: 20;
+}
+
+.top-bar button:hover {
+    transform: scale(1.1);
 }
 
 .top-bar button:active {
-  opacity: 1 !important;
-  background-color: none;
+    transform: scale(0.9);
+}
+
+.top-bar .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+.top-bar .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--top-height);
+}
+
+.top-bar .top h1 {
+    font-size: var(--font-size);
+    color: var(--high-beige-2);
+}
+
+.top-bar .top .section {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--spacing);
+    pointer-events: all;
+}
+
+.top-bar .top .section.left {
+    justify-content: left;
+    left: var(--spacing);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top-bar .top .section.middle {
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.top-bar .top .section.right {
+    justify-content: right;
+    right: var(--spacing);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top-bar .signup {
+    background-color: var(--jungle-green);
+    color: var(--high-beige-2);
+}
+
+.top-bar .menu-button {
+    position: absolute;
+    left: var(--spacing);
+    top: 50%;
+    background-color: var(--high-beige-2);
+    aspect-ratio: 1/1;
+    width: calc(var(--spacing) * 1.5);
+    mask-image: url("/images/MenuIcon.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    pointer-events: all;
+    border-width: 0;
+    border-radius: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.top-bar .menu-button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.top-bar .menu-button:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.top-bar .menu {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity calc(var(--open-speed) / 2) ease-in-out;
+}
+
+.top-bar .menu a,
+.top-bar .menu button,
+.top-bar .menu li {
+    font-size: calc(var(--font-size) * 2);
+    color: var(--high-beige-2);
+    text-decoration: underline;
+}
+
+.top-bar .menu a.disabled,
+.top-bar .menu button.disabled,
+.top-bar .menu li.disabled {
+    text-decoration: line-through;
+}
+
+.top-bar.opened {
+    height: 100vh;
+    transition: opacity 0.25s ease-in-out,
+        height calc(var(--open-speed) / 2) ease-in-out;
+}
+
+.top-bar.opened .menu-button {
+    mask-image: url("/images/CloseIcon.svg");
+}
+
+.top-bar.opened .menu {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity calc(var(--open-speed) / 2) ease-in-out
+        calc(var(--open-speed) / 2);
+}
+
+@media (max-width: 50rem) {
+    .top-bar .top .section {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .top-bar .top .menu-button {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media (min-width: 50rem) {
+    .top-bar.opened {
+        height: var(--top-height);
+        transition: none;
+    }
+
+    .top-bar.opened .menu {
+        opacity: 0;
+        pointer-events: none;
+        transition: none;
+    }
 }
