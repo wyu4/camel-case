@@ -1,10 +1,19 @@
 import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
 import gsap from "gsap";
 import Contacts from "./Contacts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function TopBar({ ...props }: VerticalWindowProps) {
     const [opened, setOpened] = useState(false);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const state = props.scrollPosition > props.viewHeight / 2;
+        setVisible(state);
+        if (state == false) {
+            setOpened(false);
+        }
+    }, [props.scrollPosition, props.viewHeight]);
 
     const toggleMenu = () => {
         const newState = !opened;
@@ -40,7 +49,7 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
         <div
             className={
                 "top-bar " +
-                (props.scrollPosition > props.viewHeight / 2 ? "visible" : "") +
+                (visible || opened ? "visible" : "") +
                 " " +
                 (opened ? "opened" : "")
             }
