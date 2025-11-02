@@ -7,7 +7,8 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
     const [opened, setOpened] = useState(false);
 
     const toggleMenu = () => {
-        setOpened(!opened);
+        const newState = !opened;
+        setOpened(newState);
     };
 
     const goto = (id: string) => {

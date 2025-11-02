@@ -56,10 +56,6 @@
     overflow-x: hidden;
 }
 
-:root:has(.top-bar.opened) {
-    overflow-y: hidden;
-}
-
 h1,
 h2,
 h3,
