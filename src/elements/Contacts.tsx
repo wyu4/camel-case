@@ -5,23 +5,38 @@ import { EMAIL_URL, GMAIL_URL } from "../global/APIHelpers";
 
 export default function Contacts({
     className = "",
-}: ComponentPropsWithRef<"span">) {
+    iconSize = "calc(var(--spacing) * 2)",
+}: ComponentPropsWithRef<"span"> & {
+    iconSize?: string;
+}) {
     return (
         <span className={"contacts " + className}>
-            <a
-                className="mail"
-                href={EMAIL_URL}
-                target="_blank"
-            >
-                <img src={Mail} />
+            <a className="mail" href={EMAIL_URL} target="_blank">
+                <Icon src={Mail} alt="Mail" iconSize={iconSize} />
             </a>
-            <a
-                className="gmail"
-                href={GMAIL_URL}
-                target="_blank"
-            >
-                <img src={Gmail} />
+            <a className="gmail" href={GMAIL_URL} target="_blank">
+                <Icon src={Gmail} alt="Gmail" iconSize={iconSize} />
             </a>
         </span>
+    );
+}
+
+function Icon({
+    src,
+    alt,
+    iconSize,
+}: {
+    src: string;
+    alt: string;
+    iconSize: string;
+}) {
+    return (
+        <img
+            src={src}
+            alt={alt}
+            style={{
+                width: iconSize,
+            }}
+        />
     );
 }

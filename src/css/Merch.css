@@ -120,9 +120,11 @@
     position: absolute;
     width: 12rem;
     filter: drop-shadow(-1rem 1rem 0.8rem rgba(0, 0, 0, 0.5));
+    will-change: filter;
 }
 
 .merch .background .sticker {
-    width: 20rem;
+    width: clamp(10rem, 17vw, 20rem);
     filter: blur(2px) drop-shadow(-0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.5)) grayscale(20%);
+    will-change: filter;
 }

@@ -1,8 +1,17 @@
 import { SIGNUP_DISABLED, SIGNUP_URL } from "../global/APIHelpers";
 import gsap from "gsap";
+import Contacts from "./Contacts";
+import { useState } from "react";
 
 export default function TopBar({ ...props }: VerticalWindowProps) {
+    const [opened, setOpened] = useState(false);
+
+    const toggleMenu = () => {
+        setOpened(!opened);
+    };
+
     const goto = (id: string) => {
+        setOpened(false);
         gsap.to(window, {
             duration: 2,
             scrollTo: id,
@@ -30,19 +39,59 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
         <div
             className={
                 "top-bar " +
-                (props.scrollPosition > props.viewHeight / 2 ? "visible" : "")
+                (props.scrollPosition > props.viewHeight / 2 ? "visible" : "") +
+                " " +
+                (opened ? "opened" : "")
             }
         >
-            <div className="section left"></div>
-            <div className="section middle">
-                <button hidden={SIGNUP_DISABLED} onClick={signup}>
-                    Sign Up
-                </button>
-                <button onClick={schedule}>schedule</button>
-                <button onClick={sponsors}>sponsors</button>
-                <button onClick={faq}>FAQ</button>
+            <div className="menu">
+                <ol>
+                    <li>
+                        <button
+                            className={SIGNUP_DISABLED ? "disabled" : ""}
+                            onClick={signup}
+                        >
+                            Sign Up
+                        </button>
+                    </li>
+
+                    <li>
+                        <button onClick={schedule}>schedule</button>
+                    </li>
+                    <li>
+                        <button onClick={sponsors}>sponsors</button>
+                    </li>
+                    <li>
+                        <button onClick={faq}>FAQ</button>
+                    </li>
+                </ol>
+                <Contacts />
             </div>
-            <div className="section right"></div>
+            <div className="top">
+                <button onClick={toggleMenu} className="menu-button" />
+                <div className="section left">
+                    <Title />
+                </div>
+                <div className="section middle">
+                    <button hidden={SIGNUP_DISABLED} onClick={signup}>
+                        Sign Up
+                    </button>
+                    <button onClick={schedule}>schedule</button>
+                    <button onClick={sponsors}>sponsors</button>
+                    <button onClick={faq}>FAQ</button>
+                </div>
+                <div className="section right">
+                    <ContactInfo />
+                </div>
+            </div>
         </div>
     );
+}
+
+function Title() {
+    return <h1>camelCase</h1>;
+}
+
+function ContactInfo() {
+    return <Contacts iconSize="2rem" />;
 }

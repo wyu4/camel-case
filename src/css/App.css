@@ -56,6 +56,10 @@
     overflow-x: hidden;
 }
 
+:root:has(.top-bar.opened) {
+    overflow-y: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -91,7 +95,7 @@ h3 {
     color: var(--main-green);
 }
 
-p, div, button {
+p, div, button, li {
     font-family: 'betm-rounded', Arial;
     font-size: 1.75rem;
     color: var(--high-dark-brown);
@@ -99,13 +103,14 @@ p, div, button {
 
 a, button {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a, u {
     color: var(--high-brown);
 }
 
-a.disabled, button.disabled {
+a.disabled, button.disabled, li.disabled {
     text-decoration: line-through;
     pointer-events: none;
 }

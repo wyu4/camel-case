@@ -1,3 +1,8 @@
+#schedule {
+    position: absolute;
+    top: -50%;
+}
+
 .agenda {
     position: relative;
     display: flex;
@@ -34,6 +39,7 @@
 }
 
 .agenda .info {
+    position: relative;
     gap: var(--spacing);
     padding: var(--spacing);
     padding-top: var(--grooves);
@@ -125,6 +131,10 @@
 }
 
 @media (max-width: 800px) {
+    #schedule {
+        top: -30vh;
+    }
+
     .agenda {
         justify-content: flex-start;
         align-items: center;
