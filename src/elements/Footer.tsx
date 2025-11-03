@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import {
     EMAIL_URL,
+    GITHUB_URL,
+    INSTAGRAM_URL,
     SIGNUP_DISABLED,
     SIGNUP_URL,
     SPONSORSHIP_URL,
@@ -46,16 +48,23 @@ export default function Footer() {
                 <Signature name="wilson" src={Wilson} />
             </div>
             <div className="shortlinks contacts">
-                <a href={EMAIL_URL}>email</a>
-                <a href={SPONSORSHIP_URL} target="_blank">
-                    sponsorship
-                </a>
                 <a
                     className={SIGNUP_DISABLED ? "disabled" : ""}
                     href={SIGNUP_URL}
                     target="_blank"
                 >
                     sign up
+                </a>
+                <a href={EMAIL_URL}>email</a>
+                <a href={SPONSORSHIP_URL} target="_blank">
+                    sponsorship
+                </a>
+
+                <a href={INSTAGRAM_URL} target="_blank">
+                    instagram
+                </a>
+                <a href={GITHUB_URL} target="_blank">
+                    view code
                 </a>
             </div>
         </section>

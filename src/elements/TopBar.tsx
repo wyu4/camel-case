@@ -61,7 +61,7 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
                             className={SIGNUP_DISABLED ? "disabled" : ""}
                             onClick={signup}
                         >
-                            Sign Up
+                            sign up
                         </button>
                     </li>
 
@@ -84,7 +84,7 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
                 </div>
                 <div className="section middle">
                     <button hidden={SIGNUP_DISABLED} onClick={signup}>
-                        Sign Up
+                        sign up
                     </button>
                     <button onClick={schedule}>schedule</button>
                     <button onClick={sponsors}>sponsors</button>

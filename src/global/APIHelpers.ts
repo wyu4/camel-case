@@ -13,7 +13,7 @@ export const PEOPLE_API =
 
 export const SPONSORSHIP_URL = "/sponsorship/"
 
-export const SIGNUP_DISABLED = true;
+export const SIGNUP_DISABLED = false;
 
 export const SIGNUP_URL = "/signup/";
 
@@ -24,6 +24,8 @@ export const GMAIL_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=camelcas
 export const JUKEBOX_URL = "https://www.jukeboxprint.com/custom-stickers";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/camelcase_ottawa";
+
+export const GITHUB_URL = "https://github.com/wyu4/camel-case";
 
 export function getImagePath(path: string) {
     return path.startsWith("media/") ? IMAGE_API + path : path;
