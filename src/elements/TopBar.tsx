@@ -75,7 +75,7 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
                         <button onClick={faq}>FAQ</button>
                     </li>
                 </ol>
-                <Contacts />
+                <Contacts contactsOnly={false} />
             </div>
             <div className="top">
                 <button onClick={toggleMenu} className="menu-button" />
@@ -103,5 +103,5 @@ function Title() {
 }
 
 function ContactInfo() {
-    return <Contacts iconSize="2rem" />;
+    return <Contacts iconSize="2rem" contactsOnly={false} />;
 }
