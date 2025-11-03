@@ -36,7 +36,7 @@ function Ceiling() {
                 window.screenY - ceilingRef.current.getBoundingClientRect().top
             );
         }
-    }, [ceilingRef]);
+    }, [window.scrollY, ceilingRef]);
 
     return (
         <div id="intro" className="ceiling" ref={ceilingRef}>
