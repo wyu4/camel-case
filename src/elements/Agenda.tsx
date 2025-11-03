@@ -82,7 +82,7 @@ function EventInfo({
             <h2>Event Info</h2>
             <Line />
             <p>
-                <b>Date: </b>November 29 - 30, 2025
+                <b>Date: </b>December 20 - 21, 2025
             </p>
             <p>
                 <b>Location: </b>

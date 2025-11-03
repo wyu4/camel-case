@@ -1,7 +1,8 @@
 import type { ComponentPropsWithRef } from "react";
 import Gmail from "/images/Gmail.webp";
 import Mail from "/images/MailIcon.webp";
-import { EMAIL_URL, GMAIL_URL } from "../global/APIHelpers";
+import Instagram from "/images/InstagramIcon.webp";
+import { EMAIL_URL, GMAIL_URL, INSTAGRAM_URL } from "../global/APIHelpers";
 
 export default function Contacts({
     className = "",
@@ -16,6 +17,9 @@ export default function Contacts({
             </a>
             <a className="gmail" href={GMAIL_URL} target="_blank">
                 <Icon src={Gmail} alt="Gmail" iconSize={iconSize} />
+            </a>
+            <a className="instagram" href={INSTAGRAM_URL} target="_blank">
+                <Icon src={Instagram} alt="Instagram" iconSize={iconSize} />
             </a>
         </span>
     );

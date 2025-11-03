@@ -23,6 +23,8 @@ export const GMAIL_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=camelcas
 
 export const JUKEBOX_URL = "https://www.jukeboxprint.com/custom-stickers";
 
+export const INSTAGRAM_URL = "https://www.instagram.com/camelcase_ottawa";
+
 export function getImagePath(path: string) {
     return path.startsWith("media/") ? IMAGE_API + path : path;
 }
