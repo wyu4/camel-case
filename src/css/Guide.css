@@ -89,7 +89,11 @@
 }
 
 .guide .background .layer.l1 .left {
-    background-image: linear-gradient(to left, var(--dark-sand), var(--dark-sand-2));
+    background-image: linear-gradient(
+        to left,
+        var(--dark-sand),
+        var(--dark-sand-2)
+    );
     clip-path: polygon(
         0 0,
         calc(100% - (var(--grooves) / 1)) 0,
@@ -167,7 +171,11 @@
 }
 
 .guide .background .layer.l1 .right {
-    background-image: linear-gradient(to right, var(--dark-sand), var(--dark-sand-2));
+    background-image: linear-gradient(
+        to right,
+        var(--dark-sand),
+        var(--dark-sand-2)
+    );
     clip-path: polygon(
         calc(var(--grooves) / 1) 0,
         calc(var(--grooves) / 3) 10%,
@@ -348,11 +356,11 @@
 
 .guide .mining {
     position: absolute;
-    left: var(--grooves);
-    right: var(--grooves);
+    left: max(20%, var(--grooves));
+    width: max(30rem, calc(80% - var(--grooves)));
     height: 7%;
-    bottom: calc(2% + var(--grooves));
-    background-color: var(--dark-sand-3);
+    top: calc(6.5% + var(--grooves));
+    background-image: linear-gradient(to top, var(--dark-sand-3), #4b3821);
     clip-path: polygon(
         0 50%,
         25% 10%,
@@ -370,9 +378,10 @@
 .guide .mining .cababas {
     position: absolute;
     aspect-ratio: 1/1;
-    max-width: 25%;
-    bottom: -10%;
-    left: 25%;
+    max-width: clamp(10rem, 25%, 50rem);
+    bottom: -15%;
+    left: 20%;
+    filter: brightness(60%) grayscale(10%);
 }
 
 .guide .exit-glow {
@@ -380,7 +389,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40%;
+    height: min(40%, 40rem);
     background-image: linear-gradient(to top, var(--high-beige-2), transparent);
     opacity: 0.2;
 }

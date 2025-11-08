@@ -1,32 +1,33 @@
-@import url('./TopBar.css');
-@import url('./TitleBanner.css');
-@import url('./Intro.css');
-@import url('./Agenda.css');
-@import url('./Guide.css');
-@import url('./Merch.css');
-@import url('./Sponsors.css');
-@import url('./FAQ.css');
-@import url('./Footer.css');
-@import url('./Contacts.css');
+@import url("./TopBar.css");
+@import url("./TitleBanner.css");
+@import url("./Intro.css");
+@import url("./Agenda.css");
+@import url("./Guide.css");
+@import url("./Merch.css");
+@import url("./Sponsors.css");
+@import url("./FAQ.css");
+@import url("./Footer.css");
+@import url("./Contacts.css");
 
 @font-face {
-    font-family: 'lazy-dog';
-    src: url('../fonts/lazy-dog.otf') format('opentype');
+    font-family: "lazy-dog";
+    src: url("../fonts/lazy-dog.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'intro-rust';
-    src: url('../fonts/intro-rust.otf') format('opentype');
+    font-family: "intro-rust";
+    src: url("../fonts/intro-rust.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'etna';
-    src: url('../fonts/etna.otf') format('opentype');
+    font-family: "etna";
+    src: url("../fonts/etna.otf") format("opentype");
+    ascent-override: 70%;
 }
 
 @font-face {
-    font-family: 'betm-rounded';
-    src: url('../fonts/betm-rounded-regular.ttf') format('truetype');
+    font-family: "betm-rounded";
+    src: url("../fonts/betm-rounded-regular.ttf") format("truetype");
 }
 
 :root {
@@ -41,7 +42,7 @@
     --high-beige: #f4e5c9;
     --high-beige-2: #f8f3e6;
     --high-grey: #8f8f8f;
-    --sky: #3e95f3;
+    --sky: #057cfc;
     --fog: var(--fog-temp);
     --jungle-green: #416137;
     --spacing: 1.5rem;
@@ -62,7 +63,8 @@ h3,
 p {
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: normal;
+    vertical-align: middle;
 }
 
 body {
@@ -74,39 +76,46 @@ body {
 }
 
 h1 {
-    font-family: 'lazy-dog', Arial;
+    font-family: "lazy-dog", Arial;
     font-size: 15rem;
     color: var(--high-dark-brown);
 }
 
 h2 {
-    font-family: 'intro-rust', Arial;
+    font-family: "intro-rust", Arial;
     font-size: 3rem;
     color: var(--high-brown);
 }
 
 h3 {
-    font-family: 'etna', Arial;
+    font-family: "etna", Arial;
     font-size: 2rem;
     color: var(--main-green);
 }
 
-p, div, button, li {
-    font-family: 'betm-rounded', Arial;
+p,
+div,
+button,
+li {
+    font-family: "betm-rounded", Arial;
     font-size: 1.75rem;
     color: var(--high-dark-brown);
 }
 
-a, button {
+a,
+button {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
-a, u {
+a,
+u {
     color: var(--high-brown);
 }
 
-a.disabled, button.disabled, li.disabled {
+a.disabled,
+button.disabled,
+li.disabled {
     text-decoration: line-through;
     pointer-events: none;
 }
@@ -131,11 +140,11 @@ a.disabled, button.disabled, li.disabled {
     padding: var(--spacing);
 }
 
-.invisible { 
+.invisible {
     opacity: 0;
 }
 
-.transparent { 
+.transparent {
     background: #00000000;
 }
 

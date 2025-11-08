@@ -246,7 +246,7 @@ function Leaf({
 }
 
 function Background() {
-    const parallax1 = 0;
+    const parallax1 = 1 / 25;
     const parallax2 = 1 / 8;
     const parallax3 = 1 / 7;
     const parallax4 = 1 / 6;
@@ -276,7 +276,9 @@ function Background() {
                     <div className="exit-glow" />
                 </div>
                 <div className="left" />
-                <div className="right">{/* <Mining /> */}</div>
+                <div className="right">
+                    <Mining />
+                </div>
             </div>
             <div
                 className="layer l2"
@@ -365,9 +367,24 @@ function Background() {
 }
 
 function Mining() {
+    const backgroundRef = useRef<HTMLDivElement>(null);
+    const [sectionY, setSectionY] = useState(0);
+
+    useEffect(() => {
+        if (backgroundRef.current) {
+            setSectionY(
+                window.screenY +
+                    window.innerHeight / 2 -
+                    backgroundRef.current.getBoundingClientRect().top
+            );
+        }
+    }, [window.scrollY, window.innerHeight, backgroundRef]);
+
     return (
-        <div className="mining">
-            <img className="cababas" src={Mining1} />
+        <div className="mining" ref={backgroundRef}>
+            <img className="cababas" src={Mining1} style={{
+                transform: `translateX(-50%) scaleX(-1) translateY(${sectionY * (1/30)}px)`
+            }} />
         </div>
     );
 }
