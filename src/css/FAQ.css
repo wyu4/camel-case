@@ -68,10 +68,10 @@
 
 .faq .question button {
     position: relative;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     padding: calc(var(--spacing) / 3);
     gap: calc(var(--spacing) / 4);
@@ -79,7 +79,6 @@
     border-radius: var(--radius);
     width: 100%;
     z-index: 35;
-    cursor: pointer;
     background: none;
 }
 
@@ -88,7 +87,6 @@
     white-space: nowrap;
     color: var(--high-dark-brown);
     font-size: 1.6rem;
-    line-height: 1rem;
     z-index: 35;
 }
 

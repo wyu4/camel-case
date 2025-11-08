@@ -181,7 +181,11 @@
 }
 
 .intro .ground .layer.l1 .left {
-    background-image: linear-gradient(to bottom left, var(--dark-sand), var(--dark-sand-2));
+    background-image: linear-gradient(
+        to bottom left,
+        var(--dark-sand),
+        var(--dark-sand-2)
+    );
     clip-path: polygon(
         0 0,
         10% calc(var(--grooves) / 2),
@@ -272,7 +276,11 @@
 }
 
 .intro .ground .layer.l1 .right {
-    background-image: linear-gradient(to bottom right, var(--dark-sand), var(--dark-sand-2));
+    background-image: linear-gradient(
+        to bottom right,
+        var(--dark-sand),
+        var(--dark-sand-2)
+    );
     clip-path: polygon(
         calc(var(--grooves) / 1.5) 100%,
         calc(var(--grooves) / 2.5) 82%,
@@ -372,6 +380,13 @@
     position: absolute;
     max-width: clamp(10rem, 20%, 25rem);
     z-index: 30;
+}
+
+.intro .cababas {
+    z-index: 32;
+    width: clamp(5rem, 10%, 20rem);
+    filter: brightness(80%);
+    transform: translateY(-50%);
 }
 
 .intro img.leaf {
