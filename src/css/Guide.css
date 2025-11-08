@@ -356,7 +356,7 @@
 
 .guide .mining {
     position: absolute;
-    left: max(20%, calc(var(--grooves) * 1.5));
+    left: max(20%, calc(var(--grooves) 1.1));
     width: max(30rem, calc(80% - var(--grooves)));
     height: 7%;
     top: calc(16% + var(--grooves));
@@ -378,7 +378,7 @@
 .guide .mining .cababas {
     position: absolute;
     aspect-ratio: 1/1;
-    max-width: clamp(10rem, 25%, 50rem);
+    max-width: clamp(8rem, 25%, 50rem);
     bottom: -15%;
     left: 20%;
     filter: brightness(60%) grayscale(10%);
