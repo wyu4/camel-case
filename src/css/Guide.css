@@ -356,10 +356,10 @@
 
 .guide .mining {
     position: absolute;
-    left: max(20%, var(--grooves));
+    left: max(20%, calc(var(--grooves) * 1.5));
     width: max(30rem, calc(80% - var(--grooves)));
     height: 7%;
-    top: calc(6.5% + var(--grooves));
+    top: calc(16% + var(--grooves));
     background-image: linear-gradient(to top, var(--dark-sand-3), #4b3821);
     clip-path: polygon(
         0 50%,
