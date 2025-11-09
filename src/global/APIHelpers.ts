@@ -15,7 +15,7 @@ export const SPONSORSHIP_URL = "/sponsorship/"
 
 export const SIGNUP_DISABLED = false;
 
-export const SIGNUP_URL = "/signup/";
+export const SIGNUP_URL = "https://camelcase.fillout.com/sign-up";
 
 export const EMAIL_URL = "mailto:camelcasehackathon@gmail.com";
 
