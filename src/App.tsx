@@ -10,6 +10,7 @@ import FAQ from "./elements/FAQ";
 import Footer from "./elements/Footer";
 import Guide from "./elements/Guide";
 import Merch from "./elements/Merch";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -52,6 +53,7 @@ export default function App() {
 
     return (
         <>
+            <Analytics />
             <div className="production background" ref={background} />
             <div className="production container">
                 <TopBar {...windowProps} />
