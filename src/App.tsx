@@ -12,6 +12,8 @@ import Guide from "./elements/Guide";
 import Merch from "./elements/Merch";
 import { Analytics } from "@vercel/analytics/react";
 
+const ANALYTICS = process.env.ANALYTICS;
+
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
         scrollPosition: 0,
@@ -53,7 +55,7 @@ export default function App() {
 
     return (
         <>
-            <Analytics />
+            <AnalyticsIfEnabled />
             <div className="production background" ref={background} />
             <div className="production container">
                 <TopBar {...windowProps} />
@@ -68,4 +70,11 @@ export default function App() {
             </div>
         </>
     );
+}
+
+function AnalyticsIfEnabled() {
+    if (ANALYTICS === undefined || ANALYTICS != "1") {
+        return null;
+    }
+    return <Analytics />;
 }
