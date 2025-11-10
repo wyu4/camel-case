@@ -12,7 +12,7 @@ import Guide from "./elements/Guide";
 import Merch from "./elements/Merch";
 import { Analytics } from "@vercel/analytics/react";
 
-const ANALYTICS = process.env.ANALYTICS;
+const ANALYTICS = import.meta.env.VITE_ANALYTICS;
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -73,6 +73,10 @@ export default function App() {
 }
 
 function AnalyticsIfEnabled() {
+    useEffect(() => {
+        console.log(`Analytics: ${String(ANALYTICS)}`);
+    }, [ANALYTICS]);
+
     if (ANALYTICS === undefined || ANALYTICS != "1") {
         return null;
     }
