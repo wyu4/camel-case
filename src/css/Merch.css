@@ -35,11 +35,11 @@
 
 .merch .background .grid {
     --grid-color: #e1cfb9;
-    aspect-ratio: 1/1;
     position: absolute;
     left: 50%;
     top: 50%;
     width: 150%;
+    height: 150%;
     background-size: 3rem 3rem;
     background-image: linear-gradient(
             to right,
