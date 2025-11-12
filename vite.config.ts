@@ -16,7 +16,6 @@ export default defineConfig({
                 main: resolve(root, "index.html"),
                 placeholder: resolve(root, "placeholder", "index.html"),
                 sponsorship: resolve(root, "sponsorship", "index.html"),
-                signup: resolve(root, "signup", "index.html"),
             },
         },
     },
