@@ -73,12 +73,5 @@ export default function App() {
 }
 
 function AnalyticsIfEnabled() {
-    useEffect(() => {
-        console.log(`Analytics: ${String(ANALYTICS)}`);
-    }, [ANALYTICS]);
-
-    if (ANALYTICS === undefined || ANALYTICS != "1") {
-        return null;
-    }
-    return <Analytics />;
+    return ((ANALYTICS === undefined || ANALYTICS != "1") ? null : <Analytics />);
 }

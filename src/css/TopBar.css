@@ -15,11 +15,12 @@
         height calc(var(--open-speed) / 2) ease-in-out
             calc(var(--open-speed) / 2);
     overflow: hidden;
-    pointer-events: all;
+    pointer-events: none;
 }
 
 .top-bar.visible {
     opacity: 1;
+    pointer-events: all;
 }
 
 .top-bar a,
@@ -75,7 +76,6 @@
     flex-wrap: nowrap;
     align-items: center;
     gap: var(--spacing);
-    pointer-events: all;
 }
 
 .top-bar .top .section.left {
@@ -115,12 +115,15 @@
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: contain;
-    pointer-events: all;
     border-width: 0;
     border-radius: 0;
     transform: translateY(-50%);
     opacity: 0;
     pointer-events: none;
+}
+
+.top-bar:not(.visible) .menu-button {
+    pointer-events: none !important;
 }
 
 .top-bar .menu-button:hover {
