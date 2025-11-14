@@ -80,6 +80,9 @@ h1 {
     font-size: 15rem;
     color: var(--high-dark-brown);
 }
+h1.uppercase {
+    font-size: 20rem;
+}
 
 h2 {
     font-family: "intro-rust", Arial;

@@ -147,8 +147,12 @@
 }
 
 .title-banner .view .title h1 {
-    font-size: 15vw;
+    font-size: 12vw;
     padding-bottom: 0.25em;
+}
+
+.title-banner .view .title h1.uppercase {
+    font-size: 19.5vw;
 }
 
 .title-banner .view .dunes {
