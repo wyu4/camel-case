@@ -9,7 +9,7 @@ import Cababas from "/images/Cababas.webp";
 gsap.registerPlugin(ScrollToPlugin);
 
 export default function TitleBanner({ ...props }: VerticalWindowProps) {
-    const TITLE = "CAMELCASE"; // Set this to whatever the name is
+    const TITLE = "camelCase"; // Set this to whatever the name is
     const headers: JSX.Element[] = [];
 
     const buttonVisibilityRange = 0.1;
@@ -38,7 +38,14 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
 
     // Splits the title into seperate header elements
     TITLE.split("").forEach((character, i) => {
-        headers.push(<h1 key={`${character}-${i}`}>{character}</h1>);
+        headers.push(
+            <h1
+                key={`${character}-${i}`}
+                className={character.toUpperCase() === character ? "uppercase" : ""}
+            >
+                {character}
+            </h1>
+        );
     });
 
     return (
