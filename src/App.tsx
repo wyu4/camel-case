@@ -13,6 +13,12 @@ import Merch from "./elements/Merch";
 import { Analytics } from "@vercel/analytics/react";
 
 const ANALYTICS = import.meta.env.VITE_ANALYTICS;
+const ROBOT = import.meta.env.VITE_ROBOT;
+
+const robotsMeta = document.createElement("meta");
+robotsMeta.name = "robots";
+robotsMeta.content = ROBOT || "noindex, nofollow";
+document.head.appendChild(robotsMeta);
 
 export default function App() {
     const [windowProps, setWindowProps] = useState<WindowProps>({
@@ -73,5 +79,5 @@ export default function App() {
 }
 
 function AnalyticsIfEnabled() {
-    return ((ANALYTICS === undefined || ANALYTICS != "1") ? null : <Analytics />);
+    return ANALYTICS === undefined || ANALYTICS != "1" ? null : <Analytics />;
 }
