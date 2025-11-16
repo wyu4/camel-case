@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/signup", "destination": "/signup/", "permanent": true },
+    { "source": "/sponsorship", "destination": "/sponsorship/", "permanent": true }
+  ]
+}
