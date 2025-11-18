@@ -51,6 +51,8 @@ button {
     text-align: center;
     text-wrap: nowrap;
     color: #f8f3e6;
+    background-color: #46876f;
+    border-width: 0;
     opacity: 0;
     animation-name: button-fade-in;
     animation-duration: 3s;
@@ -59,4 +61,5 @@ button {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    cursor: pointer;
 }
