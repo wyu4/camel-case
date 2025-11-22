@@ -42,7 +42,7 @@ export default function Footer() {
                 <Signature name="claire" src={Claire} />
                 <Signature name="elliott" src={Elliott} />
                 <Signature name="erin" src={Erin} />
-                <Signature name="fiona" src={Fiona} />
+                {/* <Signature name="fiona" src={Fiona} /> */}
                 <Signature name="jocelyn" src={Jocelyn} />
                 <Signature name="umaiza" src={Umaiza} />
                 <Signature name="wilson" src={Wilson} />
