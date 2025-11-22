@@ -162,3 +162,7 @@ li.disabled {
 .relative {
     position: relative;
 }
+
+.nodeco:not(.disabled) {
+    text-decoration: none;
+}

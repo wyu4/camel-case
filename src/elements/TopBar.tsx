@@ -29,10 +29,6 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
         });
     };
 
-    const signup = () => {
-        window.open(SIGNUP_URL)?.focus();
-    };
-
     const schedule = () => {
         goto("#schedule");
     };
@@ -57,38 +53,58 @@ export default function TopBar({ ...props }: VerticalWindowProps) {
             <div className="menu">
                 <ol>
                     <li>
-                        <button
-                            className={SIGNUP_DISABLED ? "disabled" : ""}
-                            onClick={signup}
+                        <a
+                            className={
+                                "button " + (SIGNUP_DISABLED ? "disabled" : "")
+                            }
+                            href={SIGNUP_URL}
+                            target="_blank"
                         >
                             sign up
-                        </button>
+                        </a>
                     </li>
 
                     <li>
-                        <button onClick={schedule}>schedule</button>
+                        <button className="button" onClick={schedule}>
+                            schedule
+                        </button>
                     </li>
                     <li>
-                        <button onClick={sponsors}>sponsors</button>
+                        <button className="button" onClick={sponsors}>
+                            sponsors
+                        </button>
                     </li>
                     <li>
-                        <button onClick={faq}>FAQ</button>
+                        <button className="button" onClick={faq}>
+                            FAQ
+                        </button>
                     </li>
                 </ol>
                 <Contacts contactsOnly={false} />
             </div>
             <div className="top">
-                <button onClick={toggleMenu} className="menu-button" />
+                <button onClick={toggleMenu} className="button toggle-menu" />
                 <div className="section left">
                     <Title />
                 </div>
                 <div className="section middle">
-                    <button hidden={SIGNUP_DISABLED} onClick={signup}>
+                    <a
+                        className="button nodeco"
+                        hidden={SIGNUP_DISABLED}
+                        href={SIGNUP_URL}
+                        target="_blank"
+                    >
                         sign up
+                    </a>
+                    <button className="button" onClick={schedule}>
+                        schedule
                     </button>
-                    <button onClick={schedule}>schedule</button>
-                    <button onClick={sponsors}>sponsors</button>
-                    <button onClick={faq}>FAQ</button>
+                    <button className="button" onClick={sponsors}>
+                        sponsors
+                    </button>
+                    <button className="button" onClick={faq}>
+                        FAQ
+                    </button>
                 </div>
                 <div className="section right">
                     <ContactInfo />

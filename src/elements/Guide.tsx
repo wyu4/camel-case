@@ -57,10 +57,9 @@ export default function Guide() {
                             <h3>and attend for free</h3>
                             <a
                                 className={SIGNUP_DISABLED ? "disabled" : ""}
-                                href={SIGNUP_DISABLED ? "" : SIGNUP_URL}
                                 target="_blank"
                             >
-                                Register Now
+                                Sign Up Now
                             </a>
                         </Plack>
                     </div>

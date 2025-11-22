@@ -120,7 +120,7 @@
     transform: translateY(0);
 }
 
-.title-banner .buttons button {
+.title-banner .buttons .button {
     border-width: 0;
     border-radius: 100vw;
     font-size: clamp(1rem, 3vw, 2rem);
@@ -138,11 +138,11 @@
     color: var(--high-dark-brown);
 }
 
-.title-banner .view .buttons button:hover {
+.title-banner .view .buttons .button:hover {
     transform: scale(0.95);
 }
 
-.title-banner .view .buttons button:active {
+.title-banner .view .buttons .button:active {
     transform: scale(0.9);
 }
 

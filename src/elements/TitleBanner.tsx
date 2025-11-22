@@ -78,21 +78,22 @@ export default function TitleBanner({ ...props }: VerticalWindowProps) {
                             : "")
                     }
                 >
-                    <button
+                    <a
                         className={
-                            "signup " + (SIGNUP_DISABLED ? "disabled" : "")
+                            "button signup nodeco " + (SIGNUP_DISABLED ? "disabled" : "")
                         }
-                        onClick={signup}
+                        href={SIGNUP_URL}
+                        target="_blank"
                     >
                         Sign Up
-                    </button>
-                    <button className="sponsor " onClick={sponsor}>
+                    </a>
+                    <button className="button sponsor " onClick={sponsor}>
                         Sponsor Us
                     </button>
                 </div>
                 <button
                     className={
-                        "scroll-button " +
+                        "button scroll-button " +
                         (props.scrollPosition <
                         props.viewHeight * buttonVisibilityRange
                             ? "visible"
