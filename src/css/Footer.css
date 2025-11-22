@@ -68,3 +68,7 @@
     text-wrap: nowrap;
     font-size: 0.75em;
 }
+
+.signature.advita {
+    transform: translateX(-7.5%);
+}

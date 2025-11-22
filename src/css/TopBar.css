@@ -23,8 +23,7 @@
     pointer-events: all;
 }
 
-.top-bar a,
-.top-bar button {
+.top-bar .button {
     font-size: var(--font-size);
     border-radius: 100vw;
     border-width: 0;
@@ -34,11 +33,11 @@
     z-index: 20;
 }
 
-.top-bar button:hover {
+.top-bar .button:hover {
     transform: scale(1.1);
 }
 
-.top-bar button:active {
+.top-bar .button:active {
     transform: scale(0.9);
 }
 
@@ -104,7 +103,7 @@
     color: var(--high-beige-2);
 }
 
-.top-bar .menu-button {
+.top-bar .toggle-menu {
     position: absolute;
     left: var(--spacing);
     top: 50%;
@@ -122,15 +121,15 @@
     pointer-events: none;
 }
 
-.top-bar:not(.visible) .menu-button {
+.top-bar:not(.visible) .toggle-menu {
     pointer-events: none !important;
 }
 
-.top-bar .menu-button:hover {
+.top-bar .toggle-menu:hover {
     transform: translateY(-50%) scale(1.1);
 }
 
-.top-bar .menu-button:active {
+.top-bar .toggle-menu:active {
     transform: translateY(-50%) scale(0.9);
 }
 
@@ -140,16 +139,14 @@
     transition: opacity calc(var(--open-speed) / 2) ease-in-out;
 }
 
-.top-bar .menu a,
-.top-bar .menu button,
+.top-bar .menu .button,
 .top-bar .menu li {
     font-size: calc(var(--font-size) * 2);
     color: var(--high-beige-2);
     text-decoration: underline;
 }
 
-.top-bar .menu a.disabled,
-.top-bar .menu button.disabled,
+.top-bar .menu .button.disabled,
 .top-bar .menu li.disabled {
     text-decoration: line-through;
 }
@@ -160,7 +157,7 @@
         height calc(var(--open-speed) / 2) ease-in-out;
 }
 
-.top-bar.opened .menu-button {
+.top-bar.opened .toggle-menu {
     mask-image: url("/images/CloseIcon.svg");
 }
 
@@ -177,7 +174,7 @@
         pointer-events: none;
     }
 
-    .top-bar .top .menu-button {
+    .top-bar .top .toggle-menu {
         opacity: 1;
         pointer-events: all;
     }
