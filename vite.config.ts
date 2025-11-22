@@ -1,6 +1,9 @@
-import { resolve } from "path";
+import { dirname, resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const root = resolve(__dirname, "src");
 
@@ -14,7 +17,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(root, "index.html"),
-                placeholder: resolve(root, "placeholder", "index.html"),
+                placeholderer: resolve(root, "placeholder", "index.html"),
                 sponsorship: resolve(root, "sponsorship", "index.html"),
                 signup: resolve(root, "signup", "index.html"),
             },
