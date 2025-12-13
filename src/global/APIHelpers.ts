@@ -13,7 +13,7 @@ export const PEOPLE_API =
 
 export const SPONSORSHIP_URL = "/sponsorship/"
 
-export const SIGNUP_DISABLED = false;
+export const SIGNUP_DISABLED = true;
 
 export const SIGNUP_URL = "/signup/";
 
