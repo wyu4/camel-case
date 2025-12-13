@@ -30,7 +30,7 @@ function MapViewController({
 function EventMap({ venue }: { venue: VenueProps }) {
     const defaultCenter: LatLngExpression = [31.005863, -41.011643];
 
-    const { name, address, coordinates, url } = venue;
+    const { name, address, coordinates } = venue;
 
     const [latLong, setLatLong] = useState<LatLngExpression | null>(null);
     const [zoom, setZoom] = useState<number>(1);
@@ -82,7 +82,7 @@ function EventInfo({
             <h2>Event Info</h2>
             <Line />
             <p>
-                <b>Date: </b>December 20 - 21, 2025
+                <b>Date: </b>May, 2026
             </p>
             <p>
                 <b>Location: </b>
