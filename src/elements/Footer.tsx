@@ -38,14 +38,14 @@ export default function Footer() {
             </div>
             <div className="signatures">
                 <Signature name="alyn" src={Alyn} />
-                <Signature name="advita" src={Advita} />
-                <Signature name="claire" src={Claire} />
+                {/* <Signature name="advita" src={Advita} /> */}
+                {/* <Signature name="claire" src={Claire} /> */}
                 <Signature name="elliott" src={Elliott} />
-                <Signature name="erin" src={Erin} />
+                {/* <Signature name="erin" src={Erin} /> */}
                 {/* <Signature name="fiona" src={Fiona} /> */}
-                <Signature name="jocelyn" src={Jocelyn} />
+                {/* <Signature name="jocelyn" src={Jocelyn} /> */}
                 <Signature name="umaiza" src={Umaiza} />
-                <Signature name="wilson" src={Wilson} />
+                {/* <Signature name="wilson" src={Wilson} /> */}
             </div>
             <div className="shortlinks contacts">
                 <a
